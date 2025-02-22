@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preset Switcher</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica', sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            flex-direction: column;
+        }
+        .title {
+            font-size: 3rem;
+            color: #1ca5b8;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .preset-info {
+            margin-bottom: 20px;
+            color: #697279;
+            font-size: 1rem;
+            text-align: center;
+            font-style: italic;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center; /* Center the button container */
+            gap: 20px; /* Space between arrows and button container */
+            width: 80%; /* Set to 80% */
+            max-width: 400px; /* Maximum width */
+            position: relative;
+            align-items: center; /* Center items vertically */
+        }
+        .button-group {
+            display: flex; /* Flexbox for button group */
+            flex-direction: column;
+            justify-content: center; /* Center buttons */
+            gap: 10px; /* Space between buttons vertically */
+            width: 100%; /* Ensure button group takes full width */
+        }
+        .text-field, .button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+        .text-field {
+            border: 1px solid #cccccc;
+            color: #888;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        .button {
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover { transform: translateY(-3px); }
+        .arrow {
+            width: 40px;
+            height: 40px;
+            background-color: #cccccc;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .arrow:hover { background-color: #aaaaaa; }
+        .arrow:before { content: '◀'; font-size: 1.5rem; }
+        .arrow.right:before { content: '▶'; }
+        .hidden { display: none; }
+        @media (max-width: 400px) {
+            .title { font-size: 2rem; }
+            .button { font-size: 1rem; } /* Shrinks buttons on small screens */
+            .text-field { font-size: 1rem; } /* Same size for input field */
+            .button-container {
+                width: 80%; /* Full width for button container */
+                align-items: center; /* Center items horizontally */
+            }
+            .arrow {
+                width: 30px; /* Smaller size for mobile */
+                height: 30px;
+                font-size: 1.2rem; /* Adjust arrow size */
+            }
+        }
+    </style>
+    <style>
+        .toggle-container {
+            margin-top: 5%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Helvetica', sans-serif; 
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 2.5px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #1ca5b8;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.toggle-label {
+  color: #333;
+}
+
+    </style>
+    <style>
+        .preset-info {
+            margin-bottom: 20px;
+            color: #697279;
+            font-size: 1rem;
+            text-align: center;
+            font-style: italic;
+        }
+        .dropdown {
+            width: 20%;
+            padding: 1px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+            color: #697279;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            appearance: none; /* Remove default dropdown styling */
+            text-align: center; /* Center the text */
+        }
+        .dropdown option {
+            text-align: center; /* Centers the text in the dropdown options */
+        }
+        .dropdown:focus {
+            outline: none;
+            border-color: #1ca5b8;
+        }
+        @media (max-width: 400px) {
+            .title { font-size: 2rem; }
+            .dropdown { font-size: 1rem; }
+        }
+        .errorField{
+            font-family: Arial, sans-serif;
+            color: red;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title" id="title">Writing Test</div>
+    <div class="preset-info" id="subtitle">Please type in the character.
+        A <span style="color: #ea6b66; font-weight: bold;">*</span> denotes the <span style="color: #ea6b66; font-weight: bold;">received Character</span>.<br/>
+        The <span style="color: blue; font-weight: bold;">order</span> does not matter.</br>
+        After the <span style="color: #3db5a4; font-weight: bold;">tested word (or character)</span> is locked in, press the <span style="color: #3db5a4; font-weight: bold;">submit-button or ENTER- key</span> for finishing the test</div>
+    
+    <div class="button-container">
+        
+        <div id="preset-buttons" class="button-group">
+            <form id="secretForm">
+                <label for="words" class=".preset-info">Characters to be typed in:</label>
+                <select id="words" class="dropdown" name="words">
+                    <option value="test">test</option>
+                    <option value="t">T</option>
+                    <option value="h">H</option>
+                    <option value="e">E</option>
+                    <option value="the">THE</option>
+                    <option value="o">O</option>
+                    <option value="l">L</option>
+                    <option value="d">D</option>
+                    <option value="old">OLD</option>
+                    <option value="p">P</option>
+                    <option value="u">U</option>
+                    <option value="b">B</option>
+                    <option value="pub">PUB</option>
+                </select>
+                <input class="text-field" type="text" autocomplete="off" id="hiddenInput" placeholder="Type here..." style="color: #ea6b66; margin-top: 8%;" oninput="maskInput(event)" onkeydown="checkEnter(event)">
+                <input class="button" style="background-color: #3db5a4; margin-top: 4%;" type="submit" value="Submit">
+            </form>
+            <p id="errorText" class="errorField"></p>
+        </div>
+        
+    </div>
+      <script>
+        let originalValue = ""; // Holds the real value entered by the user
+        let shownValue = "";    // Holds the masked value shown to the user
+        let measuringTime = false;
+        let startTime = "";
+        let inputTest = document.getElementById("words");
+
+        // Function to handle input masking
+        function maskInput(event) {
+            const inputField = event.target;
+            const currentValue = inputField.value;
+            inputField.value = updateShownValue(currentValue);
+        }
+
+        // Function to check if the entered character is valid
+        function isValidCharacter(char) {
+            const validCharacters = new Set(['s', 'd', 'f', 'j', 'k', 'l', ' ']);
+            return validCharacters.has(char);
+        }
+
+        function timeMeasurement(){
+            if(measuringTime){
+                return;
+            }
+
+            measuringTime = true;
+            startTime = new Date().getTime();
+        }
+
+        // Function to update the shown value based on user input
+        function updateShownValue(currentValue) {
+            timeMeasurement();
+            // Only process if a new character has been added
+            if (currentValue.length > shownValue.length) {
+                const newChar = currentValue.slice(-1); // Get the last typed character
+
+                if (!isValidCharacter(newChar)) {
+                    displayError("You submitted an invalid character, please try again.");
+                    return shownValue; // Return the last valid shown value
+                } else {
+                    clearError();
+                }
+
+                // Append the valid character to the original value
+                originalValue += newChar;
+
+                // Update the shown value with asterisks for spaces
+                shownValue += (newChar === " ") ? " " : "*";
+            }
+
+            return shownValue;
+        }
+
+        // Function to display an error message
+        function displayError(message) {
+            document.getElementById('errorText').textContent = message;
+        }
+
+        // Function to clear the error message
+        function clearError() {
+            document.getElementById('errorText').textContent = "";
+        }
+
+        // Function to handle form submission
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the form from reloading the page
+            let endTime = new Date().getTime();
+            measuringTime = false;
+            let elapsedTime = endTime - startTime;
+            let testName = inputTest.value;
+
+            let formattedMessage = {
+                "Test": testName,
+                "Submitted Value": originalValue,
+                "Test Time (ms)": elapsedTime
+            };
+
+            console.table(formattedMessage);
+            shownValue = "";
+            hiddenInput.value = "";
+            originalValue = "";
+        }
+
+        // Function to check for the Enter key and submit the form if pressed
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                const inputField = event.target;
+                inputField.value += ","; // Mask the input further
+                submitForm(event);
+            }
+        }
+
+        // Event listeners
+        document.getElementById('secretForm').addEventListener('submit', submitForm);
+    </script>
+    
+</body>
+</html>

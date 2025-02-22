@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preset Switcher</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica', sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            flex-direction: column;
+        }
+        .title {
+            font-size: 3rem;
+            color: #1ca5b8;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .preset-info {
+            margin-bottom: 20px;
+            color: #697279;
+            font-size: 1rem;
+            text-align: center;
+            font-style: italic;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center; /* Center the button container */
+            gap: 20px; /* Space between arrows and button container */
+            width: 80%; /* Set to 80% */
+            max-width: 400px; /* Maximum width */
+            position: relative;
+            align-items: center; /* Center items vertically */
+        }
+        .button-group {
+            display: flex; /* Flexbox for button group */
+            flex-direction: column;
+            justify-content: center; /* Center buttons */
+            gap: 10px; /* Space between buttons vertically */
+            width: 100%; /* Ensure button group takes full width */
+        }
+        .text-field, .button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+        .text-field {
+            border: 1px solid #cccccc;
+            color: #888;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        .button {
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover { transform: translateY(-3px); }
+        .arrow {
+            width: 40px;
+            height: 40px;
+            background-color: #cccccc;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .arrow:hover { background-color: #aaaaaa; }
+        .arrow:before { content: '◀'; font-size: 1.5rem; }
+        .arrow.right:before { content: '▶'; }
+        .hidden { display: none; }
+        @media (max-width: 400px) {
+            .title { font-size: 2rem; }
+            .button { font-size: 1rem; } /* Shrinks buttons on small screens */
+            .text-field { font-size: 1rem; } /* Same size for input field */
+            .button-container {
+                width: 80%; /* Full width for button container */
+                align-items: center; /* Center items horizontally */
+            }
+            .arrow {
+                width: 30px; /* Smaller size for mobile */
+                height: 30px;
+                font-size: 1.2rem; /* Adjust arrow size */
+            }
+        }
+    </style>
+    <style>
+        .toggle-container {
+            margin-top: 5%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Helvetica', sans-serif; 
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 2.5px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #1ca5b8;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.toggle-label {
+  color: #333;
+}
+.mb{
+    font-weight: 350;
+}
+    </style>
+<script>
+    //readaloud code
+    async function speakText(text) {
+        return new Promise((resolve) => {
+            let utterance = new SpeechSynthesisUtterance(text);
+            utterance.onend = resolve; // Resolve when speech ends
+            window.speechSynthesis.speak(utterance);
+        });
+    };
+</script>
+<script>
+    // ajax code
+    async function makeAjaxRequest() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = async function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var text = xhr.responseText;
+                if (text) {
+                    //document.getElementById('response').innerText = text;
+                    await new Promise(resolve => setTimeout(resolve, 0));  // Optional delay
+                    await speakText(text);  // Speak the received text
+                    makeAjaxRequest();  // Continue to request the next character
+                } else {
+                    console.log('Sequence complete, no more text to speak.');
+                }
+            }
+        };
+        xhr.open('GET', '/ajax', true);  // Send request to the server to get the next character
+        xhr.send();
+    };
+
+    makeAjaxRequest();  // Initial call to start the process
+</script>
+
+</head>
+<body>
+    <div class="title" id="title"></div>
+    <div class="preset-info" id="subtitle"></div>
+    
+    <div class="button-container">
+        <div class="arrow left" onclick="toggleLeft()"></div>
+        
+        <div id="preset-buttons1" class="button-group">
+            <button class="button" style="background-color: #f7b625;" onclick="sendPreset('t')">T</button>
+            <button class="button" style="background-color: #ea6b66;" onclick="sendPreset('h')">H</button>
+            <button class="button" style="background-color: #697279;" onclick="sendPreset('e')">E</button>
+        </div>
+
+        <div id="preset-buttons2" class="button-group hidden">
+            <button class="button" style="background-color: #f7b625;" onclick="sendPreset('o')">O</button>
+            <button class="button" style="background-color: #ea6b66;" onclick="sendPreset('l')">L</button>
+            <button class="button" style="background-color: #697279;" onclick="sendPreset('d')">D</button>
+        </div>
+
+        <div id="preset-buttons3" class="button-group hidden">
+            <button class="button" style="background-color: #f7b625;" onclick="sendPreset('p')">P</button>
+            <button class="button" style="background-color: #ea6b66;" onclick="sendPreset('u')">U</button>
+            <button class="button" style="background-color: #697279;" onclick="sendPreset('b')">B</button>
+        </div>
+
+        <div id="preset-buttons4" class="button-group hidden">
+            <button class="button" style="background-color: #f7b625;" onclick="sendPreset('o')">O</button>
+            <button class="button" style="background-color: #ea6b66;" onclick="sendPreset('l')">L</button>
+            <button class="button" style="background-color: #697279;" onclick="sendPreset('d')">D</button>
+        </div>
+        
+        <div id="preset-buttons5" class="button-group hidden">
+            <button class="button" style="background-color: #f7b625;" onclick="sendPreset('p')">P</button>
+            <button class="button" style="background-color: #ea6b66;" onclick="sendPreset('u')">U</button>
+            <button class="button" style="background-color: #697279;" onclick="sendPreset('b')">B</button>
+        </div>
+        
+
+        <div id="custom-inputs" class="button-group hidden">
+                <form class="button-group" onsubmit="submitForm(event)">
+                    <!-- <form action="/setpattern" method="post" class="button-group" onsubmit="submitForm(event)"> -->
+                    <input type="text" class="text-field" placeholder="Type here..." name="pattern">
+                    <input id="ostStatus" name="ostStatus" value="true" style="display: none;"> <!-- Hidden field for OST status type="hidden" -->
+                    <button class="button" style="background-color: #3db5a4;" type="submit">Save</button>
+                </form>
+                <button class="button" style="background-color: #736CA8;" onclick="location.href='/start'">Start</button>
+            </div>
+        <div class="arrow right" onclick="toggleRight()"></div>
+    </div>
+    <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="ostToggle" onclick="updateOstStatus()" checked>
+          <span class="slider round"></span>
+        </label>
+    <span class="toggle-label">OST Encoding</span>
+      </div>
+      <script>
+        function sendPreset(character){
+                const isChecked = document.getElementById('ostToggle').checked;
+                sendPostRequest(isChecked, character);
+            }
+    
+            function sendPostRequest(ostStatus, pattern){
+                const formData = new FormData();
+
+                // Append data to the form
+                formData.append('ostStatus', ostStatus); // Replace with the actual value for ostStatus
+                formData.append('pattern', pattern); // Replace with the actual value for pattern
+
+                // Submit the form data using fetch
+                fetch('/setstartpattern', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(data => {
+                    console.log('Success:');
+                    setTimeout(() => {
+                        window.location.href = '/start';
+                    }, 2000);
+                }) // Handle success
+                .catch(error => console.error('Error:', error)); // Handle error
+            }
+        // Prevent default form submission and show a message
+        function submitForm(event) {
+            event.preventDefault(); // Prevent page reload
+            const form = event.target;  // 'event.target' refers to the form being submitted
+            const formData = new FormData(form); // Pass the form element directly to FormData
+            fetch('/setpattern', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Success: in sending the response');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        </script>
+    <script>
+        var page = 0;
+        const numberOfPages = 6;
+        const titles = ["Pre<span class='mb'>study</span> Set1", "Pre<span class='mb'>study</span> Set2", "Pre<span class='mb'>study</span> Set3", "Main<span class='mb'>study</span> Set1", "Main<span class='mb'>study</span> Set2", "No Preset"];
+        const subtitles = ["Choose one of the preset words","Choose one of the preset words","Choose one of the preset words","Choose one of the preset words","Choose one of the preset words","Choose your own text"];
+        const presetButtons1 = document.getElementById('preset-buttons1');
+        const presetButtons2 = document.getElementById('preset-buttons2');
+        const presetButtons3 = document.getElementById('preset-buttons3');
+        const presetButtons4 = document.getElementById('preset-buttons4');
+        const presetButtons5 = document.getElementById('preset-buttons5');
+        const customInputs = document.getElementById('custom-inputs');
+
+        var hiddenDivs = [
+            presetButtons1, presetButtons2, presetButtons3, presetButtons4, presetButtons5, customInputs
+        ];
+// Function to update the hidden OST status field before submitting the form
+        function updateOstStatus() {
+            const ostStatus = document.getElementById('ostToggle').checked ? 'true' : 'false';
+            document.getElementById('ostStatus').value = ostStatus;
+        }
+        function toggleRight(){
+            nextPage(page+1);
+        }
+
+        function toggleLeft(){
+            nextPage(page-1);
+        }
+
+        function nextPage(value){
+            page = (numberOfPages + value) % numberOfPages;
+            toggleViewTo(page);
+        }
+
+        function toggleViewTo(index) {
+            const title = document.getElementById('title');
+            const subtitle = document.getElementById('subtitle');
+            title.innerHTML = titles[index];
+            subtitle.textContent = subtitles[index];
+            hiddenDivs.map((div, i) => div.classList[index === i ? 'remove' : 'add']('hidden'));
+        }
+        
+        
+
+        toggleViewTo(0);
+    </script>
+    
+</body>
+</html>
