@@ -115,11 +115,7 @@ void WifiMaster::setup() {
         Serial.println("File System Mounted");
     }
 
-    // Dir dir = LittleFS.openDir("/");
-    // while (dir.next()) {
-    //     Serial.print("File: ");
-    //     Serial.println(dir.fileName());
-    // }
+   
 
     // dataSender.setup();              // Call setup on the object
     if (!WifiEspNow.begin()) {

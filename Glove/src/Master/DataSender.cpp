@@ -21,29 +21,6 @@ void DataSender::setup(){
 }
 
 
-// void DataSender::sendVectorToSlave(const std::vector<int>& reorderedValues， const ChordingScheme status){
-// std::vector<int> vectorToSend;
-
-//     for (int value : reorderedValues) {
-//         if (value == 0) {
-//             vectorToSend.push_back(-1);  // Replace 0 with -1   //otherwise can't be sent
-//         } else {
-//             vectorToSend.push_back(value);  // Keep the original value
-//         }
-//     }
-
-//     size_t vectorSize = vectorToSend.size();
-//     size_t totalSize = sizeof(uint8_t) + sizeof(size_t) + vectorSize * sizeof(int);
-//     uint8_t* dataToSend = new uint8_t[totalSize];
-
-//     dataToSend[0] = 0; // 0 for vector
-//     memcpy(dataToSend + 1, &vectorSize, sizeof(size_t));
-//     memcpy(dataToSend + sizeof(uint8_t) + sizeof(size_t), vectorToSend.data(), vectorSize * sizeof(int));
-
-//     WifiEspNow.send(SingeltonWifiConnector::getInstance().SLAVE_MAC, dataToSend, totalSize);
-//     Serial.printf("==> Sent vector of size %zu to slave\n\n", vectorSize);
-//     delete[] dataToSend;
-// }
 void DataSender::sendVectorToSlave(const std::vector<int>& reorderedValues, const ChordingScheme status) {
     std::vector<int> vectorToSend;
 
