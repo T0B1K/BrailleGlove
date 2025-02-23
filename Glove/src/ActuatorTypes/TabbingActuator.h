@@ -1,12 +1,22 @@
 #ifndef TABBING_ACTUATOR_H
 #define TABBING_ACTUATOR_H
 
-#include <Servo.h>
+#ifdef TEST_ENV
+    #include "MockClasses/MockServo.h"
+#else
+    #include <Servo.h>
+#endif
+
 #include "Actuator.h"
+
 
 class TabbingActuator : public Actuator {
   private:
-    Servo servo;  // Servo object to control the DS208
+    #ifdef TEST_ENV
+      MockServo servo;
+    #else
+      Servo servo;
+    #endif
   public:
     TabbingActuator(int pin) : Actuator(pin, Stroking) {
         // Initialize the servo and set to 180 degrees
