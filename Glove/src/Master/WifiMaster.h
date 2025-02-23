@@ -26,6 +26,13 @@
 #include "DataSender.h"
 #include "../Settings/SingeltonWifiSettings.h"
 
+
+#ifdef TEST_ENV
+    MockESP8266WebServer server(80);  // Use the mock server in tests
+#else
+    ESP8266WebServer server(80);  // Real server for production
+#endif
+
 class WifiMaster {
 public:
     WifiMaster(GloveModel gloveModel);
@@ -39,11 +46,7 @@ public:
 private:
     int idx;
     String pattern;
-    #ifdef TEST_ENV
-        MockESP8266WebServer server(80);  // Use the mock server in tests
-    #else
-        ESP8266WebServer server(80);  // Real server for production
-    #endif
+
     // View view;
     BrailleMapper brailleMapper = BrailleMapper();
     ActuatorProcessingOrderMapper queue = ActuatorProcessingOrderMapper();

@@ -16,7 +16,6 @@
 #endif
 
 
-
 // WifiMaster::WifiMaster(GloveModel gloveModel): server(80), view(&server), gloveModel(gloveModel) {} // Initialize tcpServer with port 80
 WifiMaster::WifiMaster(GloveModel gloveModel): server(80), gloveModel(gloveModel) {} // Initialize tcpServer with port 80
 

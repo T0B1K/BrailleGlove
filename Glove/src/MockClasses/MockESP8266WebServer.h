@@ -3,16 +3,16 @@
 
 #include <Arduino.h>
 #include <functional>
+#include <map>
 
 class MockESP8266WebServer {
 public:
     // Constructor
-    MockESP8266WebServer(int port) {
-    }
+    MockESP8266WebServer(int port) {}
 
-    // Method to register a route
+    // Mock the 'on' method that registers routes
     void on(const String& uri, int method, std::function<void()> handler) {
-        // Log the registration of the route
+        // Log the registration of the route for the test
         Serial.print("Route registered: ");
         Serial.print(uri);
         Serial.print(" with method: ");
@@ -22,16 +22,16 @@ public:
         this->handler = handler;
     }
 
-    // Simulate the handler call in unit tests
+    // Simulate an incoming HTTP request that triggers the registered handler
     void simulateRequest() {
         if (handler) {
-            handler();
+            handler();  // Call the stored handler function
         }
     }
 
-    // Simulate sending an HTTP response
+    // Mock 'send' method to simulate sending an HTTP response
     void send(int code, const String& contentType, const String& content) {
-        // Log response details for debugging
+        // Log the response details
         Serial.print("HTTP Response sent: ");
         Serial.print("Code: ");
         Serial.print(code);
@@ -40,24 +40,48 @@ public:
         Serial.print(", Content: ");
         Serial.println(content);
 
-        // Store response details for test verification
+        // Store the response details for verification in tests
         this->responseCode = code;
         this->responseContentType = contentType;
         this->responseContent = content;
     }
 
-    // Methods to retrieve response details for assertions
+    // Methods to retrieve the sent response for assertions
     int getResponseCode() { return responseCode; }
     String getResponseContentType() { return responseContentType; }
     String getResponseContent() { return responseContent; }
 
+    // Simulate the handling of a client request
+    void handleClient() {
+        // You can use simulateRequest() to manually invoke a registered handler
+        simulateRequest();
+    }
+
+    // Mock hasArg() method to check for argument presence
+    bool hasArg(const String& arg) {
+        return args.find(arg) != args.end();
+    }
+
+    // Mock arg() method to retrieve argument values
+    String arg(const String& arg) {
+        return args[arg];
+    }
+
+    // Mock method to simulate setting arguments
+    void setArg(const String& arg, const String& value) {
+        args[arg] = value;
+    }
+
 private:
     std::function<void()> handler;  // Store the handler function
 
-    // Store response details
+    // Store response details for testing
     int responseCode = 0;
     String responseContentType;
     String responseContent;
+
+    // Store mock arguments for the request
+    std::map<String, String> args;
 };
 
-#endif  // MOCK_ESP8266_WEBSERVER_H
+#endif // MOCK_ESP8266_WEBSERVER_H
