@@ -1,5 +1,21 @@
 #include "WifiMaster.h"
 
+#ifdef TEST_ENV
+    MockLittleFS LittleFS;
+    MockFile file;
+    MockWifiEspNow WifiEspNow;
+    MockWiFi WiFi;
+    MockESP ESP;
+    
+#else
+    LittleFS LittleFS;
+    File file;
+    WifiEspNow WifiEspNow;
+    WiFi WiFi;
+    ESP ESP;
+#endif
+
+
 
 // WifiMaster::WifiMaster(GloveModel gloveModel): server(80), view(&server), gloveModel(gloveModel) {} // Initialize tcpServer with port 80
 WifiMaster::WifiMaster(GloveModel gloveModel): server(80), gloveModel(gloveModel) {} // Initialize tcpServer with port 80
@@ -8,7 +24,7 @@ WifiMaster::WifiMaster(GloveModel gloveModel): server(80), gloveModel(gloveModel
 void WifiMaster::setFrontend(){
     if (LittleFS.exists("/switch.html")) {
         // Open the file for reading
-        File file = LittleFS.open("/switch.html", "r");
+        file = LittleFS.open("/switch.html", "r");
         if (file) {
             // Read the file content into a string
             String content = file.readString();
@@ -115,9 +131,6 @@ void WifiMaster::setup() {
         Serial.println("File System Mounted");
     }
 
-   
-
-    // dataSender.setup();              // Call setup on the object
     if (!WifiEspNow.begin()) {
         Serial.println("Error initializing ESP-NOW");
         ESP.restart(); // Restart if initialization fails
@@ -248,7 +261,7 @@ void WifiMaster::sendVectorToSlave(const std::vector<int>& reorderedValues, cons
 
     // Send the data to the slave
     WifiEspNow.send(SingeltonWifiConnector::getInstance().SLAVE_MAC, dataToSend, totalSize);
-    Serial.printf("==> Sent vector of size %zu to slave (repeat as negative if present)\n\n", vectorSize);
+    // Serial.printf("==> Sent vector of size %zu to slave (repeat as negative if present)\n\n", vectorSize);
 
     // Clean up dynamically allocated memory
     delete[] dataToSend;
@@ -263,5 +276,5 @@ void WifiMaster::sendIntegerToSlave(int singleValueToSend){
     memcpy(dataToSend + 1, &singleValueToSend, sizeof(int));
 
     WifiEspNow.send(SingeltonWifiConnector::getInstance().SLAVE_MAC, dataToSend, sizeof(dataToSend));
-    Serial.printf("==> Sent integer %d to slave\n\n", singleValueToSend);
+    // Serial.printf("==> Sent integer %d to slave\n\n", singleValueToSend);
 }

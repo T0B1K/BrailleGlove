@@ -1,21 +1,29 @@
 #ifndef WIFI_MASTER_H
 #define WIFI_MASTER_H
 
-#include <ESP8266WebServer.h>
-#include <vector>
-#include <WiFiServer.h>  // Include for TCP server
-#include <cstring>
-#include <LittleFS.h>
-// #include <View/FrontendView.h>
-#include <WifiEspNow.h>
-#include <ESP8266WiFi.h>
+#ifdef TEST_ENV
+    #include "MockClasses/MockLittleFS.h"
+    #include "MockClasses/MockWifiEspNow.h"
+    #include "MockClasses/MockESP8266WebServer.h"
+#else
+    #include <LittleFS.h>
+    #include <WifiEspNow.h>
 
-// #include "View/View.h"
+    #include <ESP8266WebServer.h>
+    #include <WiFiServer.h> 
+    #include <ESP8266WiFi.h>
+#endif
+
+
+#include <vector>
+ // Include for TCP server
+#include <cstring>
 #include "Mapper/BrailleMapper.h"
 #include "Mapper/ActuatorProcessingOrderMapper.h"
 #include "Models/GloveModel.h"
 #include "Models/EncodingScheme/ChordingScheme.h"
 #include "Models/HandEnum.h"
+#include "DataSender.h"
 #include "../Settings/SingeltonWifiSettings.h"
 
 class WifiMaster {
@@ -31,12 +39,16 @@ public:
 private:
     int idx;
     String pattern;
-    ESP8266WebServer server;
-
+    #ifdef TEST_ENV
+        MockESP8266WebServer server(80);  // Use the mock server in tests
+    #else
+        ESP8266WebServer server(80);  // Real server for production
+    #endif
     // View view;
     BrailleMapper brailleMapper = BrailleMapper();
     ActuatorProcessingOrderMapper queue = ActuatorProcessingOrderMapper();
     GloveModel gloveModel;
+    // DataSender dataSender;
 
     void sendVectorToSlave(std::vector<int> reorderedValues);
     void sendIntegerToSlave(int singleValueToSend);

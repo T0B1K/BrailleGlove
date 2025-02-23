@@ -16,7 +16,7 @@ private:
     Actuator* actuators[3];
     Hand hand;
     std::vector<int> values;
-    ChordingScheme playMode = OST_ENCODING; 
+    ChordingScheme playMode; 
 
 public:
     GloveModel(Hand hand, Actuator& actuator1, Actuator& actuator2, Actuator& actuator3) {

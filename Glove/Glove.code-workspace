@@ -2,6 +2,14 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"name": "esp8266_communication",
+			"path": "../esp8266_communication"
+		},
+		{
+			"name": "FS_Example",
+			"path": "../FS_Example"
 		}
 	],
 	"settings": {
