@@ -27,18 +27,13 @@
 #include "../Settings/SingeltonWifiSettings.h"
 
 
-#ifdef TEST_ENV
-    MockESP8266WebServer server(80);  // Use the mock server in tests
-#else
-    ESP8266WebServer server(80);  // Real server for production
-#endif
 
 class WifiMaster {
 public:
     WifiMaster(GloveModel gloveModel);
+    ESP8266WebServer server;
     void setup();
     void loop();
-
     void sendVectorToSlave(const std::vector<int> &reorderedValues, const ChordingScheme status, int repeat);
 
     void sendVectorToSlave(const std::vector<int> &reorderedValues, const ChordingScheme status);

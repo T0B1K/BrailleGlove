@@ -15,8 +15,15 @@
     ESP ESP;
 #endif
 
+#ifdef TEST_ENV
+    ESP8266WebServer server(80);  // Use the mock server in tests
+#else
+    ESP8266WebServer server(80);  // Real server for production
+#endif
+
 
 // WifiMaster::WifiMaster(GloveModel gloveModel): server(80), view(&server), gloveModel(gloveModel) {} // Initialize tcpServer with port 80
+// WifiMaster::WifiMaster(GloveModel gloveModel): server(80), gloveModel(gloveModel) {} // Initialize tcpServer with port 80
 WifiMaster::WifiMaster(GloveModel gloveModel): server(80), gloveModel(gloveModel) {} // Initialize tcpServer with port 80
 
 

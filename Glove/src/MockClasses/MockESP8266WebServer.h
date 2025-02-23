@@ -5,13 +5,19 @@
 #include <functional>
 #include <map>
 
-class MockESP8266WebServer {
+enum WiFiMode {
+    HTTP_GET,
+    HTTP_POST,
+};
+
+class ESP8266WebServer {
 public:
     // Constructor
-    MockESP8266WebServer(int port) {}
+    ESP8266WebServer(int port) {}
 
+    void begin(){}
     // Mock the 'on' method that registers routes
-    void on(const String& uri, int method, std::function<void()> handler) {
+    void on(const String& uri, WiFiMode method, std::function<void()> handler) {
         // Log the registration of the route for the test
         Serial.print("Route registered: ");
         Serial.print(uri);
@@ -83,5 +89,7 @@ private:
     // Store mock arguments for the request
     std::map<String, String> args;
 };
+
+
 
 #endif // MOCK_ESP8266_WEBSERVER_H
