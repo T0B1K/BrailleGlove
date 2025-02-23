@@ -16,7 +16,6 @@
 #include "Models/GloveModel.h"
 #include "Models/EncodingScheme/ChordingScheme.h"
 #include "Models/HandEnum.h"
-#include "DataSender.h"
 #include "../Settings/SingeltonWifiSettings.h"
 
 class WifiMaster {
@@ -38,7 +37,6 @@ private:
     BrailleMapper brailleMapper = BrailleMapper();
     ActuatorProcessingOrderMapper queue = ActuatorProcessingOrderMapper();
     GloveModel gloveModel;
-    // DataSender dataSender;
 
     void sendVectorToSlave(std::vector<int> reorderedValues);
     void sendIntegerToSlave(int singleValueToSend);

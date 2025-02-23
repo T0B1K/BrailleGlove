@@ -27,6 +27,9 @@ class VibrationActuator : public Actuator {
             Serial.println("O: Vibration Actuator at pin: " + String(pin));
         }
     }
+    virtual ~VibrationActuator() {
+        // Destructor code (if any)
+    }
 };
 
 #endif
