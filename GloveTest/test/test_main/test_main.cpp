@@ -1,9 +1,10 @@
-#if defined(UNIT_TEST)
+#ifdef UNIT_TEST
+#include <ArduinoFake.h>
 #include <unity.h>
-#endif
 
 void setUp(void) {
     // Code to run before each test
+    ArduinoFakeReset();
 }
 
 void tearDown(void) {
@@ -23,3 +24,4 @@ void setup() {
 void loop() {
     // Empty loop
 }
+#endif
