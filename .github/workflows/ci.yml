@@ -28,9 +28,11 @@ jobs:
           pip install platformio
 
       - name: Install dependencies
-        run: platformio lib install
+        run: |
+          cd GloveTest
+          platformio lib install
 
       - name: Build and test
-        run: platformio test -e wemos_d1_mini32
-
-      working-directory: ./GloveTest
+        run: |
+          cd GloveTest
+          platformio test -e wemos_d1_mini32
