@@ -29,15 +29,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd BrailleGlove/GloveTest
+          cd GloveTest
           platformio lib install
 
       - name: Build project
         run: |
-          cd BrailleGlove/GloveTest
+          cd GloveTest
           platformio run
 
       - name: Run tests
         run: |
-          cd BrailleGlove/GloveTest
+          cd GloveTest
           platformio test
