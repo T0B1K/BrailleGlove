@@ -29,4 +29,4 @@ jobs:
     - name: Build and test with PlatformIO
       run: |
         pio test -e native
-      working-directory: ./BrailleGlove
+      working-directory: ./Glove
