@@ -1,0 +1,3 @@
+[submodule "Glove/googletest"]
+	path = Glove/googletest
+	url = https://github.com/google/googletest.git
