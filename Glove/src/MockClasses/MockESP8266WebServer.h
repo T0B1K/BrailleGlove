@@ -5,7 +5,7 @@
 #include <functional>
 #include <map>
 
-enum WiFiMode {
+enum WiFiModeGet {
     HTTP_GET,
     HTTP_POST,
 };
@@ -17,12 +17,21 @@ public:
 
     void begin(){}
     // Mock the 'on' method that registers routes
-    void on(const String& uri, WiFiMode method, std::function<void()> handler) {
+    void on(const String& uri, WiFiModeGet method, std::function<void()> handler) {
         // Log the registration of the route for the test
         Serial.print("Route registered: ");
         Serial.print(uri);
         Serial.print(" with method: ");
         Serial.println(method);
+
+        // Store the handler to be called in the test
+        this->handler = handler;
+    }
+    
+    void on(const String& uri, std::function<void()> handler) {
+        // Log the registration of the route for the test
+        Serial.print("Route registered: ");
+        Serial.print(uri);
 
         // Store the handler to be called in the test
         this->handler = handler;
@@ -89,7 +98,5 @@ private:
     // Store mock arguments for the request
     std::map<String, String> args;
 };
-
-
 
 #endif // MOCK_ESP8266_WEBSERVER_H

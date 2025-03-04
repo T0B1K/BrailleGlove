@@ -1,6 +1,6 @@
 #include "Controller/Controller.h"
 
-const bool IS_SLAVE = false; // Set to true for slave, false for master
+const bool IS_SLAVE = true; // Set to true for slave, false for master
 Controller controller(IS_SLAVE);
 
 void setup() {

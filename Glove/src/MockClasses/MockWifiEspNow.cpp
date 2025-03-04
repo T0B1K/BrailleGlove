@@ -1,55 +1,31 @@
 #include "MockWifiEspNow.h"
 
-// Implement other methods as needed
-void MockESP::restart() {
-    // Mock implementation
-}
+void (*MockWifiEspNow::onReceiveCallback)(const uint8_t*, const uint8_t*, unsigned int, void*) = nullptr;
+void* MockWifiEspNow::onReceiveThisPointer = nullptr;
 
-bool MockWifiEspNow::send(const uint8_t* macAddress, const uint8_t* data, size_t len) {
-    // Mock implementation
-    // For example, log the data to be sent
-    Serial.print("Sending data to ");
-    Serial.println(macAddress[0]);
-    // Return true to indicate success
-    return true;
-}
-
+// Implement the static methods
 bool MockWifiEspNow::begin() {
-    // Mock implementation
+    // Implementation
     return true;
 }
 
 bool MockWifiEspNow::addPeer(const uint8_t* macAddress) {
-    // Mock implementation
+    // Implementation
     return true;
 }
 
-String MockWiFi::macAddress() {
-    // Mock implementation
-    return "00:11:22:33:44:55";
+bool MockWifiEspNow::send(const uint8_t* macAddress, const uint8_t* data, size_t len) {
+    // Implementation
+    return true;
 }
 
-void MockWiFi::persistent(bool persistent) {
-    // Mock implementation: just log the call or do nothing
-    Serial.print("WiFi persistent: ");
-    Serial.println(persistent ? "true" : "false");
+void MockWifiEspNow::onReceive(void (*callback)(const uint8_t*, const uint8_t*, unsigned int, void*), void* thisPointer) {
+    onReceiveCallback = callback;
+    onReceiveThisPointer = thisPointer;
 }
 
-void MockWiFi::mode(int mode) {
-    // Mock implementation: log the Wi-Fi mode being set
-    String modeStr = (mode == WIFI_AP) ? "WIFI_AP" : "Unknown Mode";
-    Serial.print("WiFi mode set to: ");
-    Serial.println(modeStr);
-}
-
-void MockWiFi::disconnect() {
-    // Mock implementation: just log the disconnect action
-    Serial.println("WiFi disconnected");
-}
-
-bool MockWiFi::softAP(const String& ssid) {
-    // Mock implementation: log the SSID for the softAP mode
-    Serial.print("WiFi softAP started with SSID: ");
-    Serial.println(ssid);
-    return true;  // Simulate successful operation
+void MockWifiEspNow::simulateReceive(const uint8_t* mac, const uint8_t* buf, unsigned int count) {
+    if (onReceiveCallback) {
+        onReceiveCallback(mac, buf, count, onReceiveThisPointer);
+    }
 }

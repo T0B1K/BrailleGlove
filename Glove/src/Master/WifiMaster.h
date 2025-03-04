@@ -1,9 +1,12 @@
+#ifdef MASTER_DEVICE
+
 #ifndef WIFI_MASTER_H
 #define WIFI_MASTER_H
 
 #ifdef TEST_ENV
     #include "MockClasses/MockLittleFS.h"
     #include "MockClasses/MockWifiEspNow.h"
+    #include "MockClasses/MockWiFi.h"
     #include "MockClasses/MockESP8266WebServer.h"
 #else
     #include <LittleFS.h>
@@ -23,7 +26,6 @@
 #include "Models/GloveModel.h"
 #include "Models/EncodingScheme/ChordingScheme.h"
 #include "Models/HandEnum.h"
-#include "DataSender.h"
 #include "../Settings/SingeltonWifiSettings.h"
 
 
@@ -46,7 +48,6 @@ private:
     BrailleMapper brailleMapper = BrailleMapper();
     ActuatorProcessingOrderMapper queue = ActuatorProcessingOrderMapper();
     GloveModel gloveModel;
-    // DataSender dataSender;
 
     void sendVectorToSlave(std::vector<int> reorderedValues);
     void sendIntegerToSlave(int singleValueToSend);
@@ -68,3 +69,4 @@ private:
     }
 };
 #endif // WIFI_MASTER_H
+#endif

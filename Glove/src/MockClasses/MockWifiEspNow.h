@@ -7,28 +7,16 @@ public:
     static bool begin();
     static bool addPeer(const uint8_t* macAddress);
     bool send(const uint8_t* macAddress, const uint8_t* data, size_t len);
-    
-};
 
-class MockESP {
-public:
-    static void restart();
-};
+    // Modify onReceive to accept a callback with the correct signature
+    static void onReceive(void (*callback)(const uint8_t*, const uint8_t*, unsigned int, void*), void* thisPointer);
 
-class MockWiFi {
-public:
-    static String macAddress();
-    static void persistent(bool persistent);
-    static void mode(int mode);
-    static void disconnect();
-    static bool softAP(const String& ssid);
-};
+    // Simulate receiving data
+    static void simulateReceive(const uint8_t* mac, const uint8_t* buf, unsigned int count);
 
-enum WiFiMode {
-    WIFI_STA = 1,
-    WIFI_AP = 2,
-    WIFI_AP_STA = 3
+private:
+    static void (*onReceiveCallback)(const uint8_t*, const uint8_t*, unsigned int, void*);
+    static void* onReceiveThisPointer;
 };
-
 
 #endif // MOCK_WIFI_ESPNOW_H

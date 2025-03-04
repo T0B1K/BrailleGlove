@@ -1,3 +1,5 @@
+#ifdef MASTER_DEVICE
+
 #include "WifiMaster.h"
 
 #ifdef TEST_ENV
@@ -5,14 +7,12 @@
     MockFile file;
     MockWifiEspNow WifiEspNow;
     MockWiFi WiFi;
-    MockESP ESP;
     
 #else
     LittleFS LittleFS;
     File file;
     WifiEspNow WifiEspNow;
     WiFi WiFi;
-    ESP ESP;
 #endif
 
 #ifdef TEST_ENV
@@ -284,3 +284,5 @@ void WifiMaster::sendIntegerToSlave(int singleValueToSend){
     WifiEspNow.send(SingeltonWifiConnector::getInstance().SLAVE_MAC, dataToSend, sizeof(dataToSend));
     // Serial.printf("==> Sent integer %d to slave\n\n", singleValueToSend);
 }
+
+#endif

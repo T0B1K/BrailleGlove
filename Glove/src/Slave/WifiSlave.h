@@ -1,11 +1,20 @@
+#ifdef SLAVE_DEVICE
+
 #ifndef WIFI_SLAVE_H
 #define WIFI_SLAVE_H
+#ifdef TEST_ENV
+    #include "MockClasses/MockWifiEspNow.h"
+    #include "MockClasses/MockWiFi.h"
+    #include "MockClasses/MockESP8266WebServer.h"
+#else
+    #include <ESP8266WiFi.h>
+    #include <WifiEspNow.h>
+#endif
 
-#include <ESP8266WiFi.h>
+
 #include <vector>
-#include <WifiEspNow.h>
-#include "Models/GloveModel.h"
 
+#include "Models/GloveModel.h"
 class WifiSlave {
 public:
     WifiSlave(GloveModel gloveModel);
@@ -26,3 +35,5 @@ private:
 };
 
 #endif // WIFI_SLAVE_H
+#endif // WIFI_SLAVE_H
+

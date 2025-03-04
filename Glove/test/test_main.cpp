@@ -1,12 +1,34 @@
-#include <ArduinoFake.h>
+#include <Arduino.h>
 #include <unity.h>
 
-void test_example() {
-    TEST_ASSERT_EQUAL(1, 1);
+// Example function to test
+int add(int a, int b) {
+    return a + b;
 }
 
-int main(int argc, char **argv) {
-    UNITY_BEGIN();
-    RUN_TEST(test_example);
-    return UNITY_END();
+void setUp() {
+  // This will run before each test
+}
+
+void tearDown() {
+  // This will run after each test
+}
+
+void test_add() {
+  TEST_ASSERT_EQUAL(3, add(1, 2));
+  TEST_ASSERT_EQUAL(5, add(2, 3));
+}
+
+void setup() {
+  // Start the Unity test framework
+  UNITY_BEGIN();
+  
+  // Run the test
+  RUN_TEST(test_add);
+  
+  UNITY_END();
+}
+
+void loop() {
+  // Nothing needed here
 }
