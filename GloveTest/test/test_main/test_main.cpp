@@ -1,5 +1,6 @@
-#include <Arduino.h>
+#if defined(UNIT_TEST)
 #include <unity.h>
+#endif
 
 void setUp(void) {
     // Code to run before each test
