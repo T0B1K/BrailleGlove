@@ -1,22 +1,25 @@
-name: CI
+name: PlatformIO CI
 
 on: [push, pull_request]
 
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y cmake g++ libgtest-dev
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.x"
 
-    - name: Build and run tests
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-        make
-        ctest --output-on-failure
+    - name: Install PlatformIO
+      run: pip install platformio
+
+    - name: Run PlatformIO Build
+      run: pio run -d braille
+
+    - name: Run PlatformIO Tests
+      run: pio test -d braille
