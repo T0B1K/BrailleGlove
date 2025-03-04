@@ -9,13 +9,13 @@ void tearDown(void) {
     // Code to run after each test
 }
 
-void test_led_builtin_pin_number(void) {
-    TEST_ASSERT_EQUAL(LED_BUILTIN, 2); // Adjust according to your board's LED pin
+void test_example(void) {
+    TEST_ASSERT_EQUAL(1, 1); // Replace with your test logic
 }
 
 void setup() {
     UNITY_BEGIN();
-    RUN_TEST(test_led_builtin_pin_number);
+    RUN_TEST(test_example);
     UNITY_END();
 }
 

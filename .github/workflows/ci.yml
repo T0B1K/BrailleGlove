@@ -29,10 +29,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd GloveTest
           platformio lib install
 
-      - name: Build and test
+      - name: Build project
         run: |
-          cd GloveTest
-          platformio test -e wemos_d1_mini32
+          platformio run
+
+      - name: Run tests
+        run: |
+          platformio test
