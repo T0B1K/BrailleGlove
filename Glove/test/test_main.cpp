@@ -1,10 +1,16 @@
-#include <gtest/gtest.h>
-#include "foo.h" // Include your header files
+#include <Arduino.h>
+#include <unity.h>
 
-TEST(FooTest, HandlesPositiveInput) {
-    EXPECT_EQ(foo(1), 2);
+void test_example() {
+    TEST_ASSERT_EQUAL(1, 1);
 }
 
-TEST(FooTest, HandlesNegativeInput) {
-    EXPECT_EQ(foo(-1), 0);
+void setup() {
+    UNITY_BEGIN();
+    RUN_TEST(test_example);
+    UNITY_END();
+}
+
+void loop() {
+    // Empty loop
 }

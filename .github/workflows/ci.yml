@@ -1,27 +1,31 @@
-name: C++ CI
+name: PlatformIO CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up CMake
-        uses: actions/setup-cmake@v1
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
 
-      - name: Configure CMake
-        run: cmake -S . -B build
+    - name: Install PlatformIO
+      run: |
+        python -m pip install --upgrade pip
+        pip install platformio
 
-      - name: Build
-        run: cmake --build build
-
-      - name: Run tests
-        run: ctest --test-dir build
+    - name: Build and test with PlatformIO
+      run: |
+        pio test -e native
