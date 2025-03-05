@@ -1,9 +1,18 @@
 #ifndef WIFI_SLAVE_H
 #define WIFI_SLAVE_H
 
-#include <ESP8266WiFi.h>
+#ifdef UNIT_TEST
+    #include "../test/Mocks/ESP8266WiFi_Mock.h"
+    #include "../test/Mocks/ESPNOW_Mock.h"
+    #include "../test/Mocks/MockWiFiUDP.h"
+#else
+    #include <ESP8266WiFi.h>
+    #include <WifiEspNow.h>
+#endif
+
+
 #include <vector>
-#include <WifiEspNow.h>
+
 #include "Models/GloveModel.h"
 
 class WifiSlave {

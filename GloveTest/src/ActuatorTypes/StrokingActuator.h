@@ -1,8 +1,8 @@
 #ifndef STROKING_ACTUATOR_H
 #define STROKING_ACTUATOR_H
 
-#include <Servo.h>
 #include "Actuator.h"
+
 
 class StrokingActuator : public Actuator {
   private:
@@ -18,13 +18,11 @@ class StrokingActuator : public Actuator {
     void activate() override {
         turnedOn = true;
         // Turn 45 degrees
-        Serial.println("Turing ON Actuator at Pin [" + String(pin) + "]");
         servo.write(180);  // Move the servo to 45 degrees
     }
 
     void deactivate() override {
         turnedOn = false;
-        Serial.println("Turing OFF Actuator at Pin [" + String(pin) + "]");
         // Turn back to 0 degrees
         servo.write(0);   // Move the servo back to 0 degrees
     }

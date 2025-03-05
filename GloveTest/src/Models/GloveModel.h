@@ -1,7 +1,32 @@
 #ifndef GLOVE_MODEL_H
 #define GLOVE_MODEL_H
 
-#include <Arduino.h>
+#ifdef UNIT_TEST
+    // Define HIGH and LOW only if they are not already defined
+    #ifndef HIGH
+        #define HIGH 1
+    #endif
+    #ifndef LOW
+        #define LOW 0
+    #endif
+
+    // Provide empty implementations of digitalWrite and pinMode
+    // only if they are not already defined
+    #ifndef digitalWrite
+        void digitalWrite(int pin, int value) {
+            // Empty implementation
+        }
+    #endif
+
+    #ifndef pinMode
+        void pinMode(int pin, int mode) {
+            // Empty implementation
+        }
+    #endif
+#else
+    #include <Arduino.h>
+#endif
+
 #include <unordered_map>
 #include <vector>
 #include "../ActuatorTypes/Actuator.h"
@@ -27,7 +52,6 @@ public:
     }
 
     void resetAllActuators() {
-        Serial.println("Resetting all actuators");
         for (int i = 0; i < SingeltonGloveSettings::getInstance().NUM_ACTUATORS; i++) {
             if (actuators[i] != nullptr) {
                 actuators[i]->deactivate();
@@ -37,17 +61,12 @@ public:
 
     void executePatternAt(int index) {
         resetAllActuators();
-        Serial.println("Executing pattern: " + String(index) + 
-                       "/" + String(values.size()) + 
-                       " INT Value of Character: " + String(values[index]));
         vibrateOnNumber(values[index]);
     }
 
     void pauseBetweenLetters(){
-        Serial.println("PAUSE: " + String(SingeltonGloveSettings::getInstance().DURATION) + " (SPACE - DURATION)");
         SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().DURATION);
         resetAllActuators();
-        Serial.println("PAUSE: " + String(SingeltonGloveSettings::getInstance().PAUSE) + " (PAUSE-BETWEEN-LETTERS)");
         SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().PAUSE);
     }
 
@@ -67,12 +86,9 @@ public:
             }
         }
         if(playMode == OST_ENCODING){
-            //after ost delays, vibrate for each character
-            Serial.println("PAUSE: " + String(SingeltonGloveSettings::getInstance().DURATION) + " (VIBRATE OST-DURATION)");
             SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().DURATION);
             resetAllActuators();
         }
-        Serial.println("PAUSE: " + String(SingeltonGloveSettings::getInstance().PAUSE) + " (PAUSE BETWEEN-LETTERS)");
         SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().PAUSE);
     }
 

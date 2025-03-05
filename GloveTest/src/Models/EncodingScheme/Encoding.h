@@ -1,7 +1,12 @@
 #ifndef ENCODING_H
 #define ENCODING_H
 
-#include <Arduino.h>
+
+#ifdef UNIT_TEST
+    #include "../test/Mocks/Arduino_Mock.h";
+#else
+    #include <Arduino.h>
+#endif
 
 class Encoding {
 public:
@@ -12,7 +17,7 @@ public:
         }
     }
 
-    static boolean validIndex(int number, Hand hand){
+    static bool validIndex(int number, Hand hand){
         if ((hand == Left && number > SingeltonGloveSettings::getInstance().NUM_ACTUATORS) ||
             (hand == Right && number < SingeltonGloveSettings::getInstance().NUM_ACTUATORS + 1)) {
             return false;

@@ -3,7 +3,6 @@
 
 
 void WifiSlave::onReceiveCallback(const uint8_t* mac, const uint8_t* buf, unsigned int count, void* arg) { //size_t count
-    Serial.println("receiving messages");
     WifiSlave* instance = static_cast<WifiSlave*>(arg); // Cast to instance
     instance->processMessage(mac, buf, count); // Call the non-static method
 }
@@ -25,19 +24,14 @@ void WifiSlave::receivedPatten(std::vector<int> sensitivityPattern){
 
 
 void WifiSlave::processMessage(const uint8_t* mac, const uint8_t* buf, unsigned int count) {
-    Serial.printf("Message from %02X:%02X:%02X:%02X:%02X:%02X\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
 
     if (count > 0) {
         uint8_t messageType = buf[0];
         if (messageType == 0) { // 0 indicates a vector
             uint8_t encoding = buf[1];
             if (encoding == 0) {
-                // 0 == OST
-                Serial.println("Setting encoding: (OST_ENCODING)");
                 gloveModel.setChordMode(OST_ENCODING);
             } else {
-                // 1 == Sequential
-                Serial.println("Setting encoding: (SEQUENTIAL_ENCODING)");
                 gloveModel.setChordMode(SEQUENTIAL_ENCODING);
             }
 
@@ -52,12 +46,6 @@ void WifiSlave::processMessage(const uint8_t* mac, const uint8_t* buf, unsigned 
             repeat = firstValue;  // Extract the repeat value (stored as a negative)
             offset += sizeof(int); // Move offset forward since repeat was found
             vectorSize -= 1;       // Adjust the vector size because repeat was counted
-            Serial.printf("Repeat value detected: %d\n", repeat);
-            
-            Serial.printf("repeat: %u\n", repeat);
-
-            Serial.printf("Received vector of size: %u\n", vectorSize);
-            Serial.print("Vector values: ");
             std::vector<int> sensitivityPattern(vectorSize);
             for (size_t i = 0; i < vectorSize; i++) {
                 int value;
@@ -65,19 +53,15 @@ void WifiSlave::processMessage(const uint8_t* mac, const uint8_t* buf, unsigned 
 
                 if (value == -1) {
                     sensitivityPattern[i] = 0;
-                    Serial.print(" ");
                 } else {
                     sensitivityPattern[i] = value;
-                    Serial.print(value);
                 }
             }
-            Serial.println();
             if(repeat > 1){
                 std::vector<int> sensitivityValues = sensitivityPattern;
                 for(int i = 1; i < (int)repeat; i++){
                     sensitivityPattern.insert(sensitivityPattern.end(), sensitivityValues.begin(), sensitivityValues.end());
                 }
-                Serial.println();
             }
 
             receivedPatten(sensitivityPattern);
@@ -86,14 +70,9 @@ void WifiSlave::processMessage(const uint8_t* mac, const uint8_t* buf, unsigned 
             int receivedInteger;
             memcpy(&receivedInteger, buf + 1, sizeof(int));
 
-            Serial.printf("Received integer: %d\n", receivedInteger);
             receivedIndex(receivedInteger);
 
-        } else {
-            Serial.println("Unknown message type");
         }
-    } else {
-        Serial.println("Received empty message");
     }
 }
 
@@ -116,7 +95,6 @@ WifiSlave::WifiSlave(GloveModel gloveModel)
 
 
 void WifiSlave::setup() {
-    Serial.println();
 
     WiFi.persistent(false);
     WiFi.mode(WIFI_STA); // Set to Access Point mode
@@ -125,12 +103,9 @@ void WifiSlave::setup() {
 
     // Initialize ESP-NOW
     if (!WifiEspNow.begin()) {
-        Serial.println("Error initializing ESP-NOW");
         ESP.restart(); // Restart if initialization fails
     }
 
-    Serial.print("MAC address of this slave is: ");
-    Serial.println(WiFi.macAddress());
 
     WifiEspNow.onReceive(WifiSlave::onReceiveCallback, this);
 }

@@ -1,7 +1,6 @@
 #ifndef TABBING_ACTUATOR_H
 #define TABBING_ACTUATOR_H
 
-#include <Servo.h>
 #include "Actuator.h"
 
 class TabbingActuator : public Actuator {

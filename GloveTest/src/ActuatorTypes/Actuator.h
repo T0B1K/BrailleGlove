@@ -4,32 +4,13 @@
 #include "ActuatorType.h"
 
 #ifdef UNIT_TEST
-    // Define HIGH and LOW only if they are not already defined
-    #ifndef HIGH
-        #define HIGH 1
-    #endif
-    #ifndef LOW
-        #define LOW 0
-    #endif
+    #include "../test/Mocks/Servo_Mock.h"
+#else
+    #include <Servo.h>
+#endif
 
-    // Define pin_t only if it's not already defined
-    #ifndef pin_t
-        typedef int pin_t;
-    #endif
-
-    // Provide empty implementations of digitalWrite and pinMode
-    // only if they are not already defined
-    #ifndef digitalWrite
-        void digitalWrite(pin_t pin, int value) {
-            // Empty implementation
-        }
-    #endif
-
-    #ifndef pinMode
-        void pinMode(pin_t pin, int mode) {
-            // Empty implementation
-        }
-    #endif
+#ifdef UNIT_TEST
+    #include "../test/Mocks/Arduino_Mock.h"
 #else
     #include <Arduino.h>
 #endif

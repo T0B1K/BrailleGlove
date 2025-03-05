@@ -1,9 +1,7 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#include <ESP8266WiFi.h>
-#include <ESP8266WebServer.h>
-#include <WiFiUdp.h>
+
 #include <vector>
 
 #include "../Models/GloveModel.h"
@@ -14,6 +12,15 @@
 
 #include "../Master/WifiMaster.h"
 #include "../Slave/WifiSlave.h"
+
+#ifdef UNIT_TEST
+    #include "../test/Mocks/ESP8266WiFi_Mock.h"
+    #include "../test/Mocks/MockWiFiUDP.h"
+#else
+    #include <ESP8266WiFi.h>
+    #include <ESP8266WebServer.h>
+    #include <WiFiUdp.h>
+#endif
 
 class Controller {
 public:

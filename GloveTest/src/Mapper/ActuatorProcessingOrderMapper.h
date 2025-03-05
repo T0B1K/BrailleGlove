@@ -1,7 +1,11 @@
 #ifndef ACTUATOR_PROCESSING__ORDER_MAPPER_H
 #define ACTUATOR_PROCESSING__ORDER_MAPPER_H
 
-#include <Arduino.h>
+#ifdef UNIT_TEST
+    #include "../test/Mocks/Arduino_Mock.h"
+#else
+    #include <Arduino.h>
+#endif
 
 class ActuatorProcessingOrderMapper {
   private:

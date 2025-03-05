@@ -1,9 +1,14 @@
 #ifndef BrailleMapper_H
 #define BrailleMapper_H
 
-#include <Arduino.h>
-#include <unordered_map>
+#ifdef UNIT_TEST
+    #include "../test/Mocks/Arduino_Mock.h"
+#else
+    #include <Arduino.h>
+#endif
+
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 class BrailleMapper {
@@ -50,9 +55,9 @@ public:
         }
     }
 
-    std::vector<int> stringToIntegerList(String input) {
+    std::vector<int> stringToIntegerList(std::string input) {
         std::vector<int> result;
-        String encodedString = "";
+        std::string encodedString = "";
 
         for (char c : input) {
             if (c == ' ') {
@@ -63,7 +68,6 @@ public:
                 result.push_back(getBrailleHash(c)); // Append the braille value of the character
             }
         }
-        Serial.println("pattern: " + encodedString);
         return result;
     }
 

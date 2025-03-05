@@ -12,11 +12,7 @@ public:
         if (validIndex(number, hand)) {
             int actuatorIdx = (number - 1) % SingeltonGloveSettings::getInstance().NUM_ACTUATORS; // 3 actuators on each hand
             actuators[actuatorIdx]->activate();
-        }else{
-            Serial.println("> Ignoring number: " + String(number));
         }
-
-        Serial.println("PAUSE: " + String(SingeltonGloveSettings::getInstance().OST_OFFSET) + " (OST OFFSET)");
         customDelay(SingeltonGloveSettings::getInstance().OST_OFFSET);
     }
 };

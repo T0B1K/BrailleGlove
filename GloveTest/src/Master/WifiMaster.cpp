@@ -15,14 +15,11 @@ void WifiMaster::setFrontend(){
             server.send(200, "text/html", content);
             file.close(); // Don't forget to close the file
         } else {
-            Serial.println("Failed to open switch.html");
             server.send(500, "text/plain", "Server error: Unable to read file");
         }
     } else {
-        Serial.println("switch.html does not exist");
         server.send(404, "text/plain", "File not found");
     }
-    Serial.println("homePage");
 }
 
 String concatenateString(String string, int amount){
@@ -58,23 +55,18 @@ void WifiMaster::frontendSetPattern(String pattern, ChordingScheme status, bool 
 
 
 void WifiMaster::frontendAjaxCall(){
-    Serial.println("====================\n");
-    //todo read a character, pause, vibrate
     if (idx < (int)gloveModel.getPatternLength()) {
         
 
         String charToSend = String(pattern[idx]);
         int asciNumber = (int)pattern[idx];
 
-        Serial.println("\nCurrent Character [" + charToSend + "] ascii: [" + asciNumber + "]");
         server.send(200, "text/plain", charToSend);
 
         if(asciNumber == 32){
-            Serial.println("PAUSE: " + String(SingeltonGloveSettings::getInstance().PAUSE) + " (SPACE - PAUSE)");
             customDelay(SingeltonGloveSettings::getInstance().PAUSE);
         }else{
             //next character
-            Serial.println("PAUSE: " + String(SingeltonGloveSettings::getInstance().AUDIO_VIBRATION_OFFSET)+ " (AUDIO_VIBRATION_OFFSET)");
             customDelay(SingeltonGloveSettings::getInstance().AUDIO_VIBRATION_OFFSET);
         }
         
@@ -96,7 +88,6 @@ std::vector<int> WifiMaster::computePatternFromText(String text){
 
 
 void WifiMaster::setup() {
-    Serial.println();
 
     WiFi.persistent(false);
     WiFi.mode(WIFI_AP); // Set to Station mode
@@ -104,21 +95,12 @@ void WifiMaster::setup() {
     WiFi.softAP(SingeltonWifiConnector::getInstance().MASTER_SSID);
 
     delay(200);
-    Serial.println("\nStarting Master Glove " + String(SingeltonWifiConnector::getInstance().MASTER_SSID));
-    if (!LittleFS.begin()) {  // Initialize LittleFS
-    Serial.println("File System Mount Fail");
-    return;
-    } else {
-        Serial.println("File System Mounted");
+    if (!LittleFS.begin()) {
+        return;
     }
     if (!WifiEspNow.begin()) {
-        Serial.println("Error initializing ESP-NOW");
         ESP.restart(); // Restart if initialization fails
     }
-
-    // Print the MAC address of this node
-    Serial.print("MAC address of this master is: ");
-    Serial.println(WiFi.macAddress());
     
     const int maxRetries = 5; // Set the number of retries
     int attempts = 0;
@@ -126,17 +108,14 @@ void WifiMaster::setup() {
     // Add the slave as a peer
     while (attempts < maxRetries) {
         if (WifiEspNow.addPeer(SingeltonWifiConnector::getInstance().SLAVE_MAC)) {
-            Serial.println("Successfully added peer");
             break; // Exit loop if successful
         } else {
-            Serial.println("Failed to add peer, retrying...");
             attempts++;
             delay(1000); // Delay before retrying
         }
     }
 
     if (attempts == maxRetries) {
-        Serial.println("Failed to add peer after multiple attempts, restarting...");
         ESP.restart();
     }
 
@@ -146,42 +125,34 @@ void WifiMaster::setup() {
         setFrontend();
     });
     server.on("/setpattern", HTTP_POST,  [this]() { 
-        Serial.println("\n---- Setting pattern ----");
         
         ChordingScheme status = OST_ENCODING;
         if(server.hasArg("ostStatus")){
             String ostStatus = server.arg("ostStatus");
             status = (ostStatus == "false")? SEQUENTIAL_ENCODING : OST_ENCODING;
-            Serial.println("Encoding Scheme: " + String(ostStatus));
         }
 
         if (server.hasArg("pattern")) {
-            String pattern = server.arg("pattern");  // Get the value of the "pattern" field
-            Serial.println("Received pattern: " + pattern);  // Print it to the serial monitor (for debugging)
+            String pattern = server.arg("pattern");
             
             // Now you can process the pattern, e.g., pass it to your function
             frontendSetPattern(pattern, status, false);
-            Serial.println("-----------------------------------\n\n");
             server.send(200, "text/plain", "Pattern received: " + pattern);  // Send a response back
         } else {
             server.send(400, "text/plain", "No pattern received");  // Error response if no pattern was provided
         }
     });
     server.on("/setstartpattern", HTTP_POST,  [this](){
-        Serial.println("\n---- Setting pattern and start ----");
         
         ChordingScheme status = OST_ENCODING;
         if(server.hasArg("ostStatus")){
             String ostStatus = server.arg("ostStatus");
             status = (ostStatus == "false")? SEQUENTIAL_ENCODING : OST_ENCODING;
-            Serial.println("Encoding Scheme: " + String(ostStatus));
         }
 
         if (server.hasArg("pattern")) {
-            String pattern = server.arg("pattern");  // Get the value of the "pattern" field
-            Serial.println("Received pattern: " + pattern);
+            String pattern = server.arg("pattern");
             frontendSetPattern(pattern, status, true);
-            Serial.println("-----------------------------------\n\n");
         }
         
         server.send(200, "text/plain", "Pattern received: ");
@@ -237,7 +208,6 @@ void WifiMaster::sendVectorToSlave(const std::vector<int>& reorderedValues, cons
 
     // Send the data to the slave
     WifiEspNow.send(SingeltonWifiConnector::getInstance().SLAVE_MAC, dataToSend, totalSize);
-    Serial.printf("==> Sent vector of size %zu to slave (repeat as negative if present)\n\n", vectorSize);
 
     // Clean up dynamically allocated memory
     delete[] dataToSend;
