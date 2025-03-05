@@ -1,6 +1,27 @@
 #include "WifiSlave.h"
 #include <Settings/SingeltonWifiSettings.h>
 
+#ifdef UNIT_TEST
+    #include "../test/Mocks/ESP_Mock.h"
+    extern MockESPClass ESP;
+#endif
+#ifdef UNIT_TEST
+    #ifndef HTTP_GET
+        #define HTTP_GET 1
+    #endif
+    #ifndef HTTP_POST
+        #define HTTP_POST 0
+    #endif
+    
+    #ifndef WiFi
+        extern MockWiFi WiFi;
+    #endif
+
+    #ifndef WifiEspNow
+        extern MockWifiEspNow WifiEspNow;
+    #endif
+
+#endif
 
 void WifiSlave::onReceiveCallback(const uint8_t* mac, const uint8_t* buf, unsigned int count, void* arg) { //size_t count
     WifiSlave* instance = static_cast<WifiSlave*>(arg); // Cast to instance
@@ -95,7 +116,6 @@ WifiSlave::WifiSlave(GloveModel gloveModel)
 
 
 void WifiSlave::setup() {
-
     WiFi.persistent(false);
     WiFi.mode(WIFI_STA); // Set to Access Point mode
     WiFi.disconnect();

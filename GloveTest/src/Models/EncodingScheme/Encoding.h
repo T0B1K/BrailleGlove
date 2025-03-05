@@ -3,7 +3,10 @@
 
 
 #ifdef UNIT_TEST
-    #include "../test/Mocks/Arduino_Mock.h";
+    #ifndef ARDUINO_MOCK_H
+        #pragma once
+        #include "../test/Mocks/new_Arduino_Mock.h"
+    #endif
 #else
     #include <Arduino.h>
 #endif

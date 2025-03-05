@@ -2,7 +2,6 @@
 #define ACTUATOR_PROCESSING__ORDER_MAPPER_H
 
 #ifdef UNIT_TEST
-    #include "../test/Mocks/Arduino_Mock.h"
 #else
     #include <Arduino.h>
 #endif

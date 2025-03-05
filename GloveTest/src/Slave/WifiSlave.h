@@ -3,13 +3,19 @@
 
 #ifdef UNIT_TEST
     #include "../test/Mocks/ESP8266WiFi_Mock.h"
-    #include "../test/Mocks/ESPNOW_Mock.h"
     #include "../test/Mocks/MockWiFiUDP.h"
+    #include "../test/Mocks/ESPNOW_Mock.h"
+    #include "../test/Mocks/ESP_Mock.h"
+
 #else
     #include <ESP8266WiFi.h>
+    #include <ESP8266WebServer.h>
+    #include <WiFiUdp.h>
+    #include <WiFiServer.h>  // Include for TCP server
+    #include <LittleFS.h>
     #include <WifiEspNow.h>
-#endif
 
+#endif
 
 #include <vector>
 

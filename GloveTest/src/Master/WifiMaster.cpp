@@ -1,5 +1,18 @@
 #include "WifiMaster.h"
 
+#ifdef UNIT_TEST
+    
+    extern MockESPClass ESP;
+    #ifndef HTTP_GET
+        #define HTTP_GET 1
+    #endif
+    #ifndef HTTP_POST
+        #define HTTP_POST 0
+    #endif
+    
+     
+    
+#endif
 
 WifiMaster::WifiMaster(GloveModel gloveModel): server(80), gloveModel(gloveModel) {} // Initialize tcpServer with port 80
 
@@ -45,8 +58,6 @@ void WifiMaster::frontendSetPattern(String pattern, ChordingScheme status, bool 
     std::vector<int> glovePattern = computePatternFromText(usedPattern);
     gloveModel.setPattern(glovePattern); //save the pattern for oneself
     gloveModel.setChordMode(status);
-    Serial.println("repeat");
-    Serial.println(repeat);
     sendVectorToSlave(shortPattern, status, repeat);     //send the pattern to the other glove
     
     idx = 99999;                       //prevent ajax
@@ -164,7 +175,6 @@ void WifiMaster::setup() {
 
 
     server.begin();
-    Serial.println("Web server started");
 }
 
 void WifiMaster::loop() {
@@ -222,5 +232,4 @@ void WifiMaster::sendIntegerToSlave(int singleValueToSend){
     memcpy(dataToSend + 1, &singleValueToSend, sizeof(int));
 
     WifiEspNow.send(SingeltonWifiConnector::getInstance().SLAVE_MAC, dataToSend, sizeof(dataToSend));
-    Serial.printf("==> Sent integer %d to slave\n\n", singleValueToSend);
 }

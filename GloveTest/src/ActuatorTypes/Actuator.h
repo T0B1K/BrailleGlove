@@ -10,7 +10,6 @@
 #endif
 
 #ifdef UNIT_TEST
-    #include "../test/Mocks/Arduino_Mock.h"
 #else
     #include <Arduino.h>
 #endif

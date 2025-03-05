@@ -2,27 +2,6 @@
 #define GLOVE_MODEL_H
 
 #ifdef UNIT_TEST
-    // Define HIGH and LOW only if they are not already defined
-    #ifndef HIGH
-        #define HIGH 1
-    #endif
-    #ifndef LOW
-        #define LOW 0
-    #endif
-
-    // Provide empty implementations of digitalWrite and pinMode
-    // only if they are not already defined
-    #ifndef digitalWrite
-        void digitalWrite(int pin, int value) {
-            // Empty implementation
-        }
-    #endif
-
-    #ifndef pinMode
-        void pinMode(int pin, int mode) {
-            // Empty implementation
-        }
-    #endif
 #else
     #include <Arduino.h>
 #endif

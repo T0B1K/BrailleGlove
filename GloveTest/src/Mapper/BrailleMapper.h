@@ -2,12 +2,14 @@
 #define BrailleMapper_H
 
 #ifdef UNIT_TEST
-    #include "../test/Mocks/Arduino_Mock.h"
+    #include "../test/Mocks/String_Mock.h"
+
 #else
     #include <Arduino.h>
+    #include <string>
 #endif
 
-#include <string>
+
 #include <unordered_map>
 #include <vector>
 
@@ -55,9 +57,9 @@ public:
         }
     }
 
-    std::vector<int> stringToIntegerList(std::string input) {
+    std::vector<int> stringToIntegerList(String input) {
         std::vector<int> result;
-        std::string encodedString = "";
+        String encodedString = "";
 
         for (char c : input) {
             if (c == ' ') {
