@@ -19,7 +19,7 @@
 
 # Internals
 ## Libraries
-Appart from the standard arduino environemnt libraries, we need the WifiEspNow library for the wifi communication as well as LittleFS for the folder structure and loading files such as the website.
+Appart from the standard arduino environemnt libraries, we need the **WifiEspNow** library for the wifi communication as well as **LittleFS** for the folder structure and loading files such as the website.
 
 ## Environments
 The project contains two environments, one for testing and one for running the software in general.
@@ -96,7 +96,7 @@ This project is designed for controlling a **Passive Haptic Learning Braille Glo
 
 ## Tests
 The tests are contained in the test files.
-Moreover, we are using a CI/CD pipeline to build the project in GitHub directly using GitHub actions.
+Moreover, we are using a **CI/CD pipeline** to build the project in GitHub directly using **GitHub actions**.
 
 ```
 GloveTest/
