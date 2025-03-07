@@ -18,6 +18,9 @@
 
 
 # Internals
+## Libraries
+Appart from the standard arduino environemnt libraries, we need the WifiEspNow library for the wifi communication as well as LittleFS for the folder structure and loading files such as the website.
+
 ## Environments
 The project contains two environments, one for testing and one for running the software in general.
 ```
