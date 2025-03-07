@@ -1,7 +1,31 @@
-# GloveTest
-This repository contains the code for creating a braille glove 
+# Project Braille  
+
+**Project Braille** focuses on developing a **Braille glove** for **passive haptic learning** of Braille. The project is divided into three repositories:  
+
+## Repositories  
+
+- [**BrailleGlove**](https://github.com/T0B1K/BrailleGlove)  
+  Contains the code for the **microcontroller** responsible for controlling the Braille glove.  
+
+- [**BrailleGlovePaper**](https://github.com/T0B1K/BrailleGlovePaper)  
+  Contains the **research paper**, including details about the **user study** and **evaluation**, written in LaTeX.  
+
+- [**BrailleGloveStatistics**](https://github.com/T0B1K/BrailleGloveStatistics)  
+  Contains the **anonymized data** and **statistical analysis** from the user study.  
+
+---
+
+
 
 # Internals
+## Environments
+The project contains two environments, one for testing and one for running the software in general.
+```
+Environment    Status    Duration
+-------------  --------  ------------
+d1_mini        SUCCESS   00:00:00.145
+d1_mini_test   SUCCESS   00:00:00.143
+```
 ## Project Structure  
 
 ```
