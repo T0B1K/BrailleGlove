@@ -1,12 +1,14 @@
-name: Generate Doxygen Docs
+name: Generate and Deploy Doxygen Docs to GitHub Pages
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'GloveTest/**'  # Trigger on any changes in the GloveTest directory
 
 jobs:
-  generate_docs:
+  generate_and_deploy_docs:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,3 +25,29 @@ jobs:
         run: |
           cd GloveTest
           doxygen Doxyfile
+
+      # Set up Git config
+      - name: Set up Git config
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+
+      # Create gh-pages branch and push docs
+      - name: Create gh-pages branch and push docs
+        run: |
+          # Create gh-pages branch (if it doesn't exist)
+          git checkout --orphan gh-pages
+          git rm -rf .
+
+          # Move generated docs to root (or use a specific folder)
+          mv GloveTest/html/* .
+
+          # Commit the changes
+          git add .
+          git commit -m "Deploy Doxygen docs"
+
+          # Push the docs to the gh-pages branch using the PAT
+          git remote add origin https://github.com/${{ github.repository }}
+          git push --force origin gh-pages
+        env:
+          GH_TOKEN: ${{ secrets.GENERATE_SITES_SECRET }}
