@@ -60,9 +60,9 @@ void WifiMaster::frontendAjaxCall(){
         int asciNumber = (int)pattern[idx];
         server.send(200, "text/plain", charToSend);
         if(asciNumber == 32){
-            customDelay(SingeltonGloveSettings::getInstance().PAUSE);
+            Encoding::customDelay(SingeltonGloveSettings::getInstance().PAUSE);
         }else{
-            customDelay(SingeltonGloveSettings::getInstance().AUDIO_STIMULI_OFFSET); //next character
+            Encoding::customDelay(SingeltonGloveSettings::getInstance().AUDIO_STIMULI_OFFSET);
         }
         sendIntegerToSlave(idx);
         this->gloveModel.executePatternAt(idx);

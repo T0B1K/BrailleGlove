@@ -165,13 +165,6 @@ private:
      * @brief Defines the frontend AJAX call to update the website.
      */
     void frontendAjaxCall();
-
-    /**
-     * @brief Custom delay function to avoid blocking the program while waiting.
-     * 
-     * @param timeInMs The time to delay in milliseconds.
-     */
-    void customDelay(unsigned long timeInMs);
 };
 
 #endif // WIFI_MASTER_H
