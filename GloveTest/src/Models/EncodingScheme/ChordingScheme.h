@@ -9,7 +9,7 @@
  * OST_ENCODING and SEQUENTIAL_ENCODING.
  */
 enum ChordingScheme { 
-    OST_ENCODING,     ///< Encoding based on OST (One-Shot Timing) scheme.
+    OST_ENCODING,     ///< Encoding based on OST scheme.
     SEQUENTIAL_ENCODING ///< Encoding based on sequential timing scheme.
 };
 
