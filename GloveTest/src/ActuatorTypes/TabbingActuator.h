@@ -3,26 +3,50 @@
 
 #include "Actuator.h"
 
+/**
+ * @class TabbingActuator
+ * @brief A class representing a tabbing actuator.
+ * 
+ * This actuator is designed to create a tapping or tabbing sensation using a servo motor.
+ */
 class TabbingActuator : public Actuator {
   private:
-    Servo servo;  // Servo object to control the DS208
+    Servo servo;  ///< Servo object to control the DS208.
+
   public:
+    /**
+     * @brief Constructor for TabbingActuator.
+     * 
+     * Initializes the tabbing actuator by attaching the servo to the specified pin
+     * and setting it to the initial position (180 degrees).
+     * 
+     * @param pin The GPIO pin to which the actuator is connected.
+     */
     TabbingActuator(int pin) : Actuator(pin, Stroking) {
-        // Initialize the servo and set to 180 degrees
-        servo.attach(pin);  // Attach the servo to the specified pin
-        servo.write(180);
+        servo.attach(pin);  ///< Attach the servo to the specified pin.
+        servo.write(180);   ///< Set servo to 180 degrees initially.
         turnedOn = false;
     }
 
+    /**
+     * @brief Activates the tabbing actuator.
+     * 
+     * Moves the servo to 90 degrees to simulate a tabbing motion.
+     */
     void activate() override {
         turnedOn = true;
-        servo.write(90);
+        servo.write(90);  ///< Move the servo to 90 degrees.
     }
 
+    /**
+     * @brief Deactivates the tabbing actuator.
+     * 
+     * Moves the servo back to 180 degrees.
+     */
     void deactivate() override {
         turnedOn = false;
-        servo.write(180);
+        servo.write(180);  ///< Move the servo back to 180 degrees.
     }
 };
 
-#endif
+#endif // TABBING_ACTUATOR_H
