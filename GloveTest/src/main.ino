@@ -13,7 +13,7 @@ Controller controller(IS_SLAVE); ///< Initializes the controller with the approp
  */
 void setup() {
     #ifndef UNIT_TEST
-        Serial.begin(115200);
+        Serial.begin(115200); //test brankch
     #endif
     controller.setup();
 }
