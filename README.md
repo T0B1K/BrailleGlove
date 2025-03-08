@@ -2,6 +2,7 @@
 
 [![PlatformIO Build](https://github.com/T0B1K/BrailleGlove/actions/workflows/platformio_build.yml/badge.svg)](https://github.com/T0B1K/BrailleGlove/actions/workflows/platformio_build.yml)
 [![pages-build-deployment](https://github.com/T0B1K/BrailleGlove/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/T0B1K/BrailleGlove/actions/workflows/pages/pages-build-deployment)
+
 **Project Braille** focuses on developing a **Braille glove** for **passive haptic learning** of Braille. The project is divided into three repositories:  
 
 ## Repositories  
@@ -31,18 +32,20 @@ Environment    Status    Duration
 d1_mini        SUCCESS   00:00:00.145
 d1_mini_test   SUCCESS   00:00:00.143
 ```
+
+## Documentation
+[Documentation](GloveTest/html/index.html)
+
 ## Project Structure  
 
 ```
 GloveTest/
 │── html/
-│   ├── [HTML Documentation](GloveTest/html/index.html)
-          # This is the generated HTML for the documentation which is used in the GitHub pages
+│   ├── index.html        # This is the generated HTML for the documentation which is used in the GitHub pages
 │   ├── ...
 │
 │── latex/
-│   ├── [Latex PDF Documentation](GloveTest/latex/refman.pdf)
-          # This is the generated latex PDF for the documentation
+│   ├── refman.pdf          # This is the generated latex PDF for the documentation
 │   ├── ...
 │
 │── data/
