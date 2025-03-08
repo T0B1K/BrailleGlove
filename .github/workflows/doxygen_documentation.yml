@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'GloveTest/**'  # Trigger on any changes in the GloveTest directory
+      - 'GloveTest/**'  # Trigger on changes in the GloveTest directory
 
 jobs:
   generate_and_deploy_docs:
@@ -26,36 +26,22 @@ jobs:
           cd GloveTest
           doxygen Doxyfile
 
+      # Move generated docs to root directory
+      - name: Move docs to root
+        run: |
+          mv GloveTest/html/* ./
+
       # Set up Git config
       - name: Set up Git config
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@github.com"
 
-      # Create gh-pages branch and push docs
-      - name: Create gh-pages branch and push docs
+      # Commit and push changes to the main branch
+      - name: Commit and push docs to main branch
         run: |
-          # Create gh-pages branch (if it doesn't exist)
-          git checkout --orphan gh-pages
-          git rm -rf .
-
-          # Move generated docs to root (or use a specific folder)
-          mv GloveTest/html/* .
-
-          # Commit the changes
           git add .
           git commit -m "Deploy Doxygen docs"
-
-          # Push the docs to the gh-pages branch using the PAT
-          git remote add origin https://github.com/${{ github.repository }}
-          git push --force origin gh-pages
+          git push origin main
         env:
           GH_TOKEN: ${{ secrets.BOT_SITE_GENERATION }}
-
-      # Optional: Set up GitHub Pages to point to the gh-pages branch (can be done manually too)
-      - name: Configure GitHub Pages
-        run: |
-          curl -X PATCH \
-            -H "Authorization: token ${{ secrets.BOT_SITE_GENERATION }}" \
-            -d '{"source":{"branch":"gh-pages"}}' \
-            "https://api.github.com/repos/${{ github.repository }}"
