@@ -51,3 +51,11 @@ jobs:
           git push --force origin gh-pages
         env:
           GH_TOKEN: ${{ secrets.BOT_SITE_GENERATION }}
+
+      # Optional: Set up GitHub Pages to point to the gh-pages branch (can be done manually too)
+      - name: Configure GitHub Pages
+        run: |
+          curl -X PATCH \
+            -H "Authorization: token ${{ secrets.BOT_SITE_GENERATION }}" \
+            -d '{"source":{"branch":"gh-pages"}}' \
+            "https://api.github.com/repos/${{ github.repository }}"
