@@ -15,7 +15,7 @@ void setup() {
     #ifndef UNIT_TEST
         Serial.begin(115200);  ///< Starts serial communication at 115200 baud if not running in unit test mode.
     #endif
-    controller.setup(); ///< Calls the setup function of the controller.
+    controller.setup();
 }
 
 /**
