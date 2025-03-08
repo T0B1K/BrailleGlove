@@ -1,0 +1,67 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Hierarchical Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Actuator Class Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{8}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Constructor \& Destructor Documentation}{8}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}Actuator()}{8}{subsubsection.4.1.2.1}%
+\contentsline {subsection}{\numberline {4.1.3}Member Function Documentation}{8}{subsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.1}activate()}{8}{subsubsection.4.1.3.1}%
+\contentsline {subsubsection}{\numberline {4.1.3.2}deactivate()}{8}{subsubsection.4.1.3.2}%
+\contentsline {section}{\numberline {4.2}Actuator\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processing\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Order\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mapper Class Reference}{9}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Braille\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mapper Class Reference}{9}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Controller Class Reference}{9}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Encoding Class Reference}{9}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Glove\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{10}{section.4.6}%
+\contentsline {section}{\numberline {4.7}OSTEncoding Class Reference}{10}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Sequential\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Encoding Class Reference}{11}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Singelton\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Glove\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings Class Reference}{11}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Singelton\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wifi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Connector Class Reference}{12}{section.4.10}%
+\contentsline {section}{\numberline {4.11}Stroking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actuator Class Reference}{12}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{13}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}Constructor \& Destructor Documentation}{13}{subsection.4.11.2}%
+\contentsline {subsubsection}{\numberline {4.11.2.1}StrokingActuator()}{13}{subsubsection.4.11.2.1}%
+\contentsline {subsection}{\numberline {4.11.3}Member Function Documentation}{13}{subsection.4.11.3}%
+\contentsline {subsubsection}{\numberline {4.11.3.1}activate()}{13}{subsubsection.4.11.3.1}%
+\contentsline {subsubsection}{\numberline {4.11.3.2}deactivate()}{14}{subsubsection.4.11.3.2}%
+\contentsline {section}{\numberline {4.12}Tabbing\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actuator Class Reference}{14}{section.4.12}%
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{15}{subsection.4.12.1}%
+\contentsline {subsection}{\numberline {4.12.2}Constructor \& Destructor Documentation}{15}{subsection.4.12.2}%
+\contentsline {subsubsection}{\numberline {4.12.2.1}TabbingActuator()}{15}{subsubsection.4.12.2.1}%
+\contentsline {subsection}{\numberline {4.12.3}Member Function Documentation}{15}{subsection.4.12.3}%
+\contentsline {subsubsection}{\numberline {4.12.3.1}activate()}{15}{subsubsection.4.12.3.1}%
+\contentsline {subsubsection}{\numberline {4.12.3.2}deactivate()}{15}{subsubsection.4.12.3.2}%
+\contentsline {section}{\numberline {4.13}Vibration\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actuator Class Reference}{16}{section.4.13}%
+\contentsline {subsection}{\numberline {4.13.1}Detailed Description}{16}{subsection.4.13.1}%
+\contentsline {subsection}{\numberline {4.13.2}Constructor \& Destructor Documentation}{16}{subsection.4.13.2}%
+\contentsline {subsubsection}{\numberline {4.13.2.1}VibrationActuator()}{16}{subsubsection.4.13.2.1}%
+\contentsline {subsection}{\numberline {4.13.3}Member Function Documentation}{17}{subsection.4.13.3}%
+\contentsline {subsubsection}{\numberline {4.13.3.1}activate()}{17}{subsubsection.4.13.3.1}%
+\contentsline {subsubsection}{\numberline {4.13.3.2}deactivate()}{17}{subsubsection.4.13.3.2}%
+\contentsline {section}{\numberline {4.14}Wifi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Master Class Reference}{17}{section.4.14}%
+\contentsline {section}{\numberline {4.15}Wifi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Slave Class Reference}{18}{section.4.15}%
+\contentsline {chapter}{\numberline {5}File Documentation}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Actuator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Actuator\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{19}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Stroking\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actuator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{19}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Tabbing\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actuator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{20}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Vibration\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actuator.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{20}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Controller.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{21}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Actuator\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Processing\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Order\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mapper.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{21}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Braille\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mapper.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{22}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Wifi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Master.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{22}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Chording\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Scheme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{23}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Encoding.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{23}{section.5.11}%
+\contentsline {section}{\numberline {5.12}OSTEncoding.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{24}{section.5.12}%
+\contentsline {section}{\numberline {5.13}Sequential\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Encoding.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{24}{section.5.13}%
+\contentsline {section}{\numberline {5.14}Glove\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{25}{section.5.14}%
+\contentsline {section}{\numberline {5.15}Hand\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enum.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{26}{section.5.15}%
+\contentsline {section}{\numberline {5.16}Singelton\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Glove\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{26}{section.5.16}%
+\contentsline {section}{\numberline {5.17}Singelton\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Wifi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Settings.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{26}{section.5.17}%
+\contentsline {section}{\numberline {5.18}Wifi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Slave.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{27}{section.5.18}%
+\contentsline {chapter}{Index}{29}{section*.38}%
