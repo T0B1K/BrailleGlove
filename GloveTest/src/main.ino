@@ -13,7 +13,7 @@ Controller controller(IS_SLAVE); ///< Initializes the controller with the approp
  */
 void setup() {
     #ifndef UNIT_TEST
-        Serial.begin(115200);  ///< Starts serial communication at 115200 baud if not running in unit test mode.
+        Serial.begin(115200);
     #endif
     controller.setup();
 }
