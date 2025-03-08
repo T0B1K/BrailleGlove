@@ -11,7 +11,6 @@
 #endif
 
 
-
 /**
  * @class Actuator
  * @brief Abstract class for implementing different types of actuators.
