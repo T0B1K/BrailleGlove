@@ -1,38 +1,48 @@
-name: Doxygen Documentation
+name: Deploy Doxygen Docs to GitHub Pages
 
-# Trigger the workflow on push or pull request to the 'main' branch
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main  # or the branch you want to trigger this from
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      # Step 2: Set up Doxygen
-      - name: Install Doxygen
-        run: sudo apt-get install -y doxygen
+      # Set up Doxygen and generate documentation
+      - name: Set up Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install doxygen
 
-      # Step 3: Generate Doxygen documentation
-      - name: Run Doxygen
+      - name: Generate Doxygen documentation
         run: |
           cd GloveTest
           doxygen Doxyfile
 
-      # Step 4: Upload documentation to GitHub Pages
-      - name: Deploy Doxygen Documentation to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
-          publish_dir: ./docs/html  # Doxygen generates docs in 'docs/html'
-          user_name: 'GitHub Actions'
-          user_email: 'github-actions@github.com'
+      - name: Create gh-pages branch and push docs
+        run: |
+          # Set up Git config
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+
+          # Create gh-pages branch (if it doesn't exist)
+          git checkout --orphan gh-pages
+          git rm -rf .
+
+          # Move generated docs to root (or use a specific folder)
+          mv ./docs/* .
+
+          # Commit the changes
+          git add .
+          git commit -m "Deploy Doxygen docs"
+
+          # Push the docs to the gh-pages branch using the PAT
+          git remote add origin https://github.com/${{ github.repository }}
+          git push --force origin gh-pages
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
