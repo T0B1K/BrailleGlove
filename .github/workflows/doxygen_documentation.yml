@@ -50,4 +50,4 @@ jobs:
           git remote add origin https://github.com/${{ github.repository }}
           git push --force origin gh-pages
         env:
-          GH_TOKEN: ${{ secrets.GENERATE_SITES_SECRET }}
+          GH_TOKEN: ${{ secrets.BOT_SITE_GENERATION }}
