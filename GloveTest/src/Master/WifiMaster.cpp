@@ -78,7 +78,7 @@ void WifiMaster::frontendAjaxCall(){
             customDelay(SingeltonGloveSettings::getInstance().PAUSE);
         }else{
             //next character
-            customDelay(SingeltonGloveSettings::getInstance().AUDIO_VIBRATION_OFFSET);
+            customDelay(SingeltonGloveSettings::getInstance().AUDIO_STIMULI_OFFSET);
         }
         
         sendIntegerToSlave(idx);
