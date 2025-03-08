@@ -48,9 +48,9 @@
 \DoxyCodeLine{00044\ \ \ \ \ \}}
 \DoxyCodeLine{00045\ }
 \DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ pauseBetweenLetters()\{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().DURATION);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(SingeltonGloveSettings::getInstance().DURATION);}
 \DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ resetAllActuators();}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().PAUSE);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(SingeltonGloveSettings::getInstance().PAUSE);}
 \DoxyCodeLine{00050\ \ \ \ \ \}}
 \DoxyCodeLine{00051\ }
 \DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ vibrateOnNumber(\textcolor{keywordtype}{int}\ number)\ \{}
@@ -63,16 +63,16 @@
 \DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ number\ =\ (int)number\ /\ 10;}
 \DoxyCodeLine{00060\ }
 \DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playMode\ ==\ SEQUENTIAL\_ENCODING)\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SequentialEncoding::handle(lastDigit,\ actuators,\ hand);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sequential_encoding_aeba855f97fe8da394bc3eff8b68e2601}{SequentialEncoding::handle}}(lastDigit,\ actuators,\ hand);}
 \DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OSTEncoding::handle(lastDigit,\ actuators,\ hand);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_o_s_t_encoding_a9c02514923fe4b6c76b6891b97ffe0ab}{OSTEncoding::handle}}(lastDigit,\ actuators,\ hand);}
 \DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(playMode\ ==\ OST\_ENCODING)\{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().DURATION);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(SingeltonGloveSettings::getInstance().DURATION);}
 \DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ resetAllActuators();}
 \DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().PAUSE);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(SingeltonGloveSettings::getInstance().PAUSE);}
 \DoxyCodeLine{00072\ \ \ \ \ \}}
 \DoxyCodeLine{00073\ }
 \DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ setPattern(std::vector<int>\ newValues)\ \{}

@@ -1,5 +1,14 @@
 \doxysection{Encoding Class Reference}
 \hypertarget{class_encoding}{}\label{class_encoding}\index{Encoding@{Encoding}}
+
+
+Base class for encoding operations.  
+
+
+
+
+{\ttfamily \#include $<$Encoding.\+h$>$}
+
 Inheritance diagram for Encoding\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,12 +18,59 @@ Inheritance diagram for Encoding\+:\begin{figure}[H]
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_encoding_aa4e4b73efee494981d692f3a35bab25b}\label{class_encoding_aa4e4b73efee494981d692f3a35bab25b} 
-static void {\bfseries custom\+Delay} (unsigned long time\+In\+Ms)
-\item 
-\Hypertarget{class_encoding_a0879a5e46e610c98ef0619583d05f4b8}\label{class_encoding_a0879a5e46e610c98ef0619583d05f4b8} 
-static bool {\bfseries valid\+Index} (int number, Hand hand)
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{custom\+Delay}} (unsigned long time\+In\+Ms)
+\begin{DoxyCompactList}\small\item\em Custom delay function to provide a non-\/blocking delay. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_encoding_a0879a5e46e610c98ef0619583d05f4b8}{valid\+Index}} (int number, Hand hand)
+\begin{DoxyCompactList}\small\item\em Checks whether the given pin number is valid for the specified hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for encoding operations. 
+
+This class provides the basic functions for encoding used by its child classes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_encoding_aa4e4b73efee494981d692f3a35bab25b}\index{Encoding@{Encoding}!customDelay@{customDelay}}
+\index{customDelay@{customDelay}!Encoding@{Encoding}}
+\doxysubsubsection{\texorpdfstring{customDelay()}{customDelay()}}
+{\footnotesize\ttfamily \label{class_encoding_aa4e4b73efee494981d692f3a35bab25b} 
+static void Encoding\+::custom\+Delay (\begin{DoxyParamCaption}\item[{unsigned long}]{time\+In\+Ms}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Custom delay function to provide a non-\/blocking delay. 
+
+This function allows for a non-\/blocking delay (unlike the blocking {\ttfamily delay()} function in Arduino), so the program can continue execution while waiting.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+In\+Ms} & The delay duration in milliseconds. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Get the current time
+
+\texorpdfstring{$<$}{<} The program continues executing other tasks\Hypertarget{class_encoding_a0879a5e46e610c98ef0619583d05f4b8}\index{Encoding@{Encoding}!validIndex@{validIndex}}
+\index{validIndex@{validIndex}!Encoding@{Encoding}}
+\doxysubsubsection{\texorpdfstring{validIndex()}{validIndex()}}
+{\footnotesize\ttfamily \label{class_encoding_a0879a5e46e610c98ef0619583d05f4b8} 
+static bool Encoding\+::valid\+Index (\begin{DoxyParamCaption}\item[{int}]{number}{, }\item[{Hand}]{hand}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Checks whether the given pin number is valid for the specified hand. 
+
+This function validates whether the pin number belongs to the correct hand (left or right) based on the actuator configuration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The pin number to be validated. \\
+\hline
+{\em hand} & The hand (left or right) for which the validation is being done. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the pin is valid for the hand; false otherwise. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

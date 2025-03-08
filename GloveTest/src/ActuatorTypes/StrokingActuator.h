@@ -23,8 +23,8 @@ class StrokingActuator : public Actuator {
      * @param pin The GPIO pin to which the actuator is connected.
      */
     StrokingActuator(int pin) : Actuator(pin, Stroking) {
-        servo.attach(pin);  ///< Attach the servo to the specified pin.
-        servo.write(0);     ///< Set servo to 0 degrees initially.
+        servo.attach(pin);
+        servo.write(0);  
         turnedOn = false;
     }
 
@@ -35,7 +35,7 @@ class StrokingActuator : public Actuator {
      */
     void activate() override {
         turnedOn = true;
-        servo.write(180);  ///< Move the servo to 180 degrees.
+        servo.write(180);
     }
 
     /**
@@ -45,7 +45,7 @@ class StrokingActuator : public Actuator {
      */
     void deactivate() override {
         turnedOn = false;
-        servo.write(0);   ///< Move the servo back to 0 degrees.
+        servo.write(0);
     }
 };
 

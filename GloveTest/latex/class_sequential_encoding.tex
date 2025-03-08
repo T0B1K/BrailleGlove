@@ -1,5 +1,14 @@
 \doxysection{Sequential\+Encoding Class Reference}
 \hypertarget{class_sequential_encoding}{}\label{class_sequential_encoding}\index{SequentialEncoding@{SequentialEncoding}}
+
+
+Handles the sequential encoding scheme for actuators.  
+
+
+
+
+{\ttfamily \#include $<$Sequential\+Encoding.\+h$>$}
+
 Inheritance diagram for Sequential\+Encoding\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,16 +18,44 @@ Inheritance diagram for Sequential\+Encoding\+:\begin{figure}[H]
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_sequential_encoding_aeba855f97fe8da394bc3eff8b68e2601}\label{class_sequential_encoding_aeba855f97fe8da394bc3eff8b68e2601} 
-static void {\bfseries handle} (int number, \mbox{\hyperlink{class_actuator}{Actuator}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}actuators, Hand hand)
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_sequential_encoding_aeba855f97fe8da394bc3eff8b68e2601}{handle}} (int number, \mbox{\hyperlink{class_actuator}{Actuator}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}actuators, Hand hand)
+\begin{DoxyCompactList}\small\item\em Activates and deactivates an actuator based on the sequential encoding scheme. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_encoding}{Encoding}}}
 \begin{DoxyCompactItemize}
 \item 
-static void {\bfseries custom\+Delay} (unsigned long time\+In\+Ms)
-\item 
-static bool {\bfseries valid\+Index} (int number, Hand hand)
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{custom\+Delay}} (unsigned long time\+In\+Ms)
+\begin{DoxyCompactList}\small\item\em Custom delay function to provide a non-\/blocking delay. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_encoding_a0879a5e46e610c98ef0619583d05f4b8}{valid\+Index}} (int number, Hand hand)
+\begin{DoxyCompactList}\small\item\em Checks whether the given pin number is valid for the specified hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the sequential encoding scheme for actuators. 
+
+This class defines the sequential encoding scheme and how the actuators should be activated in sequence. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sequential_encoding_aeba855f97fe8da394bc3eff8b68e2601}\index{SequentialEncoding@{SequentialEncoding}!handle@{handle}}
+\index{handle@{handle}!SequentialEncoding@{SequentialEncoding}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily \label{class_sequential_encoding_aeba855f97fe8da394bc3eff8b68e2601} 
+static void Sequential\+Encoding\+::handle (\begin{DoxyParamCaption}\item[{int}]{number}{, }\item[{\mbox{\hyperlink{class_actuator}{Actuator}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{actuators}{, }\item[{Hand}]{hand}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Activates and deactivates an actuator based on the sequential encoding scheme. 
+
+This function handles the sequential encoding scheme by activating the actuator corresponding to the given pin number and hand (left or right). After activation, the actuator is deactivated after a specified duration. A delay is applied both after activation and deactivation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The index number representing the actuator to be activated. \\
+\hline
+{\em actuators} & The array of actuator pointers to be used. \\
+\hline
+{\em hand} & The hand (left or right) to which the actuator belongs. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

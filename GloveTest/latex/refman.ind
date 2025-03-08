@@ -2,89 +2,126 @@
 
   \item {activate}
     \subitem {Actuator}, \hyperpage{8}
-    \subitem {StrokingActuator}, \hyperpage{13}
-    \subitem {TabbingActuator}, \hyperpage{15}
-    \subitem {VibrationActuator}, \hyperpage{17}
+    \subitem {StrokingActuator}, \hyperpage{18}
+    \subitem {TabbingActuator}, \hyperpage{20}
+    \subitem {VibrationActuator}, \hyperpage{22}
   \item {Actuator}, \hyperpage{7}
     \subitem {activate}, \hyperpage{8}
     \subitem {Actuator}, \hyperpage{8}
     \subitem {deactivate}, \hyperpage{8}
   \item {ActuatorProcessingOrderMapper}, \hyperpage{9}
+    \subitem {ActuatorProcessingOrderMapper}, \hyperpage{9}
+    \subitem {reorderVectorBySensitivity}, \hyperpage{9}
 
   \indexspace
 
-  \item {BrailleMapper}, \hyperpage{9}
+  \item {BrailleMapper}, \hyperpage{10}
+    \subitem {getBrailleHash}, \hyperpage{10}
+    \subitem {stringToIntegerList}, \hyperpage{10}
 
   \indexspace
 
-  \item {Controller}, \hyperpage{9}
+  \item {Controller}, \hyperpage{11}
+    \subitem {Controller}, \hyperpage{11}
+    \subitem {loop}, \hyperpage{12}
+    \subitem {setup}, \hyperpage{12}
+  \item {customDelay}
+    \subitem {Encoding}, \hyperpage{13}
 
   \indexspace
 
   \item {deactivate}
     \subitem {Actuator}, \hyperpage{8}
-    \subitem {StrokingActuator}, \hyperpage{13}
-    \subitem {TabbingActuator}, \hyperpage{15}
-    \subitem {VibrationActuator}, \hyperpage{17}
+    \subitem {StrokingActuator}, \hyperpage{18}
+    \subitem {TabbingActuator}, \hyperpage{20}
+    \subitem {VibrationActuator}, \hyperpage{22}
 
   \indexspace
 
-  \item {Encoding}, \hyperpage{9}
+  \item {Encoding}, \hyperpage{12}
+    \subitem {customDelay}, \hyperpage{13}
+    \subitem {validIndex}, \hyperpage{13}
 
   \indexspace
 
-  \item {GloveModel}, \hyperpage{10}
+  \item {getBrailleHash}
+    \subitem {BrailleMapper}, \hyperpage{10}
+  \item {GloveModel}, \hyperpage{14}
 
   \indexspace
 
-  \item {OSTEncoding}, \hyperpage{10}
+  \item {handle}
+    \subitem {OSTEncoding}, \hyperpage{15}
+    \subitem {SequentialEncoding}, \hyperpage{16}
 
   \indexspace
 
-  \item {SequentialEncoding}, \hyperpage{11}
-  \item {SingeltonGloveSettings}, \hyperpage{11}
-  \item {SingeltonWifiConnector}, \hyperpage{12}
-  \item {src/ActuatorTypes/Actuator.h}, \hyperpage{19}
-  \item {src/ActuatorTypes/ActuatorType.h}, \hyperpage{19}
-  \item {src/ActuatorTypes/StrokingActuator.h}, \hyperpage{19}
-  \item {src/ActuatorTypes/TabbingActuator.h}, \hyperpage{20}
-  \item {src/ActuatorTypes/VibrationActuator.h}, \hyperpage{20}
-  \item {src/Controller/Controller.h}, \hyperpage{21}
-  \item {src/Mapper/ActuatorProcessingOrderMapper.h}, \hyperpage{21}
-  \item {src/Mapper/BrailleMapper.h}, \hyperpage{22}
-  \item {src/Master/WifiMaster.h}, \hyperpage{22}
-  \item {src/Models/EncodingScheme/ChordingScheme.h}, \hyperpage{23}
-  \item {src/Models/EncodingScheme/Encoding.h}, \hyperpage{23}
-  \item {src/Models/EncodingScheme/OSTEncoding.h}, \hyperpage{24}
+  \item {loop}
+    \subitem {Controller}, \hyperpage{12}
+
+  \indexspace
+
+  \item {OSTEncoding}, \hyperpage{14}
+    \subitem {handle}, \hyperpage{15}
+
+  \indexspace
+
+  \item {reorderVectorBySensitivity}
+    \subitem {ActuatorProcessingOrderMapper}, \hyperpage{9}
+
+  \indexspace
+
+  \item {SequentialEncoding}, \hyperpage{15}
+    \subitem {handle}, \hyperpage{16}
+  \item {setup}
+    \subitem {Controller}, \hyperpage{12}
+  \item {SingeltonGloveSettings}, \hyperpage{16}
+  \item {SingeltonWifiConnector}, \hyperpage{17}
+  \item {src/ActuatorTypes/Actuator.h}, \hyperpage{25}
+  \item {src/ActuatorTypes/ActuatorType.h}, \hyperpage{25}
+  \item {src/ActuatorTypes/StrokingActuator.h}, \hyperpage{25}
+  \item {src/ActuatorTypes/TabbingActuator.h}, \hyperpage{26}
+  \item {src/ActuatorTypes/VibrationActuator.h}, \hyperpage{26}
+  \item {src/Controller/Controller.h}, \hyperpage{27}
+  \item {src/Mapper/ActuatorProcessingOrderMapper.h}, \hyperpage{27}
+  \item {src/Mapper/BrailleMapper.h}, \hyperpage{28}
+  \item {src/Master/WifiMaster.h}, \hyperpage{28}
+  \item {src/Models/EncodingScheme/ChordingScheme.h}, \hyperpage{29}
+  \item {src/Models/EncodingScheme/Encoding.h}, \hyperpage{29}
+  \item {src/Models/EncodingScheme/OSTEncoding.h}, \hyperpage{30}
   \item {src/Models/EncodingScheme/SequentialEncoding.h}, 
-		\hyperpage{24}
-  \item {src/Models/GloveModel.h}, \hyperpage{25}
-  \item {src/Models/HandEnum.h}, \hyperpage{26}
-  \item {src/Settings/SingeltonGloveSettings.h}, \hyperpage{26}
-  \item {src/Settings/SingeltonWifiSettings.h}, \hyperpage{26}
-  \item {src/Slave/WifiSlave.h}, \hyperpage{27}
-  \item {StrokingActuator}, \hyperpage{12}
-    \subitem {activate}, \hyperpage{13}
-    \subitem {deactivate}, \hyperpage{13}
-    \subitem {StrokingActuator}, \hyperpage{13}
+		\hyperpage{30}
+  \item {src/Models/GloveModel.h}, \hyperpage{31}
+  \item {src/Models/HandEnum.h}, \hyperpage{32}
+  \item {src/Settings/SingeltonGloveSettings.h}, \hyperpage{32}
+  \item {src/Settings/SingeltonWifiSettings.h}, \hyperpage{32}
+  \item {src/Slave/WifiSlave.h}, \hyperpage{33}
+  \item {stringToIntegerList}
+    \subitem {BrailleMapper}, \hyperpage{10}
+  \item {StrokingActuator}, \hyperpage{17}
+    \subitem {activate}, \hyperpage{18}
+    \subitem {deactivate}, \hyperpage{18}
+    \subitem {StrokingActuator}, \hyperpage{18}
 
   \indexspace
 
-  \item {TabbingActuator}, \hyperpage{14}
-    \subitem {activate}, \hyperpage{15}
-    \subitem {deactivate}, \hyperpage{15}
-    \subitem {TabbingActuator}, \hyperpage{15}
+  \item {TabbingActuator}, \hyperpage{19}
+    \subitem {activate}, \hyperpage{20}
+    \subitem {deactivate}, \hyperpage{20}
+    \subitem {TabbingActuator}, \hyperpage{20}
 
   \indexspace
 
-  \item {VibrationActuator}, \hyperpage{16}
-    \subitem {activate}, \hyperpage{17}
-    \subitem {deactivate}, \hyperpage{17}
-    \subitem {VibrationActuator}, \hyperpage{16}
+  \item {validIndex}
+    \subitem {Encoding}, \hyperpage{13}
+  \item {VibrationActuator}, \hyperpage{21}
+    \subitem {activate}, \hyperpage{22}
+    \subitem {deactivate}, \hyperpage{22}
+    \subitem {VibrationActuator}, \hyperpage{21}
 
   \indexspace
 
-  \item {WifiMaster}, \hyperpage{17}
-  \item {WifiSlave}, \hyperpage{18}
+  \item {WifiMaster}, \hyperpage{22}
+  \item {WifiSlave}, \hyperpage{23}
 
 \end{theindex}

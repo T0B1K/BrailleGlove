@@ -1,11 +1,62 @@
 \doxysection{Actuator\+Processing\+Order\+Mapper Class Reference}
 \hypertarget{class_actuator_processing_order_mapper}{}\label{class_actuator_processing_order_mapper}\index{ActuatorProcessingOrderMapper@{ActuatorProcessingOrderMapper}}
+
+
+Reorders braille dot numbers based on finger sensitivity order.  
+
+
+
+
+{\ttfamily \#include $<$Actuator\+Processing\+Order\+Mapper.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_actuator_processing_order_mapper_a18a2d26d5ddd6bfffd9118c9eb39514b}\label{class_actuator_processing_order_mapper_a18a2d26d5ddd6bfffd9118c9eb39514b} 
-std\+::vector$<$ int $>$ {\bfseries reorder\+Vector\+By\+Sensitivity} (const std\+::vector$<$ int $>$ \&values)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_actuator_processing_order_mapper_a800fb35557df35dd8b7a239df05648cb}{Actuator\+Processing\+Order\+Mapper}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_actuator_processing_order_mapper}{Actuator\+Processing\+Order\+Mapper}. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_actuator_processing_order_mapper_a18a2d26d5ddd6bfffd9118c9eb39514b}{reorder\+Vector\+By\+Sensitivity}} (const std\+::vector$<$ int $>$ \&values)
+\begin{DoxyCompactList}\small\item\em Reorders a vector of braille chords based on sensitivity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reorders braille dot numbers based on finger sensitivity order. 
+
+This class processes braille chords and reorders the actuation sequence based on predefined sensitivity levels of each dot. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_actuator_processing_order_mapper_a800fb35557df35dd8b7a239df05648cb}\index{ActuatorProcessingOrderMapper@{ActuatorProcessingOrderMapper}!ActuatorProcessingOrderMapper@{ActuatorProcessingOrderMapper}}
+\index{ActuatorProcessingOrderMapper@{ActuatorProcessingOrderMapper}!ActuatorProcessingOrderMapper@{ActuatorProcessingOrderMapper}}
+\doxysubsubsection{\texorpdfstring{ActuatorProcessingOrderMapper()}{ActuatorProcessingOrderMapper()}}
+{\footnotesize\ttfamily \label{class_actuator_processing_order_mapper_a800fb35557df35dd8b7a239df05648cb} 
+Actuator\+Processing\+Order\+Mapper\+::\+Actuator\+Processing\+Order\+Mapper (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_actuator_processing_order_mapper}{Actuator\+Processing\+Order\+Mapper}. 
+
+Initializes the sensitivity order mapping. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_actuator_processing_order_mapper_a18a2d26d5ddd6bfffd9118c9eb39514b}\index{ActuatorProcessingOrderMapper@{ActuatorProcessingOrderMapper}!reorderVectorBySensitivity@{reorderVectorBySensitivity}}
+\index{reorderVectorBySensitivity@{reorderVectorBySensitivity}!ActuatorProcessingOrderMapper@{ActuatorProcessingOrderMapper}}
+\doxysubsubsection{\texorpdfstring{reorderVectorBySensitivity()}{reorderVectorBySensitivity()}}
+{\footnotesize\ttfamily \label{class_actuator_processing_order_mapper_a18a2d26d5ddd6bfffd9118c9eb39514b} 
+std\+::vector$<$ int $>$ Actuator\+Processing\+Order\+Mapper\+::reorder\+Vector\+By\+Sensitivity (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{values}{}\end{DoxyParamCaption})}
+
+
+
+Reorders a vector of braille chords based on sensitivity. 
+
+Each braille chord in the vector is restructured based on the predefined sensitivity order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & A vector of braille chords encoded as integers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reordered vector with braille chords sorted by sensitivity. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

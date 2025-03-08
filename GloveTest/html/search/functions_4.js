@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vibrationactuator_0',['VibrationActuator',['../class_vibration_actuator.html#a33a4a3cb031beee1697e54d2f8d59fbc',1,'VibrationActuator']]]
+  ['getbraillehash_0',['getBrailleHash',['../class_braille_mapper.html#afed81f832290536aeed92ceca672c7a6',1,'BrailleMapper']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['strokingactuator_0',['StrokingActuator',['../class_stroking_actuator.html#a068bc0419acda9a71a5abf2163d951be',1,'StrokingActuator']]]
+  ['controller_0',['Controller',['../class_controller.html#aa1ce653de721783003eccf62665e4416',1,'Controller']]],
+  ['customdelay_1',['customDelay',['../class_encoding.html#aa4e4b73efee494981d692f3a35bab25b',1,'Encoding']]]
 ];

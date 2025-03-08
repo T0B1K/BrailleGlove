@@ -27,9 +27,9 @@ public:
      * @param timeInMs The delay duration in milliseconds.
      */
     static void customDelay(unsigned long timeInMs) {
-        unsigned long startMillis = millis();  ///< Get the current time
+        unsigned long startMillis = millis();
         while (millis() - startMillis < timeInMs) {
-            yield();  ///< The program continues executing other tasks
+            yield();
         }
     }
 

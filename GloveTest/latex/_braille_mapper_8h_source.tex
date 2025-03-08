@@ -7,33 +7,32 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}../test/Mocks/String\_Mock.h"{}}}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{comment}{//\ Forward\ declare\ the\ test\ helper\ class}}
-\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }BrailleMapperTestHelper;}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \#include\ <Arduino.h>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }BrailleMapper\ \{}
-\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00017\ \ \ \ \ std::unordered\_map<char,\ int>\ brailleMap;\ \textcolor{comment}{//\ HashMap\ to\ store\ mappings}}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeBrailleMap();\ \textcolor{comment}{//\ Initializes\ the\ braille\ mappings}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00022\ \ \ \ \ BrailleMapper();\ \textcolor{comment}{//\ Constructor\ to\ initialize\ the\ mappings}}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ getBrailleHash(\textcolor{keywordtype}{char}\ letter)\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Retrieve\ Braille\ hash\ for\ a\ letter}}
-\DoxyCodeLine{00025\ \ \ \ \ std::vector<int>\ stringToIntegerList(\textcolor{keyword}{const}\ String\&\ input)\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ Convert\ string\ to\ a\ list\ of\ Braille\ integers}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Grant\ access\ to\ BrailleMapperTestHelper\ during\ unit\ tests}}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }BrailleMapperTestHelper;}
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }BrailleMapperTestHelper;}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \#include\ <Arduino.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_braille_mapper_a318c51822ccd40a84f72e176733bb8ba}{BrailleMapper}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ std::unordered\_map<char,\ int>\ brailleMap;}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BRAILLEMAPPER\_H}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeBrailleMap();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_braille_mapper_a318c51822ccd40a84f72e176733bb8ba}{BrailleMapper}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_braille_mapper_afed81f832290536aeed92ceca672c7a6}{getBrailleHash}}(\textcolor{keywordtype}{char}\ letter)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00063\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_braille_mapper_ab87ce107bbe0464514030002569e3846}{stringToIntegerList}}(\textcolor{keyword}{const}\ String\&\ input)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }BrailleMapperTestHelper;}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BRAILLEMAPPER\_H}}
 
 \end{DoxyCode}

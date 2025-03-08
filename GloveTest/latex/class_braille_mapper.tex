@@ -1,14 +1,70 @@
 \doxysection{Braille\+Mapper Class Reference}
 \hypertarget{class_braille_mapper}{}\label{class_braille_mapper}\index{BrailleMapper@{BrailleMapper}}
+
+
+Maps characters to their corresponding Braille integer representations.  
+
+
+
+
+{\ttfamily \#include $<$Braille\+Mapper.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_braille_mapper_afed81f832290536aeed92ceca672c7a6}\label{class_braille_mapper_afed81f832290536aeed92ceca672c7a6} 
-int {\bfseries get\+Braille\+Hash} (char letter) const
-\item 
-\Hypertarget{class_braille_mapper_ab87ce107bbe0464514030002569e3846}\label{class_braille_mapper_ab87ce107bbe0464514030002569e3846} 
-std\+::vector$<$ int $>$ {\bfseries string\+To\+Integer\+List} (const String \&input) const
-\end{DoxyCompactItemize}
+\Hypertarget{class_braille_mapper_a318c51822ccd40a84f72e176733bb8ba}\label{class_braille_mapper_a318c51822ccd40a84f72e176733bb8ba} 
+{\bfseries Braille\+Mapper} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_braille_mapper}{Braille\+Mapper} object and initializes mappings. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_braille_mapper_afed81f832290536aeed92ceca672c7a6}{get\+Braille\+Hash}} (char letter) const
+\begin{DoxyCompactList}\small\item\em Retrieves the Braille integer representation of a given letter. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_braille_mapper_ab87ce107bbe0464514030002569e3846}{string\+To\+Integer\+List}} (const String \&input) const
+\begin{DoxyCompactList}\small\item\em Converts a string into a list of Braille integer representations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Maps characters to their corresponding Braille integer representations. 
+
+This class provides functionality to convert individual characters and strings into Braille numerical representations based on English Tier One Braille. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_braille_mapper_afed81f832290536aeed92ceca672c7a6}\index{BrailleMapper@{BrailleMapper}!getBrailleHash@{getBrailleHash}}
+\index{getBrailleHash@{getBrailleHash}!BrailleMapper@{BrailleMapper}}
+\doxysubsubsection{\texorpdfstring{getBrailleHash()}{getBrailleHash()}}
+{\footnotesize\ttfamily \label{class_braille_mapper_afed81f832290536aeed92ceca672c7a6} 
+int Braille\+Mapper\+::get\+Braille\+Hash (\begin{DoxyParamCaption}\item[{char}]{letter}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the Braille integer representation of a given letter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em letter} & The character to be mapped. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding Braille integer representation. 
+\end{DoxyReturn}
+\Hypertarget{class_braille_mapper_ab87ce107bbe0464514030002569e3846}\index{BrailleMapper@{BrailleMapper}!stringToIntegerList@{stringToIntegerList}}
+\index{stringToIntegerList@{stringToIntegerList}!BrailleMapper@{BrailleMapper}}
+\doxysubsubsection{\texorpdfstring{stringToIntegerList()}{stringToIntegerList()}}
+{\footnotesize\ttfamily \label{class_braille_mapper_ab87ce107bbe0464514030002569e3846} 
+std\+::vector$<$ int $>$ Braille\+Mapper\+::string\+To\+Integer\+List (\begin{DoxyParamCaption}\item[{const String \&}]{input}{}\end{DoxyParamCaption}) const}
+
+
+
+Converts a string into a list of Braille integer representations. 
+
+Given an input string (e.\+g., "{}hello"{}), this function returns a vector containing the corresponding Braille integer values for each character.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input string to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of integers representing the Braille values of the characters. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

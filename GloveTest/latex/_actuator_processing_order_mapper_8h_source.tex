@@ -2,37 +2,34 @@
 \hypertarget{_actuator_processing_order_mapper_8h_source}{}\label{_actuator_processing_order_mapper_8h_source}\index{src/Mapper/ActuatorProcessingOrderMapper.h@{src/Mapper/ActuatorProcessingOrderMapper.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ACTUATOR\_PROCESSING\_\_ORDER\_MAPPER\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ACTUATOR\_PROCESSING\_\_ORDER\_MAPPER\_H}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ACTUATOR\_PROCESSING\_ORDER\_MAPPER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ACTUATOR\_PROCESSING\_ORDER\_MAPPER\_H}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}}
-\DoxyCodeLine{00005\ \ \ \ \ \textcolor{comment}{//\ Only\ define\ the\ friend\ class\ relationship\ during\ unit\ testing}}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{class\ }ActuatorProcessingOrderMapperTestHelper;}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }ActuatorProcessingOrderMapper\ \{}
-\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Sensitivity\ order\ for\ the\ actuators,\ from\ most\ to\ least\ sensitive\ based\ on\ the\ braille\ number}}
-\DoxyCodeLine{00015\ \ \ \ \ std::unordered\_map<int,\ int>\ SENSITIVITY\_ORDER;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeSensitivityOrder();}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ reorderBySensitivity(\textcolor{keywordtype}{int}\ number);}
-\DoxyCodeLine{00020\ \ \ \ \ }
-\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00022\ \ \ \ \ ActuatorProcessingOrderMapper();}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ std::vector<int>\ reorderVectorBySensitivity(\textcolor{keyword}{const}\ std::vector<int>\&\ values);}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Define\ the\ friend\ class\ only\ if\ UNIT\_TEST\ is\ defined}}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }ActuatorProcessingOrderMapperTestHelper;}
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00030\ \};}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ACTUATOR\_PROCESSING\_\_ORDER\_MAPPER\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }ActuatorProcessingOrderMapperTestHelper;}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_actuator_processing_order_mapper_a800fb35557df35dd8b7a239df05648cb}{ActuatorProcessingOrderMapper}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ std::unordered\_map<int,\ int>\ SENSITIVITY\_ORDER;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ initializeSensitivityOrder();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ reorderBySensitivity(\textcolor{keywordtype}{int}\ number);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_actuator_processing_order_mapper_a800fb35557df35dd8b7a239df05648cb}{ActuatorProcessingOrderMapper}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00067\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_actuator_processing_order_mapper_a18a2d26d5ddd6bfffd9118c9eb39514b}{reorderVectorBySensitivity}}(\textcolor{keyword}{const}\ std::vector<int>\&\ values);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }ActuatorProcessingOrderMapperTestHelper;}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ACTUATOR\_PROCESSING\_ORDER\_MAPPER\_H}}
 
 \end{DoxyCode}

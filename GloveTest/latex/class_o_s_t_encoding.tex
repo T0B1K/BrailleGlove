@@ -1,5 +1,14 @@
 \doxysection{OSTEncoding Class Reference}
 \hypertarget{class_o_s_t_encoding}{}\label{class_o_s_t_encoding}\index{OSTEncoding@{OSTEncoding}}
+
+
+Handles the OST encoding scheme for actuators.  
+
+
+
+
+{\ttfamily \#include $<$OSTEncoding.\+h$>$}
+
 Inheritance diagram for OSTEncoding\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,16 +18,44 @@ Inheritance diagram for OSTEncoding\+:\begin{figure}[H]
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_o_s_t_encoding_a9c02514923fe4b6c76b6891b97ffe0ab}\label{class_o_s_t_encoding_a9c02514923fe4b6c76b6891b97ffe0ab} 
-static void {\bfseries handle} (int number, \mbox{\hyperlink{class_actuator}{Actuator}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}actuators, Hand hand)
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_o_s_t_encoding_a9c02514923fe4b6c76b6891b97ffe0ab}{handle}} (int number, \mbox{\hyperlink{class_actuator}{Actuator}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}actuators, Hand hand)
+\begin{DoxyCompactList}\small\item\em Activates an actuator based on the OST encoding sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_encoding}{Encoding}}}
 \begin{DoxyCompactItemize}
 \item 
-static void {\bfseries custom\+Delay} (unsigned long time\+In\+Ms)
-\item 
-static bool {\bfseries valid\+Index} (int number, Hand hand)
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{custom\+Delay}} (unsigned long time\+In\+Ms)
+\begin{DoxyCompactList}\small\item\em Custom delay function to provide a non-\/blocking delay. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_encoding_a0879a5e46e610c98ef0619583d05f4b8}{valid\+Index}} (int number, Hand hand)
+\begin{DoxyCompactList}\small\item\em Checks whether the given pin number is valid for the specified hand. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the OST encoding scheme for actuators. 
+
+This class defines the OST encoding scheme and how the actuators should be activated based on that scheme. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_o_s_t_encoding_a9c02514923fe4b6c76b6891b97ffe0ab}\index{OSTEncoding@{OSTEncoding}!handle@{handle}}
+\index{handle@{handle}!OSTEncoding@{OSTEncoding}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily \label{class_o_s_t_encoding_a9c02514923fe4b6c76b6891b97ffe0ab} 
+static void OSTEncoding\+::handle (\begin{DoxyParamCaption}\item[{int}]{number}{, }\item[{\mbox{\hyperlink{class_actuator}{Actuator}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{actuators}{, }\item[{Hand}]{hand}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Activates an actuator based on the OST encoding sequence. 
+
+This function handles the activation of actuators based on the OST encoding scheme. The activation sequence is determined by the index number and the hand (left or right). The appropriate actuator is activated according to the given index, and a custom delay is applied.
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The index number representing the actuator to be activated. \\
+\hline
+{\em actuators} & The array of actuator pointers to be used. \\
+\hline
+{\em hand} & The hand (left or right) to which the actuator belongs. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

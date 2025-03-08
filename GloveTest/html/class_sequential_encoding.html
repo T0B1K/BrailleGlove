@@ -108,29 +108,83 @@ $(function(){initNavTree('class_sequential_encoding.html',''); initResizable(tru
   <div class="headertitle"><div class="title">SequentialEncoding Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Handles the sequential encoding scheme for actuators.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_sequential_encoding_8h_source.html">SequentialEncoding.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SequentialEncoding:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_sequential_encoding.png" usemap="#SequentialEncoding_map" alt=""/>
   <map id="SequentialEncoding_map" name="SequentialEncoding_map">
-<area href="class_encoding.html" alt="Encoding" shape="rect" coords="0,0,123,24"/>
+<area href="class_encoding.html" title="Base class for encoding operations." alt="Encoding" shape="rect" coords="0,0,123,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aeba855f97fe8da394bc3eff8b68e2601" id="r_aeba855f97fe8da394bc3eff8b68e2601"><td class="memItemLeft" align="right" valign="top"><a id="aeba855f97fe8da394bc3eff8b68e2601" name="aeba855f97fe8da394bc3eff8b68e2601"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>handle</b> (int number, <a class="el" href="class_actuator.html">Actuator</a> **actuators, Hand hand)</td></tr>
+<tr class="memitem:aeba855f97fe8da394bc3eff8b68e2601" id="r_aeba855f97fe8da394bc3eff8b68e2601"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeba855f97fe8da394bc3eff8b68e2601">handle</a> (int number, <a class="el" href="class_actuator.html">Actuator</a> **actuators, Hand hand)</td></tr>
+<tr class="memdesc:aeba855f97fe8da394bc3eff8b68e2601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates and deactivates an actuator based on the sequential encoding scheme.  <br /></td></tr>
 <tr class="separator:aeba855f97fe8da394bc3eff8b68e2601"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_encoding"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_class_encoding')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_encoding.html">Encoding</a></td></tr>
-<tr class="memitem:aa4e4b73efee494981d692f3a35bab25b inherit pub_static_methods_class_encoding" id="r_aa4e4b73efee494981d692f3a35bab25b"><td class="memItemLeft" align="right" valign="top">
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>customDelay</b> (unsigned long timeInMs)</td></tr>
+<tr class="memitem:aa4e4b73efee494981d692f3a35bab25b inherit pub_static_methods_class_encoding" id="r_aa4e4b73efee494981d692f3a35bab25b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encoding.html#aa4e4b73efee494981d692f3a35bab25b">customDelay</a> (unsigned long timeInMs)</td></tr>
+<tr class="memdesc:aa4e4b73efee494981d692f3a35bab25b inherit pub_static_methods_class_encoding"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom delay function to provide a non-blocking delay.  <br /></td></tr>
 <tr class="separator:aa4e4b73efee494981d692f3a35bab25b inherit pub_static_methods_class_encoding"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0879a5e46e610c98ef0619583d05f4b8 inherit pub_static_methods_class_encoding" id="r_a0879a5e46e610c98ef0619583d05f4b8"><td class="memItemLeft" align="right" valign="top">
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>validIndex</b> (int number, Hand hand)</td></tr>
+<tr class="memitem:a0879a5e46e610c98ef0619583d05f4b8 inherit pub_static_methods_class_encoding" id="r_a0879a5e46e610c98ef0619583d05f4b8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encoding.html#a0879a5e46e610c98ef0619583d05f4b8">validIndex</a> (int number, Hand hand)</td></tr>
+<tr class="memdesc:a0879a5e46e610c98ef0619583d05f4b8 inherit pub_static_methods_class_encoding"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the given pin number is valid for the specified hand.  <br /></td></tr>
 <tr class="separator:a0879a5e46e610c98ef0619583d05f4b8 inherit pub_static_methods_class_encoding"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Handles the sequential encoding scheme for actuators. </p>
+<p>This class defines the sequential encoding scheme and how the actuators should be activated in sequence. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aeba855f97fe8da394bc3eff8b68e2601" name="aeba855f97fe8da394bc3eff8b68e2601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeba855f97fe8da394bc3eff8b68e2601">&#9670;&#160;</a></span>handle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void SequentialEncoding::handle </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>number</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_actuator.html">Actuator</a> **</td>          <td class="paramname"><span class="paramname"><em>actuators</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Hand</td>          <td class="paramname"><span class="paramname"><em>hand</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Activates and deactivates an actuator based on the sequential encoding scheme. </p>
+<p>This function handles the sequential encoding scheme by activating the actuator corresponding to the given pin number and hand (left or right). After activation, the actuator is deactivated after a specified duration. A delay is applied both after activation and deactivation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>The index number representing the actuator to be activated. </td></tr>
+    <tr><td class="paramname">actuators</td><td>The array of actuator pointers to be used. </td></tr>
+    <tr><td class="paramname">hand</td><td>The hand (left or right) to which the actuator belongs. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Models/EncodingScheme/<a class="el" href="_sequential_encoding_8h_source.html">SequentialEncoding.h</a></li>
 </ul>

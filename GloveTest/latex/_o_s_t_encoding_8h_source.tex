@@ -10,17 +10,17 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../../Models/HandEnum.h"{}}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Encoding.h"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_o_s_t_encoding}{OSTEncoding}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_encoding}{Encoding}}\ \{}
-\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ handle(\textcolor{keywordtype}{int}\ number,\ \mbox{\hyperlink{class_actuator}{Actuator}}**\ actuators,\ Hand\ hand)\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validIndex(number,\ hand))\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ actuatorIdx\ =\ (number\ -\/\ 1)\ \%\ SingeltonGloveSettings::getInstance().NUM\_ACTUATORS;\ \textcolor{comment}{//\ 3\ actuators\ on\ each\ hand}}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ actuators[actuatorIdx]-\/>\mbox{\hyperlink{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901}{activate}}();}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ customDelay(SingeltonGloveSettings::getInstance().OST\_OFFSET);}
-\DoxyCodeLine{00017\ \ \ \ \ \}}
-\DoxyCodeLine{00018\ \};}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_o_s_t_encoding}{OSTEncoding}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_encoding}{Encoding}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_o_s_t_encoding_a9c02514923fe4b6c76b6891b97ffe0ab}{handle}}(\textcolor{keywordtype}{int}\ number,\ \mbox{\hyperlink{class_actuator}{Actuator}}**\ actuators,\ Hand\ hand)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_encoding_a0879a5e46e610c98ef0619583d05f4b8}{validIndex}}(number,\ hand))\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ actuatorIdx\ =\ (number\ -\/\ 1)\ \%\ SingeltonGloveSettings::getInstance().NUM\_ACTUATORS;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ actuators[actuatorIdx]-\/>\mbox{\hyperlink{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901}{activate}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{customDelay}}(SingeltonGloveSettings::getInstance().OST\_OFFSET);}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

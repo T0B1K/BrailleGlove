@@ -108,13 +108,73 @@ $(function(){initNavTree('class_actuator_processing_order_mapper.html',''); init
   <div class="headertitle"><div class="title">ActuatorProcessingOrderMapper Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Reorders braille dot numbers based on finger sensitivity order.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_actuator_processing_order_mapper_8h_source.html">ActuatorProcessingOrderMapper.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a18a2d26d5ddd6bfffd9118c9eb39514b" id="r_a18a2d26d5ddd6bfffd9118c9eb39514b"><td class="memItemLeft" align="right" valign="top"><a id="a18a2d26d5ddd6bfffd9118c9eb39514b" name="a18a2d26d5ddd6bfffd9118c9eb39514b"></a>
-std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>reorderVectorBySensitivity</b> (const std::vector&lt; int &gt; &amp;values)</td></tr>
+<tr class="memitem:a800fb35557df35dd8b7a239df05648cb" id="r_a800fb35557df35dd8b7a239df05648cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a800fb35557df35dd8b7a239df05648cb">ActuatorProcessingOrderMapper</a> ()</td></tr>
+<tr class="memdesc:a800fb35557df35dd8b7a239df05648cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="class_actuator_processing_order_mapper.html" title="Reorders braille dot numbers based on finger sensitivity order.">ActuatorProcessingOrderMapper</a>.  <br /></td></tr>
+<tr class="separator:a800fb35557df35dd8b7a239df05648cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18a2d26d5ddd6bfffd9118c9eb39514b" id="r_a18a2d26d5ddd6bfffd9118c9eb39514b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18a2d26d5ddd6bfffd9118c9eb39514b">reorderVectorBySensitivity</a> (const std::vector&lt; int &gt; &amp;values)</td></tr>
+<tr class="memdesc:a18a2d26d5ddd6bfffd9118c9eb39514b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reorders a vector of braille chords based on sensitivity.  <br /></td></tr>
 <tr class="separator:a18a2d26d5ddd6bfffd9118c9eb39514b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Reorders braille dot numbers based on finger sensitivity order. </p>
+<p>This class processes braille chords and reorders the actuation sequence based on predefined sensitivity levels of each dot. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a800fb35557df35dd8b7a239df05648cb" name="a800fb35557df35dd8b7a239df05648cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a800fb35557df35dd8b7a239df05648cb">&#9670;&#160;</a></span>ActuatorProcessingOrderMapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ActuatorProcessingOrderMapper::ActuatorProcessingOrderMapper </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="class_actuator_processing_order_mapper.html" title="Reorders braille dot numbers based on finger sensitivity order.">ActuatorProcessingOrderMapper</a>. </p>
+<p>Initializes the sensitivity order mapping. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a18a2d26d5ddd6bfffd9118c9eb39514b" name="a18a2d26d5ddd6bfffd9118c9eb39514b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18a2d26d5ddd6bfffd9118c9eb39514b">&#9670;&#160;</a></span>reorderVectorBySensitivity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; int &gt; ActuatorProcessingOrderMapper::reorderVectorBySensitivity </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reorders a vector of braille chords based on sensitivity. </p>
+<p>Each braille chord in the vector is restructured based on the predefined sensitivity order.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>A vector of braille chords encoded as integers. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reordered vector with braille chords sorted by sensitivity. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/Mapper/<a class="el" href="_actuator_processing_order_mapper_8h_source.html">ActuatorProcessingOrderMapper.h</a></li>
 <li>src/Mapper/<b>ActuatorProcessingOrderMapper.cpp</b></li>

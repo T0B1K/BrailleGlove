@@ -105,40 +105,39 @@ $(function(){initNavTree('_actuator_processing_order_mapper_8h_source.html','');
   <div class="headertitle"><div class="title">ActuatorProcessingOrderMapper.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ACTUATOR_PROCESSING__ORDER_MAPPER_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ACTUATOR_PROCESSING__ORDER_MAPPER_H</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ACTUATOR_PROCESSING_ORDER_MAPPER_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ACTUATOR_PROCESSING_ORDER_MAPPER_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifdef UNIT_TEST</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="comment">// Only define the friend class relationship during unit testing</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">class </span>ActuatorProcessingOrderMapperTestHelper;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_actuator_processing_order_mapper.html">   12</a></span><span class="keyword">class </span>ActuatorProcessingOrderMapper {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// Sensitivity order for the actuators, from most to least sensitive based on the braille number</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    std::unordered_map&lt;int, int&gt; SENSITIVITY_ORDER;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> initializeSensitivityOrder();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> reorderBySensitivity(<span class="keywordtype">int</span> number);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    ActuatorProcessingOrderMapper();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::vector&lt;int&gt; reorderVectorBySensitivity(<span class="keyword">const</span> std::vector&lt;int&gt;&amp; values);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifdef UNIT_TEST</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Define the friend class only if UNIT_TEST is defined</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">friend</span> <span class="keyword">class </span>ActuatorProcessingOrderMapperTestHelper;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifdef UNIT_TEST</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">class </span>ActuatorProcessingOrderMapperTestHelper;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_actuator_processing_order_mapper.html">   21</a></span><span class="keyword">class </span><a class="code hl_function" href="class_actuator_processing_order_mapper.html#a800fb35557df35dd8b7a239df05648cb">ActuatorProcessingOrderMapper</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::unordered_map&lt;int, int&gt; SENSITIVITY_ORDER;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> initializeSensitivityOrder();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">int</span> reorderBySensitivity(<span class="keywordtype">int</span> number);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="class_actuator_processing_order_mapper.html#a800fb35557df35dd8b7a239df05648cb">ActuatorProcessingOrderMapper</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    std::vector&lt;int&gt; <a class="code hl_function" href="class_actuator_processing_order_mapper.html#a18a2d26d5ddd6bfffd9118c9eb39514b">reorderVectorBySensitivity</a>(<span class="keyword">const</span> std::vector&lt;int&gt;&amp; values);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#ifdef UNIT_TEST</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">friend</span> <span class="keyword">class </span>ActuatorProcessingOrderMapperTestHelper;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif </span><span class="comment">// ACTUATOR_PROCESSING__ORDER_MAPPER_H</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// ACTUATOR_PROCESSING_ORDER_MAPPER_H</span></div>
+<div class="ttc" id="aclass_actuator_processing_order_mapper_html_a18a2d26d5ddd6bfffd9118c9eb39514b"><div class="ttname"><a href="class_actuator_processing_order_mapper.html#a18a2d26d5ddd6bfffd9118c9eb39514b">ActuatorProcessingOrderMapper::reorderVectorBySensitivity</a></div><div class="ttdeci">std::vector&lt; int &gt; reorderVectorBySensitivity(const std::vector&lt; int &gt; &amp;values)</div><div class="ttdoc">Reorders a vector of braille chords based on sensitivity.</div><div class="ttdef"><b>Definition</b> ActuatorProcessingOrderMapper.cpp:40</div></div>
+<div class="ttc" id="aclass_actuator_processing_order_mapper_html_a800fb35557df35dd8b7a239df05648cb"><div class="ttname"><a href="class_actuator_processing_order_mapper.html#a800fb35557df35dd8b7a239df05648cb">ActuatorProcessingOrderMapper::ActuatorProcessingOrderMapper</a></div><div class="ttdeci">ActuatorProcessingOrderMapper()</div><div class="ttdoc">Constructor for ActuatorProcessingOrderMapper.</div><div class="ttdef"><b>Definition</b> ActuatorProcessingOrderMapper.cpp:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

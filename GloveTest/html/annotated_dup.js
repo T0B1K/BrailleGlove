@@ -1,9 +1,9 @@
 var annotated_dup =
 [
     [ "Actuator", "class_actuator.html", "class_actuator" ],
-    [ "ActuatorProcessingOrderMapper", "class_actuator_processing_order_mapper.html", null ],
-    [ "BrailleMapper", "class_braille_mapper.html", null ],
-    [ "Controller", "class_controller.html", null ],
+    [ "ActuatorProcessingOrderMapper", "class_actuator_processing_order_mapper.html", "class_actuator_processing_order_mapper" ],
+    [ "BrailleMapper", "class_braille_mapper.html", "class_braille_mapper" ],
+    [ "Controller", "class_controller.html", "class_controller" ],
     [ "Encoding", "class_encoding.html", null ],
     [ "GloveModel", "class_glove_model.html", null ],
     [ "OSTEncoding", "class_o_s_t_encoding.html", null ],

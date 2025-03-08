@@ -23,8 +23,8 @@ class TabbingActuator : public Actuator {
      * @param pin The GPIO pin to which the actuator is connected.
      */
     TabbingActuator(int pin) : Actuator(pin, Stroking) {
-        servo.attach(pin);  ///< Attach the servo to the specified pin.
-        servo.write(180);   ///< Set servo to 180 degrees initially.
+        servo.attach(pin);
+        servo.write(180);
         turnedOn = false;
     }
 
@@ -35,7 +35,7 @@ class TabbingActuator : public Actuator {
      */
     void activate() override {
         turnedOn = true;
-        servo.write(90);  ///< Move the servo to 90 degrees.
+        servo.write(90);
     }
 
     /**
@@ -45,7 +45,7 @@ class TabbingActuator : public Actuator {
      */
     void deactivate() override {
         turnedOn = false;
-        servo.write(180);  ///< Move the servo back to 180 degrees.
+        servo.write(180);
     }
 };
 

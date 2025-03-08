@@ -108,16 +108,82 @@ $(function(){initNavTree('class_braille_mapper.html',''); initResizable(true); }
   <div class="headertitle"><div class="title">BrailleMapper Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Maps characters to their corresponding Braille integer representations.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_braille_mapper_8h_source.html">BrailleMapper.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afed81f832290536aeed92ceca672c7a6" id="r_afed81f832290536aeed92ceca672c7a6"><td class="memItemLeft" align="right" valign="top"><a id="afed81f832290536aeed92ceca672c7a6" name="afed81f832290536aeed92ceca672c7a6"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getBrailleHash</b> (char letter) const</td></tr>
+<tr class="memitem:a318c51822ccd40a84f72e176733bb8ba" id="r_a318c51822ccd40a84f72e176733bb8ba"><td class="memItemLeft" align="right" valign="top"><a id="a318c51822ccd40a84f72e176733bb8ba" name="a318c51822ccd40a84f72e176733bb8ba"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>BrailleMapper</b> ()</td></tr>
+<tr class="memdesc:a318c51822ccd40a84f72e176733bb8ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_braille_mapper.html" title="Maps characters to their corresponding Braille integer representations.">BrailleMapper</a> object and initializes mappings. <br /></td></tr>
+<tr class="separator:a318c51822ccd40a84f72e176733bb8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed81f832290536aeed92ceca672c7a6" id="r_afed81f832290536aeed92ceca672c7a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afed81f832290536aeed92ceca672c7a6">getBrailleHash</a> (char letter) const</td></tr>
+<tr class="memdesc:afed81f832290536aeed92ceca672c7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the Braille integer representation of a given letter.  <br /></td></tr>
 <tr class="separator:afed81f832290536aeed92ceca672c7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab87ce107bbe0464514030002569e3846" id="r_ab87ce107bbe0464514030002569e3846"><td class="memItemLeft" align="right" valign="top"><a id="ab87ce107bbe0464514030002569e3846" name="ab87ce107bbe0464514030002569e3846"></a>
-std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>stringToIntegerList</b> (const String &amp;input) const</td></tr>
+<tr class="memitem:ab87ce107bbe0464514030002569e3846" id="r_ab87ce107bbe0464514030002569e3846"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab87ce107bbe0464514030002569e3846">stringToIntegerList</a> (const String &amp;input) const</td></tr>
+<tr class="memdesc:ab87ce107bbe0464514030002569e3846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string into a list of Braille integer representations.  <br /></td></tr>
 <tr class="separator:ab87ce107bbe0464514030002569e3846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Maps characters to their corresponding Braille integer representations. </p>
+<p>This class provides functionality to convert individual characters and strings into Braille numerical representations based on English Tier One Braille. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="afed81f832290536aeed92ceca672c7a6" name="afed81f832290536aeed92ceca672c7a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afed81f832290536aeed92ceca672c7a6">&#9670;&#160;</a></span>getBrailleHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BrailleMapper::getBrailleHash </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>letter</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the Braille integer representation of a given letter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">letter</td><td>The character to be mapped. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding Braille integer representation. </dd></dl>
+
+</div>
+</div>
+<a id="ab87ce107bbe0464514030002569e3846" name="ab87ce107bbe0464514030002569e3846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab87ce107bbe0464514030002569e3846">&#9670;&#160;</a></span>stringToIntegerList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; int &gt; BrailleMapper::stringToIntegerList </td>
+          <td>(</td>
+          <td class="paramtype">const String &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a string into a list of Braille integer representations. </p>
+<p>Given an input string (e.g., "hello"), this function returns a vector containing the corresponding Braille integer values for each character.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The input string to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of integers representing the Braille values of the characters. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/Mapper/<a class="el" href="_braille_mapper_8h_source.html">BrailleMapper.h</a></li>
 <li>src/Mapper/<b>BrailleMapper.cpp</b></li>

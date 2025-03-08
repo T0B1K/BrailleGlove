@@ -1,18 +1,72 @@
 \doxysection{Controller Class Reference}
 \hypertarget{class_controller}{}\label{class_controller}\index{Controller@{Controller}}
+
+
+Handles the initialization and execution of either the master or slave mode.  
+
+
+
+
+{\ttfamily \#include $<$Controller.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_controller_aa1ce653de721783003eccf62665e4416}\label{class_controller_aa1ce653de721783003eccf62665e4416} 
-{\bfseries Controller} (bool is\+Slave)
-\item 
-\Hypertarget{class_controller_aaff2c0ac01c4d7a6b78718ac8a411c4b}\label{class_controller_aaff2c0ac01c4d7a6b78718ac8a411c4b} 
-void {\bfseries setup} ()
-\item 
-\Hypertarget{class_controller_a9ec8c2d4a68acccd118537c36894e516}\label{class_controller_a9ec8c2d4a68acccd118537c36894e516} 
-void {\bfseries loop} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_controller_aa1ce653de721783003eccf62665e4416}{Controller}} (bool is\+Slave)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_controller}{Controller} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_aaff2c0ac01c4d7a6b78718ac8a411c4b}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Sets up the master or slave mode based on the given conditions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a9ec8c2d4a68acccd118537c36894e516}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Runs the main execution loop for either the master or slave mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Handles the initialization and execution of either the master or slave mode. 
+
+This class determines whether the system should operate as a master or a slave and initializes the appropriate class accordingly. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_controller_aa1ce653de721783003eccf62665e4416}\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily \label{class_controller_aa1ce653de721783003eccf62665e4416} 
+Controller\+::\+Controller (\begin{DoxyParamCaption}\item[{bool}]{is\+Slave}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_controller}{Controller} class. 
+
+Determines whether the device should act as a master or a slave.
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Slave} & A boolean flag indicating whether the device should run in slave mode. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_controller_a9ec8c2d4a68acccd118537c36894e516}\index{Controller@{Controller}!loop@{loop}}
+\index{loop@{loop}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{class_controller_a9ec8c2d4a68acccd118537c36894e516} 
+void Controller\+::loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Runs the main execution loop for either the master or slave mode. 
+
+This function should be called continuously in the main program loop. \Hypertarget{class_controller_aaff2c0ac01c4d7a6b78718ac8a411c4b}\index{Controller@{Controller}!setup@{setup}}
+\index{setup@{setup}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{class_controller_aaff2c0ac01c4d7a6b78718ac8a411c4b} 
+void Controller\+::setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets up the master or slave mode based on the given conditions. 
+
+This function initializes the appropriate components depending on whether the device is in master or slave mode. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

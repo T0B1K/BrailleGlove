@@ -20,8 +20,8 @@ class VibrationActuator : public Actuator {
      * @param pin The GPIO pin to which the actuator is connected.
      */
     VibrationActuator(int pin) : Actuator(pin, Vibration) {
-        pinMode(pin, OUTPUT);      ///< Set the pin as an output.
-        digitalWrite(pin, LOW);    ///< Ensure the actuator is off initially.
+        pinMode(pin, OUTPUT);
+        digitalWrite(pin, LOW);
         turnedOn = false;
     }
 
@@ -33,7 +33,7 @@ class VibrationActuator : public Actuator {
     void activate() override {
         if (!turnedOn) {
             turnedOn = true;
-            digitalWrite(pin, HIGH); ///< Turn on vibration.
+            digitalWrite(pin, HIGH);
         }
     }
 
@@ -45,7 +45,7 @@ class VibrationActuator : public Actuator {
     void deactivate() override {
         if (turnedOn) {
             turnedOn = false;
-            digitalWrite(pin, LOW); ///< Turn off vibration.
+            digitalWrite(pin, LOW);
         }
     }
 };

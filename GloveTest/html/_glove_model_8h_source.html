@@ -152,9 +152,9 @@ $(function(){initNavTree('_glove_model_8h_source.html',''); initResizable(true);
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> pauseBetweenLetters(){</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().DURATION);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_function" href="class_encoding.html#aa4e4b73efee494981d692f3a35bab25b">SequentialEncoding::customDelay</a>(SingeltonGloveSettings::getInstance().DURATION);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        resetAllActuators();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().PAUSE);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_function" href="class_encoding.html#aa4e4b73efee494981d692f3a35bab25b">SequentialEncoding::customDelay</a>(SingeltonGloveSettings::getInstance().PAUSE);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> vibrateOnNumber(<span class="keywordtype">int</span> number) {</div>
@@ -167,16 +167,16 @@ $(function(){initNavTree('_glove_model_8h_source.html',''); initResizable(true);
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            number = (int)number / 10;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">if</span> (playMode == SEQUENTIAL_ENCODING) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                SequentialEncoding::handle(lastDigit, actuators, hand);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <a class="code hl_function" href="class_sequential_encoding.html#aeba855f97fe8da394bc3eff8b68e2601">SequentialEncoding::handle</a>(lastDigit, actuators, hand);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                OSTEncoding::handle(lastDigit, actuators, hand);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <a class="code hl_function" href="class_o_s_t_encoding.html#a9c02514923fe4b6c76b6891b97ffe0ab">OSTEncoding::handle</a>(lastDigit, actuators, hand);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            }</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">if</span>(playMode == OST_ENCODING){</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().DURATION);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <a class="code hl_function" href="class_encoding.html#aa4e4b73efee494981d692f3a35bab25b">SequentialEncoding::customDelay</a>(SingeltonGloveSettings::getInstance().DURATION);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            resetAllActuators();</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().PAUSE);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_function" href="class_encoding.html#aa4e4b73efee494981d692f3a35bab25b">SequentialEncoding::customDelay</a>(SingeltonGloveSettings::getInstance().PAUSE);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> setPattern(std::vector&lt;int&gt; newValues) {</div>
@@ -199,6 +199,9 @@ $(function(){initNavTree('_glove_model_8h_source.html',''); initResizable(true);
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_actuator_html"><div class="ttname"><a href="class_actuator.html">Actuator</a></div><div class="ttdoc">Abstract class for implementing different types of actuators.</div><div class="ttdef"><b>Definition</b> Actuator.h:20</div></div>
+<div class="ttc" id="aclass_encoding_html_aa4e4b73efee494981d692f3a35bab25b"><div class="ttname"><a href="class_encoding.html#aa4e4b73efee494981d692f3a35bab25b">Encoding::customDelay</a></div><div class="ttdeci">static void customDelay(unsigned long timeInMs)</div><div class="ttdoc">Custom delay function to provide a non-blocking delay.</div><div class="ttdef"><b>Definition</b> Encoding.h:29</div></div>
+<div class="ttc" id="aclass_o_s_t_encoding_html_a9c02514923fe4b6c76b6891b97ffe0ab"><div class="ttname"><a href="class_o_s_t_encoding.html#a9c02514923fe4b6c76b6891b97ffe0ab">OSTEncoding::handle</a></div><div class="ttdeci">static void handle(int number, Actuator **actuators, Hand hand)</div><div class="ttdoc">Activates an actuator based on the OST encoding sequence.</div><div class="ttdef"><b>Definition</b> OSTEncoding.h:28</div></div>
+<div class="ttc" id="aclass_sequential_encoding_html_aeba855f97fe8da394bc3eff8b68e2601"><div class="ttname"><a href="class_sequential_encoding.html#aeba855f97fe8da394bc3eff8b68e2601">SequentialEncoding::handle</a></div><div class="ttdeci">static void handle(int number, Actuator **actuators, Hand hand)</div><div class="ttdoc">Activates and deactivates an actuator based on the sequential encoding scheme.</div><div class="ttdef"><b>Definition</b> SequentialEncoding.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

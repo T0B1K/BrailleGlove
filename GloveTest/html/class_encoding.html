@@ -108,26 +108,111 @@ $(function(){initNavTree('class_encoding.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Encoding Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base class for encoding operations.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_encoding_8h_source.html">Encoding.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Encoding:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_encoding.png" usemap="#Encoding_map" alt=""/>
   <map id="Encoding_map" name="Encoding_map">
-<area href="class_o_s_t_encoding.html" alt="OSTEncoding" shape="rect" coords="0,56,123,80"/>
-<area href="class_sequential_encoding.html" alt="SequentialEncoding" shape="rect" coords="133,56,256,80"/>
+<area href="class_o_s_t_encoding.html" title="Handles the OST encoding scheme for actuators." alt="OSTEncoding" shape="rect" coords="0,56,123,80"/>
+<area href="class_sequential_encoding.html" title="Handles the sequential encoding scheme for actuators." alt="SequentialEncoding" shape="rect" coords="133,56,256,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa4e4b73efee494981d692f3a35bab25b" id="r_aa4e4b73efee494981d692f3a35bab25b"><td class="memItemLeft" align="right" valign="top"><a id="aa4e4b73efee494981d692f3a35bab25b" name="aa4e4b73efee494981d692f3a35bab25b"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>customDelay</b> (unsigned long timeInMs)</td></tr>
+<tr class="memitem:aa4e4b73efee494981d692f3a35bab25b" id="r_aa4e4b73efee494981d692f3a35bab25b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4e4b73efee494981d692f3a35bab25b">customDelay</a> (unsigned long timeInMs)</td></tr>
+<tr class="memdesc:aa4e4b73efee494981d692f3a35bab25b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom delay function to provide a non-blocking delay.  <br /></td></tr>
 <tr class="separator:aa4e4b73efee494981d692f3a35bab25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0879a5e46e610c98ef0619583d05f4b8" id="r_a0879a5e46e610c98ef0619583d05f4b8"><td class="memItemLeft" align="right" valign="top"><a id="a0879a5e46e610c98ef0619583d05f4b8" name="a0879a5e46e610c98ef0619583d05f4b8"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>validIndex</b> (int number, Hand hand)</td></tr>
+<tr class="memitem:a0879a5e46e610c98ef0619583d05f4b8" id="r_a0879a5e46e610c98ef0619583d05f4b8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0879a5e46e610c98ef0619583d05f4b8">validIndex</a> (int number, Hand hand)</td></tr>
+<tr class="memdesc:a0879a5e46e610c98ef0619583d05f4b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the given pin number is valid for the specified hand.  <br /></td></tr>
 <tr class="separator:a0879a5e46e610c98ef0619583d05f4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for encoding operations. </p>
+<p>This class provides the basic functions for encoding used by its child classes. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa4e4b73efee494981d692f3a35bab25b" name="aa4e4b73efee494981d692f3a35bab25b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4e4b73efee494981d692f3a35bab25b">&#9670;&#160;</a></span>customDelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Encoding::customDelay </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long</td>          <td class="paramname"><span class="paramname"><em>timeInMs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Custom delay function to provide a non-blocking delay. </p>
+<p>This function allows for a non-blocking delay (unlike the blocking <code>delay()</code> function in Arduino), so the program can continue execution while waiting.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeInMs</td><td>The delay duration in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; Get the current time</p>
+<p>&lt; The program continues executing other tasks</p>
+
+</div>
+</div>
+<a id="a0879a5e46e610c98ef0619583d05f4b8" name="a0879a5e46e610c98ef0619583d05f4b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0879a5e46e610c98ef0619583d05f4b8">&#9670;&#160;</a></span>validIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool Encoding::validIndex </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>number</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Hand</td>          <td class="paramname"><span class="paramname"><em>hand</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether the given pin number is valid for the specified hand. </p>
+<p>This function validates whether the pin number belongs to the correct hand (left or right) based on the actuator configuration.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>The pin number to be validated. </td></tr>
+    <tr><td class="paramname">hand</td><td>The hand (left or right) for which the validation is being done. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the pin is valid for the hand; false otherwise. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Models/EncodingScheme/<a class="el" href="_encoding_8h_source.html">Encoding.h</a></li>
 </ul>
