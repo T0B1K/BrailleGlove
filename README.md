@@ -34,7 +34,7 @@ d1_mini_test   SUCCESS   00:00:00.143
 ```
 
 ## Documentation
-The [**GitHub Pages Documentation**](https://t0b1k.github.io/BrailleGlove/GloveTest/html/annotated.html)
+The full [**GitHub Pages Documentation**](https://t0b1k.github.io/BrailleGlove/GloveTest/html/annotated.html) is also available on GitHub pages.
 
 ## Project Structure  
 

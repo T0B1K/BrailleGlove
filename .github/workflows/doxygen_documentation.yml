@@ -17,12 +17,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # Prevent overwriting credentials
 
       # Set up Doxygen and generate documentation
       - name: Set up Doxygen
         run: |
           sudo apt-get update
-          sudo apt-get install doxygen
+          sudo apt-get install -y doxygen
 
       - name: Generate Doxygen documentation
         run: |
@@ -40,13 +42,11 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@github.com"
 
-      # Commit and push changes to the main branch
-      - name: Commit and push docs to main branch
+      # Commit and push changes to the gh-pages branch
+      - name: Commit and push docs to gh-pages branch
         run: |
           git add .
           git commit -m "Deploy Doxygen docs"
-          git push origin main
+          git push origin gh-pages
         env:
           GH_TOKEN: ${{ secrets.BOT_SITE_GENERATION }}
-
-
