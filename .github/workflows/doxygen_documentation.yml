@@ -1,6 +1,6 @@
 name: Doxygen Documentation
 
-# Run on any push or pull request to the main branch
+# Trigger the workflow on push or pull request to the 'main' branch
 on:
   push:
     branches:
@@ -11,25 +11,26 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest # Use Ubuntu for the CI environment
+    runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout the repository
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    # Step 2: Set up Doxygen
-    - name: Set up Doxygen
-      run: sudo apt-get install doxygen
+      # Step 2: Set up Doxygen
+      - name: Install Doxygen
+        run: sudo apt-get install -y doxygen
 
-    # Step 3: Run Doxygen with your Doxyfile
-    - name: Generate Doxygen documentation
-      run: doxygen Doxyfile
+      # Step 3: Generate Doxygen documentation
+      - name: Run Doxygen
+        run: doxygen Doxyfile
 
-    # Optional: Upload the generated documentation to a GitHub Pages site or elsewhere
-    # Uncomment the following lines if you want to upload the generated docs
-    # - name: Upload documentation to GitHub Pages
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: ./docs/html
+      # Step 4: Upload documentation to GitHub Pages
+      - name: Deploy Doxygen Documentation to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
+          publish_dir: ./docs/html  # Doxygen generates docs in 'docs/html'
+          user_name: 'GitHub Actions'
+          user_email: 'github-actions@github.com'
