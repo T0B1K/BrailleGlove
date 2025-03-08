@@ -1,5 +1,8 @@
 name: Generate and Deploy Doxygen Docs to GitHub Pages
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -45,3 +48,5 @@ jobs:
           git push origin main
         env:
           GH_TOKEN: ${{ secrets.BOT_SITE_GENERATION }}
+
+
