@@ -10,7 +10,7 @@
     #include <ESP8266WiFi.h>
     #include <ESP8266WebServer.h>
     #include <WiFiUdp.h>
-    #include <WiFiServer.h>  ///< Include for TCP server
+    #include <WiFiServer.h>
     #include <LittleFS.h>
     #include <WifiEspNow.h>
 #endif

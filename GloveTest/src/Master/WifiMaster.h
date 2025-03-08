@@ -13,16 +13,16 @@
     #include "../test/Mocks/ESPNOW_Mock.h"
     #include "../test/Mocks/ESP_Mock.h"
 
-    extern LittleFSMock LittleFS; ///< Mock for LittleFS
-    #define File MockFile ///< Mock for file system
-    extern MockWiFi WiFi; ///< Mock for Wi-Fi
-    extern MockWifiEspNow WifiEspNow; ///< Mock for Wi-Fi ESP-NOW
+    extern LittleFSMock LittleFS;
+    #define File MockFile
+    extern MockWiFi WiFi;
+    extern MockWifiEspNow WifiEspNow;
     
 #else
     #include <ESP8266WiFi.h>
     #include <ESP8266WebServer.h>
     #include <WiFiUdp.h>
-    #include <WiFiServer.h>  ///< Include for TCP server
+    #include <WiFiServer.h>
     #include <LittleFS.h>
     #include <WifiEspNow.h>
 #endif
