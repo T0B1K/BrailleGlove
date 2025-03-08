@@ -109,25 +109,82 @@ $(function(){initNavTree('class_singelton_wifi_connector.html',''); initResizabl
   <div class="headertitle"><div class="title">SingeltonWifiConnector Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Singleton class for Wi-Fi settings.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_singelton_wifi_settings_8h_source.html">SingeltonWifiSettings.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a06acb00fd99fc97855bd0f89b4a72eb7" id="r_a06acb00fd99fc97855bd0f89b4a72eb7"><td class="memItemLeft" align="right" valign="top"><a id="a06acb00fd99fc97855bd0f89b4a72eb7" name="a06acb00fd99fc97855bd0f89b4a72eb7"></a>
-static <a class="el" href="class_singelton_wifi_connector.html">SingeltonWifiConnector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+<tr class="memitem:a06acb00fd99fc97855bd0f89b4a72eb7" id="r_a06acb00fd99fc97855bd0f89b4a72eb7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_singelton_wifi_connector.html">SingeltonWifiConnector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06acb00fd99fc97855bd0f89b4a72eb7">getInstance</a> ()</td></tr>
+<tr class="memdesc:a06acb00fd99fc97855bd0f89b4a72eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the singleton instance of the <a class="el" href="class_singelton_wifi_connector.html" title="Singleton class for Wi-Fi settings.">SingeltonWifiConnector</a> class.  <br /></td></tr>
 <tr class="separator:a06acb00fd99fc97855bd0f89b4a72eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0a9ed8cb7a7aa893331fee5e0fa61a28" id="r_a0a9ed8cb7a7aa893331fee5e0fa61a28"><td class="memItemLeft" align="right" valign="top"><a id="a0a9ed8cb7a7aa893331fee5e0fa61a28" name="a0a9ed8cb7a7aa893331fee5e0fa61a28"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>MASTER_SSID</b> = &quot;MV-Glove&quot;</td></tr>
+<tr class="memdesc:a0a9ed8cb7a7aa893331fee5e0fa61a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SSID name for the master Wi-Fi network. <br /></td></tr>
 <tr class="separator:a0a9ed8cb7a7aa893331fee5e0fa61a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8a580d4c2b472b41c01dadd261830a2" id="r_aa8a580d4c2b472b41c01dadd261830a2"><td class="memItemLeft" align="right" valign="top"><a id="aa8a580d4c2b472b41c01dadd261830a2" name="aa8a580d4c2b472b41c01dadd261830a2"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><b>SLAVE_SSID</b> = &quot;VS-Glove&quot;</td></tr>
+<tr class="memdesc:aa8a580d4c2b472b41c01dadd261830a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SSID name for the slave Wi-Fi network. <br /></td></tr>
 <tr class="separator:aa8a580d4c2b472b41c01dadd261830a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2c290a08198215b32aedd918afc8e79" id="r_ab2c290a08198215b32aedd918afc8e79"><td class="memItemLeft" align="right" valign="top"><a id="ab2c290a08198215b32aedd918afc8e79" name="ab2c290a08198215b32aedd918afc8e79"></a>
-const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>SLAVE_MAC</b> [6] = {0x48, 0x55, 0x19, 0xF6, 0xC9, 0xB3}</td></tr>
+<tr class="memitem:ab2c290a08198215b32aedd918afc8e79" id="r_ab2c290a08198215b32aedd918afc8e79"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2c290a08198215b32aedd918afc8e79">SLAVE_MAC</a> [6] = {0x48, 0x55, 0x19, 0xF6, 0xC9, 0xB3}</td></tr>
+<tr class="memdesc:ab2c290a08198215b32aedd918afc8e79"><td class="mdescLeft">&#160;</td><td class="mdescRight">The MAC address of the slave device for the Wi-Fi connection.  <br /></td></tr>
 <tr class="separator:ab2c290a08198215b32aedd918afc8e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Singleton class for Wi-Fi settings. </p>
+<p>This class follows the Singleton pattern to ensure only one instance exists for managing Wi-Fi settings, including SSID names and MAC address for master and slave devices in the system. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a06acb00fd99fc97855bd0f89b4a72eb7" name="a06acb00fd99fc97855bd0f89b4a72eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06acb00fd99fc97855bd0f89b4a72eb7">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_singelton_wifi_connector.html">SingeltonWifiConnector</a> &amp; SingeltonWifiConnector::getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the singleton instance of the <a class="el" href="class_singelton_wifi_connector.html" title="Singleton class for Wi-Fi settings.">SingeltonWifiConnector</a> class. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the single instance of <a class="el" href="class_singelton_wifi_connector.html" title="Singleton class for Wi-Fi settings.">SingeltonWifiConnector</a>. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab2c290a08198215b32aedd918afc8e79" name="ab2c290a08198215b32aedd918afc8e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2c290a08198215b32aedd918afc8e79">&#9670;&#160;</a></span>SLAVE_MAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t SingeltonWifiConnector::SLAVE_MAC[6] = {0x48, 0x55, 0x19, 0xF6, 0xC9, 0xB3}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The MAC address of the slave device for the Wi-Fi connection. </p>
+<p>The MAC address is used to identify the slave device in the network. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Settings/<a class="el" href="_singelton_wifi_settings_8h_source.html">SingeltonWifiSettings.h</a></li>
 </ul>

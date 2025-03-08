@@ -5,33 +5,37 @@
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SINGELTON\_GLOVE\_SETTINGS}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SINGELTON\_GLOVE\_SETTINGS}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }SingeltonGloveSettings\ \{}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ SingeltonGloveSettings()\ \{\}}
-\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ SingeltonGloveSettings(\textcolor{keyword}{const}\ SingeltonGloveSettings\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\textcolor{keyword}{const}\ SingeltonGloveSettings\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ SingeltonGloveSettings\&\ getInstance()\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ SingeltonGloveSettings\ instance;}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO\ change\ settings\ accordingly}}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ OST\_OFFSET\ =\ 10;}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ DURATION\ =\ 200;}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ PAUSE\ =\ 2000;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ NUM\_ACTUATORS\ =\ 3;}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ AUDIO\_VIBRATION\_OFFSET\ =\ 100;}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ SEQ\_OFFSET\ =\ 1000;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ studyOstRepititions\ =\ 126;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ studySeqRepititions\ =\ 44;}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }SingeltonGloveSettings\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ SingeltonGloveSettings()\ \{\}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \ \ \ \ SingeltonGloveSettings(\textcolor{keyword}{const}\ SingeltonGloveSettings\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\textcolor{keyword}{const}\ SingeltonGloveSettings\&)\ =\ \textcolor{keyword}{delete};}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ SingeltonGloveSettings\&\ \mbox{\hyperlink{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb}{getInstance}}()\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ SingeltonGloveSettings\ instance;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_singelton_glove_settings_a954067e6498fd4eab73ad773eaa962b2}{OST\_OFFSET}}\ =\ 10;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_singelton_glove_settings_ac3caea5672f2bfff2ccd796002b8a959}{DURATION}}\ =\ 200;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_singelton_glove_settings_a40d543fb1e8aefc46953a484c8891796}{PAUSE}}\ =\ 2000;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_singelton_glove_settings_ac5d31d549d52ce5b27f5e9f10d85df96}{NUM\_ACTUATORS}}\ =\ 3;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_singelton_glove_settings_ad3060a98d05902ff54e440a39987db28}{AUDIO\_STIMULI\_OFFSET}}\ =\ 100;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_singelton_glove_settings_aa52d8445b131af1b0aa1c4d67de070dd}{SEQ\_OFFSET}}\ =\ 1000;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_singelton_glove_settings_ae4ef9ab090730555a7749dfc35f91429}{studyOstRepititions}}\ =\ 126;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_singelton_glove_settings_a5454194c036108f6baa8230cb0e6e4b3}{studySeqRepititions}}\ =\ 44;}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -269,6 +269,13 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
 INPUT ./hierarchy.tex
@@ -298,9 +305,6 @@ INPUT ./class_actuator.tex
 INPUT ./class_actuator.tex
 INPUT ./class_actuator.tex
 INPUT class_actuator.tex
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
-INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/t1pcr.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm
 INPUT ./class_actuator.pdf
@@ -315,8 +319,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvro8t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvro8t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrro8t.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
@@ -332,8 +334,6 @@ INPUT ./class_actuator_processing_order_mapper.tex
 INPUT class_actuator_processing_order_mapper.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/courier/pcrro8t.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrro8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/helvetic/phvb8tn.vf
@@ -439,6 +439,10 @@ INPUT ./class_wifi_master.tex
 INPUT ./class_wifi_master.tex
 INPUT ./class_wifi_master.tex
 INPUT class_wifi_master.tex
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrb8t.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/courier/pcrb8t.vf
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrb8r.tfm
 INPUT ./class_wifi_slave.tex
 INPUT ./class_wifi_slave.tex
 INPUT ./class_wifi_slave.tex
@@ -547,6 +551,7 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb

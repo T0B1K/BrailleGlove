@@ -2,28 +2,32 @@
 \hypertarget{_singelton_wifi_settings_8h_source}{}\label{_singelton_wifi_settings_8h_source}\index{src/Settings/SingeltonWifiSettings.h@{src/Settings/SingeltonWifiSettings.h}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <cstdint>}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ SINGELTON\_WIFI\_SETTINGS}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ SINGELTON\_WIFI\_SETTINGS}}
-\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SINGELTON\_WIFI\_SETTINGS}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SINGELTON\_WIFI\_SETTINGS}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }SingeltonWifiConnector\ \{}
-\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ SingeltonWifiConnector()\ \{\}}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ SingeltonWifiConnector(\textcolor{keyword}{const}\ SingeltonWifiConnector\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\textcolor{keyword}{const}\ SingeltonWifiConnector\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ SingeltonWifiConnector\&\ getInstance()\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ SingeltonWifiConnector\ instance;}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ MASTER\_SSID\ =\ \textcolor{stringliteral}{"{}MV-\/Glove"{}};}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ SLAVE\_SSID\ =\ \textcolor{stringliteral}{"{}VS-\/Glove"{}};}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ SLAVE\_MAC[6]\ =\ \{0x48,\ 0x55,\ 0x19,\ 0xF6,\ 0xC9,\ 0xB3\};\ \textcolor{comment}{//use\ the\ right\ slave\ mac}}
-\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }SingeltonWifiConnector\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ SingeltonWifiConnector()\ \{\}}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ \ \ \ \ SingeltonWifiConnector(\textcolor{keyword}{const}\ SingeltonWifiConnector\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\textcolor{keyword}{const}\ SingeltonWifiConnector\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ SingeltonWifiConnector\&\ \mbox{\hyperlink{class_singelton_wifi_connector_a06acb00fd99fc97855bd0f89b4a72eb7}{getInstance}}()\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ SingeltonWifiConnector\ instance;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_singelton_wifi_connector_a0a9ed8cb7a7aa893331fee5e0fa61a28}{MASTER\_SSID}}\ =\ \textcolor{stringliteral}{"{}MV-\/Glove"{}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_singelton_wifi_connector_aa8a580d4c2b472b41c01dadd261830a2}{SLAVE\_SSID}}\ =\ \textcolor{stringliteral}{"{}VS-\/Glove"{}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{class_singelton_wifi_connector_ab2c290a08198215b32aedd918afc8e79}{SLAVE\_MAC}}[6]\ =\ \{0x48,\ 0x55,\ 0x19,\ 0xF6,\ 0xC9,\ 0xB3\};}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

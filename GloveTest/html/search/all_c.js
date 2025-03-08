@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tabbingactuator_0',['TabbingActuator',['../class_tabbing_actuator.html',1,'TabbingActuator'],['../class_tabbing_actuator.html#a8f288eaa95d764f2a0ed88d0422b085b',1,'TabbingActuator::TabbingActuator()']]],
-  ['turnedon_1',['turnedOn',['../class_actuator.html#a0799af131c17c48143c785db7c20ba6d',1,'Actuator']]]
+  ['reordervectorbysensitivity_0',['reorderVectorBySensitivity',['../class_actuator_processing_order_mapper.html#a18a2d26d5ddd6bfffd9118c9eb39514b',1,'ActuatorProcessingOrderMapper']]],
+  ['resetallactuators_1',['resetAllActuators',['../class_glove_model.html#a5c73bff70dc88ee6be9c9da522c5427d',1,'GloveModel']]]
 ];

@@ -109,40 +109,85 @@ $(function(){initNavTree('class_singelton_glove_settings.html',''); initResizabl
   <div class="headertitle"><div class="title">SingeltonGloveSettings Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Singleton class that defines all the different glove settings.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_singelton_glove_settings_8h_source.html">SingeltonGloveSettings.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a584353d16a48c32eca3debbcb2fe78bb" id="r_a584353d16a48c32eca3debbcb2fe78bb"><td class="memItemLeft" align="right" valign="top"><a id="a584353d16a48c32eca3debbcb2fe78bb" name="a584353d16a48c32eca3debbcb2fe78bb"></a>
-static <a class="el" href="class_singelton_glove_settings.html">SingeltonGloveSettings</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+<tr class="memitem:a584353d16a48c32eca3debbcb2fe78bb" id="r_a584353d16a48c32eca3debbcb2fe78bb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_singelton_glove_settings.html">SingeltonGloveSettings</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a584353d16a48c32eca3debbcb2fe78bb">getInstance</a> ()</td></tr>
+<tr class="memdesc:a584353d16a48c32eca3debbcb2fe78bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the singleton instance of the <a class="el" href="class_singelton_glove_settings.html" title="Singleton class that defines all the different glove settings.">SingeltonGloveSettings</a> class.  <br /></td></tr>
 <tr class="separator:a584353d16a48c32eca3debbcb2fe78bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a954067e6498fd4eab73ad773eaa962b2" id="r_a954067e6498fd4eab73ad773eaa962b2"><td class="memItemLeft" align="right" valign="top"><a id="a954067e6498fd4eab73ad773eaa962b2" name="a954067e6498fd4eab73ad773eaa962b2"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>OST_OFFSET</b> = 10</td></tr>
+<tr class="memdesc:a954067e6498fd4eab73ad773eaa962b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The offset between activations in the OST encoding. <br /></td></tr>
 <tr class="separator:a954067e6498fd4eab73ad773eaa962b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3caea5672f2bfff2ccd796002b8a959" id="r_ac3caea5672f2bfff2ccd796002b8a959"><td class="memItemLeft" align="right" valign="top"><a id="ac3caea5672f2bfff2ccd796002b8a959" name="ac3caea5672f2bfff2ccd796002b8a959"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>DURATION</b> = 200</td></tr>
+<tr class="memdesc:ac3caea5672f2bfff2ccd796002b8a959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration of actuator activation in milliseconds. <br /></td></tr>
 <tr class="separator:ac3caea5672f2bfff2ccd796002b8a959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40d543fb1e8aefc46953a484c8891796" id="r_a40d543fb1e8aefc46953a484c8891796"><td class="memItemLeft" align="right" valign="top"><a id="a40d543fb1e8aefc46953a484c8891796" name="a40d543fb1e8aefc46953a484c8891796"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>PAUSE</b> = 2000</td></tr>
+<tr class="memdesc:a40d543fb1e8aefc46953a484c8891796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause time between two characters in milliseconds. <br /></td></tr>
 <tr class="separator:a40d543fb1e8aefc46953a484c8891796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5d31d549d52ce5b27f5e9f10d85df96" id="r_ac5d31d549d52ce5b27f5e9f10d85df96"><td class="memItemLeft" align="right" valign="top"><a id="ac5d31d549d52ce5b27f5e9f10d85df96" name="ac5d31d549d52ce5b27f5e9f10d85df96"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>NUM_ACTUATORS</b> = 3</td></tr>
+<tr class="memdesc:ac5d31d549d52ce5b27f5e9f10d85df96"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of actuators used in the glove. <br /></td></tr>
 <tr class="separator:ac5d31d549d52ce5b27f5e9f10d85df96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1263bb7daabbdec6e6b546bdb6d9151" id="r_ab1263bb7daabbdec6e6b546bdb6d9151"><td class="memItemLeft" align="right" valign="top"><a id="ab1263bb7daabbdec6e6b546bdb6d9151" name="ab1263bb7daabbdec6e6b546bdb6d9151"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>AUDIO_VIBRATION_OFFSET</b> = 100</td></tr>
-<tr class="separator:ab1263bb7daabbdec6e6b546bdb6d9151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3060a98d05902ff54e440a39987db28" id="r_ad3060a98d05902ff54e440a39987db28"><td class="memItemLeft" align="right" valign="top"><a id="ad3060a98d05902ff54e440a39987db28" name="ad3060a98d05902ff54e440a39987db28"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>AUDIO_STIMULI_OFFSET</b> = 100</td></tr>
+<tr class="memdesc:ad3060a98d05902ff54e440a39987db28"><td class="mdescLeft">&#160;</td><td class="mdescRight">The offset between audio stimuli and tactile stimuli in milliseconds. <br /></td></tr>
+<tr class="separator:ad3060a98d05902ff54e440a39987db28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa52d8445b131af1b0aa1c4d67de070dd" id="r_aa52d8445b131af1b0aa1c4d67de070dd"><td class="memItemLeft" align="right" valign="top"><a id="aa52d8445b131af1b0aa1c4d67de070dd" name="aa52d8445b131af1b0aa1c4d67de070dd"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>SEQ_OFFSET</b> = 1000</td></tr>
+<tr class="memdesc:aa52d8445b131af1b0aa1c4d67de070dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The offset between characters in the Sequential encoding scheme. <br /></td></tr>
 <tr class="separator:aa52d8445b131af1b0aa1c4d67de070dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4ef9ab090730555a7749dfc35f91429" id="r_ae4ef9ab090730555a7749dfc35f91429"><td class="memItemLeft" align="right" valign="top"><a id="ae4ef9ab090730555a7749dfc35f91429" name="ae4ef9ab090730555a7749dfc35f91429"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>studyOstRepititions</b> = 126</td></tr>
+<tr class="memdesc:ae4ef9ab090730555a7749dfc35f91429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of repetitions for the OST encoding in the study. <br /></td></tr>
 <tr class="separator:ae4ef9ab090730555a7749dfc35f91429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5454194c036108f6baa8230cb0e6e4b3" id="r_a5454194c036108f6baa8230cb0e6e4b3"><td class="memItemLeft" align="right" valign="top"><a id="a5454194c036108f6baa8230cb0e6e4b3" name="a5454194c036108f6baa8230cb0e6e4b3"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>studySeqRepititions</b> = 44</td></tr>
+<tr class="memdesc:a5454194c036108f6baa8230cb0e6e4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of repetitions for the Sequential encoding in the study. <br /></td></tr>
 <tr class="separator:a5454194c036108f6baa8230cb0e6e4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Singleton class that defines all the different glove settings. </p>
+<p>This class follows the Singleton pattern, ensuring that only one instance of the glove settings exists. It contains various constants that define the parameters for actuator timing, offsets, and repetitions related to the glove's operation. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a584353d16a48c32eca3debbcb2fe78bb" name="a584353d16a48c32eca3debbcb2fe78bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584353d16a48c32eca3debbcb2fe78bb">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_singelton_glove_settings.html">SingeltonGloveSettings</a> &amp; SingeltonGloveSettings::getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the singleton instance of the <a class="el" href="class_singelton_glove_settings.html" title="Singleton class that defines all the different glove settings.">SingeltonGloveSettings</a> class. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the single instance of <a class="el" href="class_singelton_glove_settings.html" title="Singleton class that defines all the different glove settings.">SingeltonGloveSettings</a>. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Settings/<a class="el" href="_singelton_glove_settings_8h_source.html">SingeltonGloveSettings.h</a></li>
 </ul>

@@ -1,24 +1,110 @@
 \doxysection{Wifi\+Master Class Reference}
 \hypertarget{class_wifi_master}{}\label{class_wifi_master}\index{WifiMaster@{WifiMaster}}
+
+
+\texorpdfstring{$<$}{<} Include for TCP server  
+
+
+
+
+{\ttfamily \#include $<$Wifi\+Master.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_wifi_master_a876448f0e9961a8fe7507af7f217704e}\label{class_wifi_master_a876448f0e9961a8fe7507af7f217704e} 
-{\bfseries Wifi\+Master} (\mbox{\hyperlink{class_glove_model}{Glove\+Model}} glove\+Model)
-\item 
-\Hypertarget{class_wifi_master_a6af2f57b21b59d68ea815e34958b11e4}\label{class_wifi_master_a6af2f57b21b59d68ea815e34958b11e4} 
-void {\bfseries setup} ()
-\item 
-\Hypertarget{class_wifi_master_abb8e9900b0f15ba1e58a627888551ddb}\label{class_wifi_master_abb8e9900b0f15ba1e58a627888551ddb} 
-void {\bfseries loop} ()
-\item 
-\Hypertarget{class_wifi_master_a845c8e9233414e5dca1331449a329288}\label{class_wifi_master_a845c8e9233414e5dca1331449a329288} 
-void {\bfseries send\+Vector\+To\+Slave} (const std\+::vector$<$ int $>$ \&reordered\+Values, const Chording\+Scheme status, int repeat)
-\item 
-\Hypertarget{class_wifi_master_aa53e80c635da0196f236f9419ba0655e}\label{class_wifi_master_aa53e80c635da0196f236f9419ba0655e} 
-void {\bfseries send\+Vector\+To\+Slave} (const std\+::vector$<$ int $>$ \&reordered\+Values, const Chording\+Scheme status)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_wifi_master_a876448f0e9961a8fe7507af7f217704e}{Wifi\+Master}} (\mbox{\hyperlink{class_glove_model}{Glove\+Model}} glove\+Model)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_wifi_master}{Wifi\+Master} object with a given glove model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wifi_master_a6af2f57b21b59d68ea815e34958b11e4}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Standard setup function for the Wi-\/\+Fi master. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wifi_master_abb8e9900b0f15ba1e58a627888551ddb}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Standard loop function for the Wi-\/\+Fi master. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wifi_master_a845c8e9233414e5dca1331449a329288}{send\+Vector\+To\+Slave}} (const std\+::vector$<$ int $>$ \&reordered\+Values, const Chording\+Scheme status, int repeat)
+\begin{DoxyCompactList}\small\item\em Sends a vector to the slave device, including a repeat count for longer patterns. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wifi_master_aa53e80c635da0196f236f9419ba0655e}{send\+Vector\+To\+Slave}} (const std\+::vector$<$ int $>$ \&reordered\+Values, const Chording\+Scheme status)
+\begin{DoxyCompactList}\small\item\em Sends a vector to the slave device for a short pattern (no repeat). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Include for TCP server 
+
+This class handles the communication and Wi-\/\+Fi functionality for the master device, including website setup, response handling, and communication between the master and slave devices. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_wifi_master_a876448f0e9961a8fe7507af7f217704e}\index{WifiMaster@{WifiMaster}!WifiMaster@{WifiMaster}}
+\index{WifiMaster@{WifiMaster}!WifiMaster@{WifiMaster}}
+\doxysubsubsection{\texorpdfstring{WifiMaster()}{WifiMaster()}}
+{\footnotesize\ttfamily \label{class_wifi_master_a876448f0e9961a8fe7507af7f217704e} 
+Wifi\+Master\+::\+Wifi\+Master (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_glove_model}{Glove\+Model}}}]{glove\+Model}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_wifi_master}{Wifi\+Master} object with a given glove model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em glove\+Model} & The glove model to be used for actuator control and pattern execution. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wifi_master_abb8e9900b0f15ba1e58a627888551ddb}\index{WifiMaster@{WifiMaster}!loop@{loop}}
+\index{loop@{loop}!WifiMaster@{WifiMaster}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{class_wifi_master_abb8e9900b0f15ba1e58a627888551ddb} 
+void Wifi\+Master\+::loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Standard loop function for the Wi-\/\+Fi master. 
+
+Continuously handles communication and controls actuators. \Hypertarget{class_wifi_master_aa53e80c635da0196f236f9419ba0655e}\index{WifiMaster@{WifiMaster}!sendVectorToSlave@{sendVectorToSlave}}
+\index{sendVectorToSlave@{sendVectorToSlave}!WifiMaster@{WifiMaster}}
+\doxysubsubsection{\texorpdfstring{sendVectorToSlave()}{sendVectorToSlave()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_wifi_master_aa53e80c635da0196f236f9419ba0655e} 
+void Wifi\+Master\+::send\+Vector\+To\+Slave (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{reordered\+Values}{, }\item[{const Chording\+Scheme}]{status}{}\end{DoxyParamCaption})}
+
+
+
+Sends a vector to the slave device for a short pattern (no repeat). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reordered\+Values} & The vector of reordered values representing the pattern. \\
+\hline
+{\em status} & The current chording scheme status. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_wifi_master_a845c8e9233414e5dca1331449a329288}\index{WifiMaster@{WifiMaster}!sendVectorToSlave@{sendVectorToSlave}}
+\index{sendVectorToSlave@{sendVectorToSlave}!WifiMaster@{WifiMaster}}
+\doxysubsubsection{\texorpdfstring{sendVectorToSlave()}{sendVectorToSlave()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_wifi_master_a845c8e9233414e5dca1331449a329288} 
+void Wifi\+Master\+::send\+Vector\+To\+Slave (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{reordered\+Values}{, }\item[{const Chording\+Scheme}]{status}{, }\item[{int}]{repeat}{}\end{DoxyParamCaption})}
+
+
+
+Sends a vector to the slave device, including a repeat count for longer patterns. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reordered\+Values} & The vector of reordered values representing the pattern. \\
+\hline
+{\em status} & The current chording scheme status. \\
+\hline
+{\em repeat} & The number of times to repeat the pattern if it is long. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_wifi_master_a6af2f57b21b59d68ea815e34958b11e4}\index{WifiMaster@{WifiMaster}!setup@{setup}}
+\index{setup@{setup}!WifiMaster@{WifiMaster}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{class_wifi_master_a6af2f57b21b59d68ea815e34958b11e4} 
+void Wifi\+Master\+::setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Standard setup function for the Wi-\/\+Fi master. 
+
+Sets up Wi-\/\+Fi, ESP-\/\+NOW, and the web server. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

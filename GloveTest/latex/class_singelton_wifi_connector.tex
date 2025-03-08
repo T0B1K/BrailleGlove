@@ -1,24 +1,65 @@
 \doxysection{Singelton\+Wifi\+Connector Class Reference}
 \hypertarget{class_singelton_wifi_connector}{}\label{class_singelton_wifi_connector}\index{SingeltonWifiConnector@{SingeltonWifiConnector}}
+
+
+Singleton class for Wi-\/\+Fi settings.  
+
+
+
+
+{\ttfamily \#include $<$Singelton\+Wifi\+Settings.\+h$>$}
+
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_singelton_wifi_connector_a06acb00fd99fc97855bd0f89b4a72eb7}\label{class_singelton_wifi_connector_a06acb00fd99fc97855bd0f89b4a72eb7} 
-static \mbox{\hyperlink{class_singelton_wifi_connector}{Singelton\+Wifi\+Connector}} \& {\bfseries get\+Instance} ()
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{class_singelton_wifi_connector}{Singelton\+Wifi\+Connector}} \& \mbox{\hyperlink{class_singelton_wifi_connector_a06acb00fd99fc97855bd0f89b4a72eb7}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of the \doxylink{class_singelton_wifi_connector}{Singelton\+Wifi\+Connector} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_singelton_wifi_connector_a0a9ed8cb7a7aa893331fee5e0fa61a28}\label{class_singelton_wifi_connector_a0a9ed8cb7a7aa893331fee5e0fa61a28} 
 const char \texorpdfstring{$\ast$}{*} {\bfseries MASTER\+\_\+\+SSID} = "{}MV-\/Glove"{}
-\item 
+\begin{DoxyCompactList}\small\item\em The SSID name for the master Wi-\/\+Fi network. \end{DoxyCompactList}\item 
 \Hypertarget{class_singelton_wifi_connector_aa8a580d4c2b472b41c01dadd261830a2}\label{class_singelton_wifi_connector_aa8a580d4c2b472b41c01dadd261830a2} 
 const char \texorpdfstring{$\ast$}{*} {\bfseries SLAVE\+\_\+\+SSID} = "{}VS-\/Glove"{}
-\item 
-\Hypertarget{class_singelton_wifi_connector_ab2c290a08198215b32aedd918afc8e79}\label{class_singelton_wifi_connector_ab2c290a08198215b32aedd918afc8e79} 
-const uint8\+\_\+t {\bfseries SLAVE\+\_\+\+MAC} \mbox{[}6\mbox{]} = \{0x48, 0x55, 0x19, 0x\+F6, 0x\+C9, 0x\+B3\}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The SSID name for the slave Wi-\/\+Fi network. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{class_singelton_wifi_connector_ab2c290a08198215b32aedd918afc8e79}{SLAVE\+\_\+\+MAC}} \mbox{[}6\mbox{]} = \{0x48, 0x55, 0x19, 0x\+F6, 0x\+C9, 0x\+B3\}
+\begin{DoxyCompactList}\small\item\em The MAC address of the slave device for the Wi-\/\+Fi connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Singleton class for Wi-\/\+Fi settings. 
+
+This class follows the Singleton pattern to ensure only one instance exists for managing Wi-\/\+Fi settings, including SSID names and MAC address for master and slave devices in the system. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_singelton_wifi_connector_a06acb00fd99fc97855bd0f89b4a72eb7}\index{SingeltonWifiConnector@{SingeltonWifiConnector}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!SingeltonWifiConnector@{SingeltonWifiConnector}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_singelton_wifi_connector_a06acb00fd99fc97855bd0f89b4a72eb7} 
+static \mbox{\hyperlink{class_singelton_wifi_connector}{Singelton\+Wifi\+Connector}} \& Singelton\+Wifi\+Connector\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the singleton instance of the \doxylink{class_singelton_wifi_connector}{Singelton\+Wifi\+Connector} class. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the single instance of \doxylink{class_singelton_wifi_connector}{Singelton\+Wifi\+Connector}. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_singelton_wifi_connector_ab2c290a08198215b32aedd918afc8e79}\index{SingeltonWifiConnector@{SingeltonWifiConnector}!SLAVE\_MAC@{SLAVE\_MAC}}
+\index{SLAVE\_MAC@{SLAVE\_MAC}!SingeltonWifiConnector@{SingeltonWifiConnector}}
+\doxysubsubsection{\texorpdfstring{SLAVE\_MAC}{SLAVE\_MAC}}
+{\footnotesize\ttfamily \label{class_singelton_wifi_connector_ab2c290a08198215b32aedd918afc8e79} 
+const uint8\+\_\+t Singelton\+Wifi\+Connector\+::\+SLAVE\+\_\+\+MAC\mbox{[}6\mbox{]} = \{0x48, 0x55, 0x19, 0x\+F6, 0x\+C9, 0x\+B3\}}
+
+
+
+The MAC address of the slave device for the Wi-\/\+Fi connection. 
+
+The MAC address is used to identify the slave device in the network. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

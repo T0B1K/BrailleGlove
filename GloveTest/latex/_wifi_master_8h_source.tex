@@ -17,72 +17,76 @@
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}../test/Mocks/ESPNOW\_Mock.h"{}}}
 \DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}../test/Mocks/ESP\_Mock.h"{}}}
 \DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{extern}\ LittleFSMock\ LittleFS;}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \#define\ File\ MockFile}}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{extern}\ MockWiFi\ WiFi;}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{extern}\ MockWifiEspNow\ WifiEspNow;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{extern}\ LittleFSMock\ LittleFS;\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \#define\ File\ MockFile\ }}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{extern}\ MockWiFi\ WiFi;\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{extern}\ MockWifiEspNow\ WifiEspNow;\ }
 \DoxyCodeLine{00020\ \ \ \ \ }
 \DoxyCodeLine{00021\ \textcolor{preprocessor}{\#else}}
 \DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \#include\ <ESP8266WiFi.h>}}
 \DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ \#include\ <ESP8266WebServer.h>}}
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ \#include\ <WiFiUdp.h>}}
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \#include\ <WiFiServer.h>}\ \ \textcolor{comment}{//\ Include\ for\ TCP\ server}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \#include\ <WiFiServer.h>}\ \ }
 \DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ \#include\ <LittleFS.h>}}
 \DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \#include\ <WifiEspNow.h>}}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <cstring>}}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <cstring>}}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}Mapper/BrailleMapper.h"{}}}
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}Mapper/ActuatorProcessingOrderMapper.h"{}}}
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}Models/GloveModel.h"{}}}
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}Models/EncodingScheme/ChordingScheme.h"{}}}
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}Models/HandEnum.h"{}}}
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}../Settings/SingeltonWifiSettings.h"{}}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }WifiMaster\ \{}
-\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00044\ \ \ \ \ WifiMaster(\mbox{\hyperlink{class_glove_model}{GloveModel}}\ gloveModel);}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ setup();}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ loop();}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ sendVectorToSlave(\textcolor{keyword}{const}\ std::vector<int>\ \&reorderedValues,\ \textcolor{keyword}{const}\ ChordingScheme\ status,\ \textcolor{keywordtype}{int}\ repeat);}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ sendVectorToSlave(\textcolor{keyword}{const}\ std::vector<int>\ \&reorderedValues,\ \textcolor{keyword}{const}\ ChordingScheme\ status);}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ idx;}
-\DoxyCodeLine{00054\ \ \ \ \ String\ pattern;}
-\DoxyCodeLine{00055\ \ \ \ \ ESP8266WebServer\ server;}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ View\ view;}}
-\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_braille_mapper}{BrailleMapper}}\ brailleMapper\ =\ \mbox{\hyperlink{class_braille_mapper}{BrailleMapper}}();}
-\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_actuator_processing_order_mapper}{ActuatorProcessingOrderMapper}}\ queue\ =\ \mbox{\hyperlink{class_actuator_processing_order_mapper}{ActuatorProcessingOrderMapper}}();}
-\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_glove_model}{GloveModel}}\ gloveModel;}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ DataSender\ dataSender;}}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ sendVectorToSlave(std::vector<int>\ reorderedValues);}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ sendIntegerToSlave(\textcolor{keywordtype}{int}\ singleValueToSend);}
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ setFrontend();}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ frontendSetPattern(String\ pattern,\ ChordingScheme\ status,\ \textcolor{keywordtype}{bool}\ longPattern);}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ printConnectedDevices();}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ frontendSetPattern(String\ pattern,\ ChordingScheme\ status);}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ computePatternAndDistribute(String\ text,\ ChordingScheme\ status,\ \textcolor{keywordtype}{bool}\ longPattern);}
-\DoxyCodeLine{00070\ \ \ \ \ std::vector<int>\ computePatternFromText(String\ text);}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ distributePatternToGloves(std::vector<int>\ pattern);}
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ startFunction();}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ frontendAjaxCall();}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ customDelay(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ timeInMs)\{\ \textcolor{comment}{//this\ is\ needed\ for\ wifi\ compatability}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ startMillis\ =\ millis();\ \ \textcolor{comment}{//\ Get\ the\ current\ time}}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (millis()\ -\/\ startMillis\ <\ timeInMs)\ \{\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ yield();\ \ \textcolor{comment}{//the\ programm\ doesn't\ stop}}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00080\ \ \ \ \ \}}
-\DoxyCodeLine{00081\ \};}
-\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WIFI\_MASTER\_H}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}Mapper/BrailleMapper.h"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}Mapper/ActuatorProcessingOrderMapper.h"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}Models/GloveModel.h"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}Models/EncodingScheme/ChordingScheme.h"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}Models/HandEnum.h"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}../Settings/SingeltonWifiSettings.h"{}}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_wifi_master_a876448f0e9961a8fe7507af7f217704e}{WifiMaster}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_wifi_master_a876448f0e9961a8fe7507af7f217704e}{WifiMaster}}(\mbox{\hyperlink{class_glove_model}{GloveModel}}\ gloveModel);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wifi_master_a6af2f57b21b59d68ea815e34958b11e4}{setup}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wifi_master_abb8e9900b0f15ba1e58a627888551ddb}{loop}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wifi_master_a845c8e9233414e5dca1331449a329288}{sendVectorToSlave}}(\textcolor{keyword}{const}\ std::vector<int>\ \&reorderedValues,\ \textcolor{keyword}{const}\ ChordingScheme\ status,\ \textcolor{keywordtype}{int}\ repeat);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wifi_master_aa53e80c635da0196f236f9419ba0655e}{sendVectorToSlave}}(\textcolor{keyword}{const}\ std::vector<int>\ \&reorderedValues,\ \textcolor{keyword}{const}\ ChordingScheme\ status);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ idx;\ }
+\DoxyCodeLine{00087\ \ \ \ \ String\ pattern;\ }
+\DoxyCodeLine{00088\ \ \ \ \ ESP8266WebServer\ server;\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{class_braille_mapper}{BrailleMapper}}\ brailleMapper\ =\ \mbox{\hyperlink{class_braille_mapper}{BrailleMapper}}();\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_actuator_processing_order_mapper}{ActuatorProcessingOrderMapper}}\ queue\ =\ \mbox{\hyperlink{class_actuator_processing_order_mapper}{ActuatorProcessingOrderMapper}}();\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_glove_model}{GloveModel}}\ gloveModel;\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ setupWifi();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ setupESPNow();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_wifi_master_a845c8e9233414e5dca1331449a329288}{sendVectorToSlave}}(std::vector<int>\ reorderedValues);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ sendIntegerToSlave(\textcolor{keywordtype}{int}\ singleValueToSend);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ setFrontend();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ frontendSetPattern(String\ pattern,\ ChordingScheme\ status,\ \textcolor{keywordtype}{bool}\ longPattern);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ frontendSetPattern(String\ pattern,\ ChordingScheme\ status);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ computePatternAndDistribute(String\ text,\ ChordingScheme\ status,\ \textcolor{keywordtype}{bool}\ longPattern);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00155\ \ \ \ \ std::vector<int>\ computePatternFromText(String\ text);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ distributePatternToGloves(std::vector<int>\ pattern);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ frontendAjaxCall();}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ customDelay(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ timeInMs);}
+\DoxyCodeLine{00175\ \};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WIFI\_MASTER\_H}}
 
 \end{DoxyCode}

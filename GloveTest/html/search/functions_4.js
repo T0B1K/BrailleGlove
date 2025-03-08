@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getbraillehash_0',['getBrailleHash',['../class_braille_mapper.html#afed81f832290536aeed92ceca672c7a6',1,'BrailleMapper']]]
+  ['executepatternat_0',['executePatternAt',['../class_glove_model.html#aff9e79269bfb75e21f6e5f10999059b5',1,'GloveModel']]]
 ];

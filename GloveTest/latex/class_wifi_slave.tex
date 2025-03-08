@@ -1,27 +1,121 @@
 \doxysection{Wifi\+Slave Class Reference}
 \hypertarget{class_wifi_slave}{}\label{class_wifi_slave}\index{WifiSlave@{WifiSlave}}
+
+
+\texorpdfstring{$<$}{<} Include for TCP server  
+
+
+
+
+{\ttfamily \#include $<$Wifi\+Slave.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_wifi_slave_accb0ae50c20f8d86d536c12a433b5d6b}\label{class_wifi_slave_accb0ae50c20f8d86d536c12a433b5d6b} 
-{\bfseries Wifi\+Slave} (\mbox{\hyperlink{class_glove_model}{Glove\+Model}} glove\+Model)
-\item 
-\Hypertarget{class_wifi_slave_a8eeaf49d3a774aca1dfd193f733f13a0}\label{class_wifi_slave_a8eeaf49d3a774aca1dfd193f733f13a0} 
-void {\bfseries setup} ()
-\item 
-\Hypertarget{class_wifi_slave_ad57b76e1bee099f516db680bfba4dcab}\label{class_wifi_slave_ad57b76e1bee099f516db680bfba4dcab} 
-void {\bfseries loop} ()
-\item 
-\Hypertarget{class_wifi_slave_a1c6fdf959891a70bd88dde5f910c44eb}\label{class_wifi_slave_a1c6fdf959891a70bd88dde5f910c44eb} 
-void {\bfseries process\+Message} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}mac, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, size\+\_\+t count)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_wifi_slave_accb0ae50c20f8d86d536c12a433b5d6b}{Wifi\+Slave}} (\mbox{\hyperlink{class_glove_model}{Glove\+Model}} glove\+Model)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_wifi_slave}{Wifi\+Slave} object with a given glove model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wifi_slave_a8eeaf49d3a774aca1dfd193f733f13a0}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Standard setup function for the Wi-\/\+Fi slave. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wifi_slave_ad57b76e1bee099f516db680bfba4dcab}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Standard loop function for the Wi-\/\+Fi slave. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wifi_slave_a1c6fdf959891a70bd88dde5f910c44eb}{process\+Message}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}mac, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Processes the received message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_wifi_slave_aa325ba0c45adfce45b094dc2c7015756}\label{class_wifi_slave_aa325ba0c45adfce45b094dc2c7015756} 
-static void {\bfseries on\+Receive\+Callback} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}mac, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, size\+\_\+t count, void \texorpdfstring{$\ast$}{*}arg)
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_wifi_slave_aa325ba0c45adfce45b094dc2c7015756}{on\+Receive\+Callback}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}mac, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, size\+\_\+t count, void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em Callback function for handling received data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Include for TCP server 
+
+This class defines the behavior of a Wi\+Fi slave device, including receiving data via Wi-\/\+Fi and processing it to control actuators. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_wifi_slave_accb0ae50c20f8d86d536c12a433b5d6b}\index{WifiSlave@{WifiSlave}!WifiSlave@{WifiSlave}}
+\index{WifiSlave@{WifiSlave}!WifiSlave@{WifiSlave}}
+\doxysubsubsection{\texorpdfstring{WifiSlave()}{WifiSlave()}}
+{\footnotesize\ttfamily \label{class_wifi_slave_accb0ae50c20f8d86d536c12a433b5d6b} 
+Wifi\+Slave\+::\+Wifi\+Slave (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_glove_model}{Glove\+Model}}}]{glove\+Model}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_wifi_slave}{Wifi\+Slave} object with a given glove model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em glove\+Model} & The glove model to be used for actuator control and pattern execution. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wifi_slave_ad57b76e1bee099f516db680bfba4dcab}\index{WifiSlave@{WifiSlave}!loop@{loop}}
+\index{loop@{loop}!WifiSlave@{WifiSlave}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily \label{class_wifi_slave_ad57b76e1bee099f516db680bfba4dcab} 
+void Wifi\+Slave\+::loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Standard loop function for the Wi-\/\+Fi slave. 
+
+Continuously handles incoming data and controls the actuators accordingly. \Hypertarget{class_wifi_slave_aa325ba0c45adfce45b094dc2c7015756}\index{WifiSlave@{WifiSlave}!onReceiveCallback@{onReceiveCallback}}
+\index{onReceiveCallback@{onReceiveCallback}!WifiSlave@{WifiSlave}}
+\doxysubsubsection{\texorpdfstring{onReceiveCallback()}{onReceiveCallback()}}
+{\footnotesize\ttfamily \label{class_wifi_slave_aa325ba0c45adfce45b094dc2c7015756} 
+void Wifi\+Slave\+::on\+Receive\+Callback (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{mac}{, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{size\+\_\+t}]{count}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{arg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Callback function for handling received data. 
+
+This function is called when data is received via Wi-\/\+Fi. It identifies the type of data and processes it accordingly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mac} & The MAC address of the sender. \\
+\hline
+{\em buf} & The received data buffer. \\
+\hline
+{\em count} & The number of bytes received. \\
+\hline
+{\em arg} & Additional argument passed to the callback (not used here). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_wifi_slave_a1c6fdf959891a70bd88dde5f910c44eb}\index{WifiSlave@{WifiSlave}!processMessage@{processMessage}}
+\index{processMessage@{processMessage}!WifiSlave@{WifiSlave}}
+\doxysubsubsection{\texorpdfstring{processMessage()}{processMessage()}}
+{\footnotesize\ttfamily \label{class_wifi_slave_a1c6fdf959891a70bd88dde5f910c44eb} 
+void Wifi\+Slave\+::process\+Message (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{mac}{, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{size\+\_\+t}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Processes the received message. 
+
+This function processes the message and takes the appropriate actions based on the content of the message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mac} & The MAC address of the sender. \\
+\hline
+{\em buf} & The received data buffer. \\
+\hline
+{\em count} & The number of bytes received. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_wifi_slave_a8eeaf49d3a774aca1dfd193f733f13a0}\index{WifiSlave@{WifiSlave}!setup@{setup}}
+\index{setup@{setup}!WifiSlave@{WifiSlave}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily \label{class_wifi_slave_a8eeaf49d3a774aca1dfd193f733f13a0} 
+void Wifi\+Slave\+::setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Standard setup function for the Wi-\/\+Fi slave. 
+
+Initializes necessary components for Wi-\/\+Fi communication and the glove model. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

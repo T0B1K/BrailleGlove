@@ -1,38 +1,67 @@
 \doxysection{Singelton\+Glove\+Settings Class Reference}
 \hypertarget{class_singelton_glove_settings}{}\label{class_singelton_glove_settings}\index{SingeltonGloveSettings@{SingeltonGloveSettings}}
+
+
+Singleton class that defines all the different glove settings.  
+
+
+
+
+{\ttfamily \#include $<$Singelton\+Glove\+Settings.\+h$>$}
+
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb}\label{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb} 
-static \mbox{\hyperlink{class_singelton_glove_settings}{Singelton\+Glove\+Settings}} \& {\bfseries get\+Instance} ()
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{class_singelton_glove_settings}{Singelton\+Glove\+Settings}} \& \mbox{\hyperlink{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of the \doxylink{class_singelton_glove_settings}{Singelton\+Glove\+Settings} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_singelton_glove_settings_a954067e6498fd4eab73ad773eaa962b2}\label{class_singelton_glove_settings_a954067e6498fd4eab73ad773eaa962b2} 
 const int {\bfseries OST\+\_\+\+OFFSET} = 10
-\item 
+\begin{DoxyCompactList}\small\item\em The offset between activations in the OST encoding. \end{DoxyCompactList}\item 
 \Hypertarget{class_singelton_glove_settings_ac3caea5672f2bfff2ccd796002b8a959}\label{class_singelton_glove_settings_ac3caea5672f2bfff2ccd796002b8a959} 
 const int {\bfseries DURATION} = 200
-\item 
+\begin{DoxyCompactList}\small\item\em Duration of actuator activation in milliseconds. \end{DoxyCompactList}\item 
 \Hypertarget{class_singelton_glove_settings_a40d543fb1e8aefc46953a484c8891796}\label{class_singelton_glove_settings_a40d543fb1e8aefc46953a484c8891796} 
 const int {\bfseries PAUSE} = 2000
-\item 
+\begin{DoxyCompactList}\small\item\em Pause time between two characters in milliseconds. \end{DoxyCompactList}\item 
 \Hypertarget{class_singelton_glove_settings_ac5d31d549d52ce5b27f5e9f10d85df96}\label{class_singelton_glove_settings_ac5d31d549d52ce5b27f5e9f10d85df96} 
 const int {\bfseries NUM\+\_\+\+ACTUATORS} = 3
-\item 
-\Hypertarget{class_singelton_glove_settings_ab1263bb7daabbdec6e6b546bdb6d9151}\label{class_singelton_glove_settings_ab1263bb7daabbdec6e6b546bdb6d9151} 
-const int {\bfseries AUDIO\+\_\+\+VIBRATION\+\_\+\+OFFSET} = 100
-\item 
+\begin{DoxyCompactList}\small\item\em The number of actuators used in the glove. \end{DoxyCompactList}\item 
+\Hypertarget{class_singelton_glove_settings_ad3060a98d05902ff54e440a39987db28}\label{class_singelton_glove_settings_ad3060a98d05902ff54e440a39987db28} 
+const int {\bfseries AUDIO\+\_\+\+STIMULI\+\_\+\+OFFSET} = 100
+\begin{DoxyCompactList}\small\item\em The offset between audio stimuli and tactile stimuli in milliseconds. \end{DoxyCompactList}\item 
 \Hypertarget{class_singelton_glove_settings_aa52d8445b131af1b0aa1c4d67de070dd}\label{class_singelton_glove_settings_aa52d8445b131af1b0aa1c4d67de070dd} 
 const int {\bfseries SEQ\+\_\+\+OFFSET} = 1000
-\item 
+\begin{DoxyCompactList}\small\item\em The offset between characters in the Sequential encoding scheme. \end{DoxyCompactList}\item 
 \Hypertarget{class_singelton_glove_settings_ae4ef9ab090730555a7749dfc35f91429}\label{class_singelton_glove_settings_ae4ef9ab090730555a7749dfc35f91429} 
 const int {\bfseries study\+Ost\+Repititions} = 126
-\item 
+\begin{DoxyCompactList}\small\item\em Number of repetitions for the OST encoding in the study. \end{DoxyCompactList}\item 
 \Hypertarget{class_singelton_glove_settings_a5454194c036108f6baa8230cb0e6e4b3}\label{class_singelton_glove_settings_a5454194c036108f6baa8230cb0e6e4b3} 
 const int {\bfseries study\+Seq\+Repititions} = 44
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Number of repetitions for the Sequential encoding in the study. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton class that defines all the different glove settings. 
+
+This class follows the Singleton pattern, ensuring that only one instance of the glove settings exists. It contains various constants that define the parameters for actuator timing, offsets, and repetitions related to the glove\textquotesingle{}s operation. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb}\index{SingeltonGloveSettings@{SingeltonGloveSettings}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!SingeltonGloveSettings@{SingeltonGloveSettings}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb} 
+static \mbox{\hyperlink{class_singelton_glove_settings}{Singelton\+Glove\+Settings}} \& Singelton\+Glove\+Settings\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the singleton instance of the \doxylink{class_singelton_glove_settings}{Singelton\+Glove\+Settings} class. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the single instance of \doxylink{class_singelton_glove_settings}{Singelton\+Glove\+Settings}. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

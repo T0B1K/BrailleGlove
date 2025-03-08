@@ -19,79 +19,79 @@
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}./EncodingScheme/SequentialEncoding.h"{}}}
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}./EncodingScheme/OSTEncoding.h"{}}}
 \DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }GloveModel\ \{}
-\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_actuator}{Actuator}}*\ actuators[3];}
-\DoxyCodeLine{00021\ \ \ \ \ Hand\ hand;}
-\DoxyCodeLine{00022\ \ \ \ \ std::vector<int>\ values;}
-\DoxyCodeLine{00023\ \ \ \ \ ChordingScheme\ playMode;\ }
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \ \ GloveModel(Hand\ hand,\ \mbox{\hyperlink{class_actuator}{Actuator}}\&\ actuator1,\ \mbox{\hyperlink{class_actuator}{Actuator}}\&\ actuator2,\ \mbox{\hyperlink{class_actuator}{Actuator}}\&\ actuator3)\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ actuators[0]\ =\ \&actuator1;}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ actuators[1]\ =\ \&actuator2;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ actuators[2]\ =\ \&actuator3;}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ this-\/>hand\ =\ hand;}
-\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_glove_model_a848359362d349be0cd1baeba3d93cb95}{GloveModel}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_actuator}{Actuator}}*\ actuators[3];\ }
+\DoxyCodeLine{00029\ \ \ \ \ Hand\ hand;\ }
+\DoxyCodeLine{00030\ \ \ \ \ std::vector<int>\ values;\ }
+\DoxyCodeLine{00031\ \ \ \ \ ChordingScheme\ playMode;\ }
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ resetAllActuators()\ \{}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ SingeltonGloveSettings::getInstance().NUM\_ACTUATORS;\ i++)\ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (actuators[i]\ !=\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actuators[i]-\/>deactivate();}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00039\ \ \ \ \ \}}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ executePatternAt(\textcolor{keywordtype}{int}\ index)\ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ resetAllActuators();}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ vibrateOnNumber(values[index]);}
-\DoxyCodeLine{00044\ \ \ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ pauseBetweenLetters()\{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(SingeltonGloveSettings::getInstance().DURATION);}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ resetAllActuators();}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(SingeltonGloveSettings::getInstance().PAUSE);}
-\DoxyCodeLine{00050\ \ \ \ \ \}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ vibrateOnNumber(\textcolor{keywordtype}{int}\ number)\ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (number\ <\ 1)\ \{\ \ \ \textcolor{comment}{//\ -\/1\ is\ a\ pause,\ so\ reset\ every\ actuator}}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ pauseBetweenLetters();}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (number\ >\ 0)\ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lastDigit\ =\ number\ \%\ 10;}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ number\ =\ (int)number\ /\ 10;}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playMode\ ==\ SEQUENTIAL\_ENCODING)\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sequential_encoding_aeba855f97fe8da394bc3eff8b68e2601}{SequentialEncoding::handle}}(lastDigit,\ actuators,\ hand);}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_o_s_t_encoding_a9c02514923fe4b6c76b6891b97ffe0ab}{OSTEncoding::handle}}(lastDigit,\ actuators,\ hand);}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(playMode\ ==\ OST\_ENCODING)\{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(SingeltonGloveSettings::getInstance().DURATION);}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ resetAllActuators();}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(SingeltonGloveSettings::getInstance().PAUSE);}
-\DoxyCodeLine{00072\ \ \ \ \ \}}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ setPattern(std::vector<int>\ newValues)\ \{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ values\ =\ newValues;}
-\DoxyCodeLine{00076\ \ \ \ \ \}}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ std::vector<int>\ getPattern()\ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ values;}
-\DoxyCodeLine{00080\ \ \ \ \ \}}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ getPatternLength()\ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ values.size();}
-\DoxyCodeLine{00084\ \ \ \ \ \}}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ setChordMode(ChordingScheme\ chordMode)\ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ playMode\ =\ chordMode;}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \};}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_glove_model_a848359362d349be0cd1baeba3d93cb95}{GloveModel}}(Hand\ hand,\ \mbox{\hyperlink{class_actuator}{Actuator}}\&\ actuator1,\ \mbox{\hyperlink{class_actuator}{Actuator}}\&\ actuator2,\ \mbox{\hyperlink{class_actuator}{Actuator}}\&\ actuator3)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ actuators[0]\ =\ \&actuator1;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ actuators[1]\ =\ \&actuator2;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ actuators[2]\ =\ \&actuator3;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ this-\/>hand\ =\ hand;}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_glove_model_a5c73bff70dc88ee6be9c9da522c5427d}{resetAllActuators}}()\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb}{SingeltonGloveSettings::getInstance}}().\mbox{\hyperlink{class_singelton_glove_settings_ac5d31d549d52ce5b27f5e9f10d85df96}{NUM\_ACTUATORS}};\ i++)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (actuators[i]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actuators[i]-\/>deactivate();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_glove_model_aff9e79269bfb75e21f6e5f10999059b5}{executePatternAt}}(\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_glove_model_a5c73bff70dc88ee6be9c9da522c5427d}{resetAllActuators}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_glove_model_ab20bf4ce393260da1e59c91ecf8ec11d}{activateOnNumber}}(values[index]);}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_glove_model_ad3d37890e4554c09985a66f77ad15653}{pauseBetweenLetters}}()\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(\mbox{\hyperlink{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb}{SingeltonGloveSettings::getInstance}}().DURATION);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_glove_model_a5c73bff70dc88ee6be9c9da522c5427d}{resetAllActuators}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(\mbox{\hyperlink{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb}{SingeltonGloveSettings::getInstance}}().PAUSE);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_glove_model_ab20bf4ce393260da1e59c91ecf8ec11d}{activateOnNumber}}(\textcolor{keywordtype}{int}\ number)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (number\ <\ 1)\ \{\ \ \ \textcolor{comment}{//\ -\/1\ is\ a\ pause,\ so\ reset\ every\ actuator}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_glove_model_ad3d37890e4554c09985a66f77ad15653}{pauseBetweenLetters}}();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (number\ >\ 0)\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lastDigit\ =\ number\ \%\ 10;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ number\ =\ (int)number\ /\ 10;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playMode\ ==\ SEQUENTIAL\_ENCODING)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_sequential_encoding_aeba855f97fe8da394bc3eff8b68e2601}{SequentialEncoding::handle}}(lastDigit,\ actuators,\ hand);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_o_s_t_encoding_a9c02514923fe4b6c76b6891b97ffe0ab}{OSTEncoding::handle}}(lastDigit,\ actuators,\ hand);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playMode\ ==\ OST\_ENCODING)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(\mbox{\hyperlink{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb}{SingeltonGloveSettings::getInstance}}().DURATION);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_glove_model_a5c73bff70dc88ee6be9c9da522c5427d}{resetAllActuators}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_encoding_aa4e4b73efee494981d692f3a35bab25b}{SequentialEncoding::customDelay}}(\mbox{\hyperlink{class_singelton_glove_settings_a584353d16a48c32eca3debbcb2fe78bb}{SingeltonGloveSettings::getInstance}}().PAUSE);}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_glove_model_a099a674368ef9cd54123a11519cbf69d}{setPattern}}(std::vector<int>\ newValues)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ values\ =\ newValues;}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00135\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_glove_model_a219a693928bbb483ab0b860effe042aa}{getPattern}}()\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ values;}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_glove_model_ae6a2237c453d9c0afc40ce90dc74d4e7}{getPatternLength}}()\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ values.size();}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_glove_model_a12d78b12d28cff117c287d6c21955ec8}{setChordMode}}(ChordingScheme\ chordMode)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ playMode\ =\ chordMode;}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

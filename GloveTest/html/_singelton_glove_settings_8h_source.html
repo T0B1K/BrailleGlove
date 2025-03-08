@@ -107,37 +107,52 @@ $(function(){initNavTree('_singelton_glove_settings_8h_source.html',''); initRes
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SINGELTON_GLOVE_SETTINGS</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SINGELTON_GLOVE_SETTINGS</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html">    5</a></span><span class="keyword">class </span>SingeltonGloveSettings {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        SingeltonGloveSettings() {}</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        SingeltonGloveSettings(<span class="keyword">const</span> SingeltonGloveSettings&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> SingeltonGloveSettings&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">static</span> SingeltonGloveSettings&amp; getInstance() {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keyword">static</span> SingeltonGloveSettings instance;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keywordflow">return</span> instance;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="comment">//TODO change settings accordingly</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> OST_OFFSET = 10;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> DURATION = 200;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> PAUSE = 2000;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> NUM_ACTUATORS = 3;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> AUDIO_VIBRATION_OFFSET = 100;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> SEQ_OFFSET = 1000;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> studyOstRepititions = 126;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> studySeqRepititions = 44;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
-</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html">   12</a></span><span class="keyword">class </span>SingeltonGloveSettings {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    SingeltonGloveSettings() {}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    SingeltonGloveSettings(<span class="keyword">const</span> SingeltonGloveSettings&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> operator=(<span class="keyword">const</span> SingeltonGloveSettings&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html#a584353d16a48c32eca3debbcb2fe78bb">   36</a></span>    <span class="keyword">static</span> SingeltonGloveSettings&amp; <a class="code hl_function" href="class_singelton_glove_settings.html#a584353d16a48c32eca3debbcb2fe78bb">getInstance</a>() {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">static</span> SingeltonGloveSettings instance;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> instance;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html#a954067e6498fd4eab73ad773eaa962b2">   42</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_singelton_glove_settings.html#a954067e6498fd4eab73ad773eaa962b2">OST_OFFSET</a> = 10;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html#ac3caea5672f2bfff2ccd796002b8a959">   45</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_singelton_glove_settings.html#ac3caea5672f2bfff2ccd796002b8a959">DURATION</a> = 200;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html#a40d543fb1e8aefc46953a484c8891796">   48</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_singelton_glove_settings.html#a40d543fb1e8aefc46953a484c8891796">PAUSE</a> = 2000;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html#ac5d31d549d52ce5b27f5e9f10d85df96">   51</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_singelton_glove_settings.html#ac5d31d549d52ce5b27f5e9f10d85df96">NUM_ACTUATORS</a> = 3;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html#ad3060a98d05902ff54e440a39987db28">   54</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_singelton_glove_settings.html#ad3060a98d05902ff54e440a39987db28">AUDIO_STIMULI_OFFSET</a> = 100;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html#aa52d8445b131af1b0aa1c4d67de070dd">   57</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_singelton_glove_settings.html#aa52d8445b131af1b0aa1c4d67de070dd">SEQ_OFFSET</a> = 1000;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html#ae4ef9ab090730555a7749dfc35f91429">   60</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_singelton_glove_settings.html#ae4ef9ab090730555a7749dfc35f91429">studyOstRepititions</a> = 126;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_singelton_glove_settings.html#a5454194c036108f6baa8230cb0e6e4b3">   63</a></span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_singelton_glove_settings.html#a5454194c036108f6baa8230cb0e6e4b3">studySeqRepititions</a> = 44;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_singelton_glove_settings_html_a40d543fb1e8aefc46953a484c8891796"><div class="ttname"><a href="class_singelton_glove_settings.html#a40d543fb1e8aefc46953a484c8891796">SingeltonGloveSettings::PAUSE</a></div><div class="ttdeci">const int PAUSE</div><div class="ttdoc">Pause time between two characters in milliseconds.</div><div class="ttdef"><b>Definition</b> SingeltonGloveSettings.h:48</div></div>
+<div class="ttc" id="aclass_singelton_glove_settings_html_a5454194c036108f6baa8230cb0e6e4b3"><div class="ttname"><a href="class_singelton_glove_settings.html#a5454194c036108f6baa8230cb0e6e4b3">SingeltonGloveSettings::studySeqRepititions</a></div><div class="ttdeci">const int studySeqRepititions</div><div class="ttdoc">Number of repetitions for the Sequential encoding in the study.</div><div class="ttdef"><b>Definition</b> SingeltonGloveSettings.h:63</div></div>
+<div class="ttc" id="aclass_singelton_glove_settings_html_a584353d16a48c32eca3debbcb2fe78bb"><div class="ttname"><a href="class_singelton_glove_settings.html#a584353d16a48c32eca3debbcb2fe78bb">SingeltonGloveSettings::getInstance</a></div><div class="ttdeci">static SingeltonGloveSettings &amp; getInstance()</div><div class="ttdoc">Gets the singleton instance of the SingeltonGloveSettings class.</div><div class="ttdef"><b>Definition</b> SingeltonGloveSettings.h:36</div></div>
+<div class="ttc" id="aclass_singelton_glove_settings_html_a954067e6498fd4eab73ad773eaa962b2"><div class="ttname"><a href="class_singelton_glove_settings.html#a954067e6498fd4eab73ad773eaa962b2">SingeltonGloveSettings::OST_OFFSET</a></div><div class="ttdeci">const int OST_OFFSET</div><div class="ttdoc">The offset between activations in the OST encoding.</div><div class="ttdef"><b>Definition</b> SingeltonGloveSettings.h:42</div></div>
+<div class="ttc" id="aclass_singelton_glove_settings_html_aa52d8445b131af1b0aa1c4d67de070dd"><div class="ttname"><a href="class_singelton_glove_settings.html#aa52d8445b131af1b0aa1c4d67de070dd">SingeltonGloveSettings::SEQ_OFFSET</a></div><div class="ttdeci">const int SEQ_OFFSET</div><div class="ttdoc">The offset between characters in the Sequential encoding scheme.</div><div class="ttdef"><b>Definition</b> SingeltonGloveSettings.h:57</div></div>
+<div class="ttc" id="aclass_singelton_glove_settings_html_ac3caea5672f2bfff2ccd796002b8a959"><div class="ttname"><a href="class_singelton_glove_settings.html#ac3caea5672f2bfff2ccd796002b8a959">SingeltonGloveSettings::DURATION</a></div><div class="ttdeci">const int DURATION</div><div class="ttdoc">Duration of actuator activation in milliseconds.</div><div class="ttdef"><b>Definition</b> SingeltonGloveSettings.h:45</div></div>
+<div class="ttc" id="aclass_singelton_glove_settings_html_ac5d31d549d52ce5b27f5e9f10d85df96"><div class="ttname"><a href="class_singelton_glove_settings.html#ac5d31d549d52ce5b27f5e9f10d85df96">SingeltonGloveSettings::NUM_ACTUATORS</a></div><div class="ttdeci">const int NUM_ACTUATORS</div><div class="ttdoc">The number of actuators used in the glove.</div><div class="ttdef"><b>Definition</b> SingeltonGloveSettings.h:51</div></div>
+<div class="ttc" id="aclass_singelton_glove_settings_html_ad3060a98d05902ff54e440a39987db28"><div class="ttname"><a href="class_singelton_glove_settings.html#ad3060a98d05902ff54e440a39987db28">SingeltonGloveSettings::AUDIO_STIMULI_OFFSET</a></div><div class="ttdeci">const int AUDIO_STIMULI_OFFSET</div><div class="ttdoc">The offset between audio stimuli and tactile stimuli in milliseconds.</div><div class="ttdef"><b>Definition</b> SingeltonGloveSettings.h:54</div></div>
+<div class="ttc" id="aclass_singelton_glove_settings_html_ae4ef9ab090730555a7749dfc35f91429"><div class="ttname"><a href="class_singelton_glove_settings.html#ae4ef9ab090730555a7749dfc35f91429">SingeltonGloveSettings::studyOstRepititions</a></div><div class="ttdeci">const int studyOstRepititions</div><div class="ttdoc">Number of repetitions for the OST encoding in the study.</div><div class="ttdef"><b>Definition</b> SingeltonGloveSettings.h:60</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

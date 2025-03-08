@@ -118,8 +118,8 @@ $(function(){initNavTree('_tabbing_actuator_8h_source.html',''); initResizable(t
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_tabbing_actuator.html#a8f288eaa95d764f2a0ed88d0422b085b">   25</a></span>    <a class="code hl_function" href="class_tabbing_actuator.html#a8f288eaa95d764f2a0ed88d0422b085b">TabbingActuator</a>(<span class="keywordtype">int</span> <a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>) : <a class="code hl_function" href="class_actuator.html#adc053742bcd5d2671ee955fda7544539">Actuator</a>(<a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>, Stroking) {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        servo.attach(<a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>);  </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        servo.write(180);   </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        servo.attach(<a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        servo.write(180);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_variable" href="class_actuator.html#a0799af131c17c48143c785db7c20ba6d">turnedOn</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
 </div>
@@ -127,14 +127,14 @@ $(function(){initNavTree('_tabbing_actuator_8h_source.html',''); initResizable(t
 <div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_tabbing_actuator.html#a4bffd00dd034e3bfa073a6d435ddc038">   36</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_tabbing_actuator.html#a4bffd00dd034e3bfa073a6d435ddc038">activate</a>()<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_variable" href="class_actuator.html#a0799af131c17c48143c785db7c20ba6d">turnedOn</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        servo.write(90);  </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        servo.write(90);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
 <div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_tabbing_actuator.html#ad413c01a617efee167597f9a7ab59122">   46</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_tabbing_actuator.html#ad413c01a617efee167597f9a7ab59122">deactivate</a>()<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_variable" href="class_actuator.html#a0799af131c17c48143c785db7c20ba6d">turnedOn</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        servo.write(180);  </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        servo.write(180);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>

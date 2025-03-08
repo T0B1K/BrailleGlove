@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['turnedon_0',['turnedOn',['../class_actuator.html#a0799af131c17c48143c785db7c20ba6d',1,'Actuator']]]
+  ['master_5fssid_0',['MASTER_SSID',['../class_singelton_wifi_connector.html#a0a9ed8cb7a7aa893331fee5e0fa61a28',1,'SingeltonWifiConnector']]]
 ];

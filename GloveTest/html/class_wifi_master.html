@@ -108,25 +108,166 @@ $(function(){initNavTree('class_wifi_master.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">WifiMaster Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>&lt; Include for TCP server  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_wifi_master_8h_source.html">WifiMaster.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a876448f0e9961a8fe7507af7f217704e" id="r_a876448f0e9961a8fe7507af7f217704e"><td class="memItemLeft" align="right" valign="top"><a id="a876448f0e9961a8fe7507af7f217704e" name="a876448f0e9961a8fe7507af7f217704e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>WifiMaster</b> (<a class="el" href="class_glove_model.html">GloveModel</a> gloveModel)</td></tr>
+<tr class="memitem:a876448f0e9961a8fe7507af7f217704e" id="r_a876448f0e9961a8fe7507af7f217704e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a876448f0e9961a8fe7507af7f217704e">WifiMaster</a> (<a class="el" href="class_glove_model.html">GloveModel</a> gloveModel)</td></tr>
+<tr class="memdesc:a876448f0e9961a8fe7507af7f217704e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_wifi_master.html" title="&lt; Include for TCP server">WifiMaster</a> object with a given glove model.  <br /></td></tr>
 <tr class="separator:a876448f0e9961a8fe7507af7f217704e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6af2f57b21b59d68ea815e34958b11e4" id="r_a6af2f57b21b59d68ea815e34958b11e4"><td class="memItemLeft" align="right" valign="top"><a id="a6af2f57b21b59d68ea815e34958b11e4" name="a6af2f57b21b59d68ea815e34958b11e4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> ()</td></tr>
+<tr class="memitem:a6af2f57b21b59d68ea815e34958b11e4" id="r_a6af2f57b21b59d68ea815e34958b11e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6af2f57b21b59d68ea815e34958b11e4">setup</a> ()</td></tr>
+<tr class="memdesc:a6af2f57b21b59d68ea815e34958b11e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard setup function for the Wi-Fi master.  <br /></td></tr>
 <tr class="separator:a6af2f57b21b59d68ea815e34958b11e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb8e9900b0f15ba1e58a627888551ddb" id="r_abb8e9900b0f15ba1e58a627888551ddb"><td class="memItemLeft" align="right" valign="top"><a id="abb8e9900b0f15ba1e58a627888551ddb" name="abb8e9900b0f15ba1e58a627888551ddb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
+<tr class="memitem:abb8e9900b0f15ba1e58a627888551ddb" id="r_abb8e9900b0f15ba1e58a627888551ddb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb8e9900b0f15ba1e58a627888551ddb">loop</a> ()</td></tr>
+<tr class="memdesc:abb8e9900b0f15ba1e58a627888551ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard loop function for the Wi-Fi master.  <br /></td></tr>
 <tr class="separator:abb8e9900b0f15ba1e58a627888551ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a845c8e9233414e5dca1331449a329288" id="r_a845c8e9233414e5dca1331449a329288"><td class="memItemLeft" align="right" valign="top"><a id="a845c8e9233414e5dca1331449a329288" name="a845c8e9233414e5dca1331449a329288"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendVectorToSlave</b> (const std::vector&lt; int &gt; &amp;reorderedValues, const ChordingScheme status, int repeat)</td></tr>
+<tr class="memitem:a845c8e9233414e5dca1331449a329288" id="r_a845c8e9233414e5dca1331449a329288"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a845c8e9233414e5dca1331449a329288">sendVectorToSlave</a> (const std::vector&lt; int &gt; &amp;reorderedValues, const ChordingScheme status, int repeat)</td></tr>
+<tr class="memdesc:a845c8e9233414e5dca1331449a329288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a vector to the slave device, including a repeat count for longer patterns.  <br /></td></tr>
 <tr class="separator:a845c8e9233414e5dca1331449a329288"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa53e80c635da0196f236f9419ba0655e" id="r_aa53e80c635da0196f236f9419ba0655e"><td class="memItemLeft" align="right" valign="top"><a id="aa53e80c635da0196f236f9419ba0655e" name="aa53e80c635da0196f236f9419ba0655e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendVectorToSlave</b> (const std::vector&lt; int &gt; &amp;reorderedValues, const ChordingScheme status)</td></tr>
+<tr class="memitem:aa53e80c635da0196f236f9419ba0655e" id="r_aa53e80c635da0196f236f9419ba0655e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa53e80c635da0196f236f9419ba0655e">sendVectorToSlave</a> (const std::vector&lt; int &gt; &amp;reorderedValues, const ChordingScheme status)</td></tr>
+<tr class="memdesc:aa53e80c635da0196f236f9419ba0655e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a vector to the slave device for a short pattern (no repeat).  <br /></td></tr>
 <tr class="separator:aa53e80c635da0196f236f9419ba0655e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>&lt; Include for TCP server </p>
+<p>This class handles the communication and Wi-Fi functionality for the master device, including website setup, response handling, and communication between the master and slave devices. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a876448f0e9961a8fe7507af7f217704e" name="a876448f0e9961a8fe7507af7f217704e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a876448f0e9961a8fe7507af7f217704e">&#9670;&#160;</a></span>WifiMaster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WifiMaster::WifiMaster </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_glove_model.html">GloveModel</a></td>          <td class="paramname"><span class="paramname"><em>gloveModel</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_wifi_master.html" title="&lt; Include for TCP server">WifiMaster</a> object with a given glove model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gloveModel</td><td>The glove model to be used for actuator control and pattern execution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="abb8e9900b0f15ba1e58a627888551ddb" name="abb8e9900b0f15ba1e58a627888551ddb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8e9900b0f15ba1e58a627888551ddb">&#9670;&#160;</a></span>loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WifiMaster::loop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Standard loop function for the Wi-Fi master. </p>
+<p>Continuously handles communication and controls actuators. </p>
+
+</div>
+</div>
+<a id="aa53e80c635da0196f236f9419ba0655e" name="aa53e80c635da0196f236f9419ba0655e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa53e80c635da0196f236f9419ba0655e">&#9670;&#160;</a></span>sendVectorToSlave() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WifiMaster::sendVectorToSlave </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>reorderedValues</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ChordingScheme</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends a vector to the slave device for a short pattern (no repeat). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reorderedValues</td><td>The vector of reordered values representing the pattern. </td></tr>
+    <tr><td class="paramname">status</td><td>The current chording scheme status. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a845c8e9233414e5dca1331449a329288" name="a845c8e9233414e5dca1331449a329288"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a845c8e9233414e5dca1331449a329288">&#9670;&#160;</a></span>sendVectorToSlave() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WifiMaster::sendVectorToSlave </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>reorderedValues</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ChordingScheme</td>          <td class="paramname"><span class="paramname"><em>status</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>repeat</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends a vector to the slave device, including a repeat count for longer patterns. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reorderedValues</td><td>The vector of reordered values representing the pattern. </td></tr>
+    <tr><td class="paramname">status</td><td>The current chording scheme status. </td></tr>
+    <tr><td class="paramname">repeat</td><td>The number of times to repeat the pattern if it is long. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6af2f57b21b59d68ea815e34958b11e4" name="a6af2f57b21b59d68ea815e34958b11e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6af2f57b21b59d68ea815e34958b11e4">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WifiMaster::setup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Standard setup function for the Wi-Fi master. </p>
+<p>Sets up Wi-Fi, ESP-NOW, and the web server. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/Master/<a class="el" href="_wifi_master_8h_source.html">WifiMaster.h</a></li>
 <li>src/Master/<b>WifiMaster.cpp</b></li>

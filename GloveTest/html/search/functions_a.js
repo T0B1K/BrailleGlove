@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['validindex_0',['validIndex',['../class_encoding.html#a0879a5e46e610c98ef0619583d05f4b8',1,'Encoding']]],
-  ['vibrationactuator_1',['VibrationActuator',['../class_vibration_actuator.html#a33a4a3cb031beee1697e54d2f8d59fbc',1,'VibrationActuator']]]
+  ['reordervectorbysensitivity_0',['reorderVectorBySensitivity',['../class_actuator_processing_order_mapper.html#a18a2d26d5ddd6bfffd9118c9eb39514b',1,'ActuatorProcessingOrderMapper']]],
+  ['resetallactuators_1',['resetAllActuators',['../class_glove_model.html#a5c73bff70dc88ee6be9c9da522c5427d',1,'GloveModel']]]
 ];

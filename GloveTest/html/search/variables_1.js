@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pin_0',['pin',['../class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4',1,'Actuator']]]
+  ['duration_0',['DURATION',['../class_singelton_glove_settings.html#ac3caea5672f2bfff2ccd796002b8a959',1,'SingeltonGloveSettings']]]
 ];

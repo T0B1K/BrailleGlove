@@ -1,35 +1,185 @@
 \doxysection{Glove\+Model Class Reference}
 \hypertarget{class_glove_model}{}\label{class_glove_model}\index{GloveModel@{GloveModel}}
+
+
+Represents the glove model, simulating actuator behavior on a given hand.  
+
+
+
+
+{\ttfamily \#include $<$Glove\+Model.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_glove_model_a848359362d349be0cd1baeba3d93cb95}\label{class_glove_model_a848359362d349be0cd1baeba3d93cb95} 
-{\bfseries Glove\+Model} (Hand hand, \mbox{\hyperlink{class_actuator}{Actuator}} \&actuator1, \mbox{\hyperlink{class_actuator}{Actuator}} \&actuator2, \mbox{\hyperlink{class_actuator}{Actuator}} \&actuator3)
-\item 
-\Hypertarget{class_glove_model_a5c73bff70dc88ee6be9c9da522c5427d}\label{class_glove_model_a5c73bff70dc88ee6be9c9da522c5427d} 
-void {\bfseries reset\+All\+Actuators} ()
-\item 
-\Hypertarget{class_glove_model_aff9e79269bfb75e21f6e5f10999059b5}\label{class_glove_model_aff9e79269bfb75e21f6e5f10999059b5} 
-void {\bfseries execute\+Pattern\+At} (int index)
-\item 
-\Hypertarget{class_glove_model_ad3d37890e4554c09985a66f77ad15653}\label{class_glove_model_ad3d37890e4554c09985a66f77ad15653} 
-void {\bfseries pause\+Between\+Letters} ()
-\item 
-\Hypertarget{class_glove_model_a7df77a16f25bb3a71654b672dda4a8b7}\label{class_glove_model_a7df77a16f25bb3a71654b672dda4a8b7} 
-void {\bfseries vibrate\+On\+Number} (int number)
-\item 
-\Hypertarget{class_glove_model_a099a674368ef9cd54123a11519cbf69d}\label{class_glove_model_a099a674368ef9cd54123a11519cbf69d} 
-void {\bfseries set\+Pattern} (std\+::vector$<$ int $>$ new\+Values)
-\item 
-\Hypertarget{class_glove_model_a219a693928bbb483ab0b860effe042aa}\label{class_glove_model_a219a693928bbb483ab0b860effe042aa} 
-std\+::vector$<$ int $>$ {\bfseries get\+Pattern} ()
-\item 
-\Hypertarget{class_glove_model_ae6a2237c453d9c0afc40ce90dc74d4e7}\label{class_glove_model_ae6a2237c453d9c0afc40ce90dc74d4e7} 
-int {\bfseries get\+Pattern\+Length} ()
-\item 
-\Hypertarget{class_glove_model_a12d78b12d28cff117c287d6c21955ec8}\label{class_glove_model_a12d78b12d28cff117c287d6c21955ec8} 
-void {\bfseries set\+Chord\+Mode} (Chording\+Scheme chord\+Mode)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_glove_model_a848359362d349be0cd1baeba3d93cb95}{Glove\+Model}} (Hand hand, \mbox{\hyperlink{class_actuator}{Actuator}} \&actuator1, \mbox{\hyperlink{class_actuator}{Actuator}} \&actuator2, \mbox{\hyperlink{class_actuator}{Actuator}} \&actuator3)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_glove_model}{Glove\+Model} object with the given hand and actuators. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_glove_model_a5c73bff70dc88ee6be9c9da522c5427d}{reset\+All\+Actuators}} ()
+\begin{DoxyCompactList}\small\item\em Resets all actuators to their initial state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_glove_model_aff9e79269bfb75e21f6e5f10999059b5}{execute\+Pattern\+At}} (int index)
+\begin{DoxyCompactList}\small\item\em Executes a pattern of actuations at the specified index in the pattern. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_glove_model_ad3d37890e4554c09985a66f77ad15653}{pause\+Between\+Letters}} ()
+\begin{DoxyCompactList}\small\item\em Pauses between letters during a sequence of actuations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_glove_model_ab20bf4ce393260da1e59c91ecf8ec11d}{activate\+On\+Number}} (int number)
+\begin{DoxyCompactList}\small\item\em Activates the stimuli on a given number representing a specific actuator pattern. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_glove_model_a099a674368ef9cd54123a11519cbf69d}{set\+Pattern}} (std\+::vector$<$ int $>$ new\+Values)
+\begin{DoxyCompactList}\small\item\em Sets a new pattern of actuations to be played. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_glove_model_a219a693928bbb483ab0b860effe042aa}{get\+Pattern}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current pattern of actuations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_glove_model_ae6a2237c453d9c0afc40ce90dc74d4e7}{get\+Pattern\+Length}} ()
+\begin{DoxyCompactList}\small\item\em Returns the length of the current pattern. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_glove_model_a12d78b12d28cff117c287d6c21955ec8}{set\+Chord\+Mode}} (Chording\+Scheme chord\+Mode)
+\begin{DoxyCompactList}\small\item\em Sets the chording mode for the glove, either sequential or OST encoding. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the glove model, simulating actuator behavior on a given hand. 
+
+This class is used to simulate the actuations of actuators on a glove. It defines the pattern of actuations and the chording scheme (OST or sequential). The class also provides methods to control and reset actuators and manage the sequence of actuations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_glove_model_a848359362d349be0cd1baeba3d93cb95}\index{GloveModel@{GloveModel}!GloveModel@{GloveModel}}
+\index{GloveModel@{GloveModel}!GloveModel@{GloveModel}}
+\doxysubsubsection{\texorpdfstring{GloveModel()}{GloveModel()}}
+{\footnotesize\ttfamily \label{class_glove_model_a848359362d349be0cd1baeba3d93cb95} 
+Glove\+Model\+::\+Glove\+Model (\begin{DoxyParamCaption}\item[{Hand}]{hand}{, }\item[{\mbox{\hyperlink{class_actuator}{Actuator}} \&}]{actuator1}{, }\item[{\mbox{\hyperlink{class_actuator}{Actuator}} \&}]{actuator2}{, }\item[{\mbox{\hyperlink{class_actuator}{Actuator}} \&}]{actuator3}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{class_glove_model}{Glove\+Model} object with the given hand and actuators. 
+
+Initializes the glove with actuators and assigns the specified hand (left or right).
+
+
+\begin{DoxyParams}{Parameters}
+{\em hand} & The hand (left or right) of the glove. \\
+\hline
+{\em actuator1} & First actuator of the glove. \\
+\hline
+{\em actuator2} & Second actuator of the glove. \\
+\hline
+{\em actuator3} & Third actuator of the glove. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_glove_model_ab20bf4ce393260da1e59c91ecf8ec11d}\index{GloveModel@{GloveModel}!activateOnNumber@{activateOnNumber}}
+\index{activateOnNumber@{activateOnNumber}!GloveModel@{GloveModel}}
+\doxysubsubsection{\texorpdfstring{activateOnNumber()}{activateOnNumber()}}
+{\footnotesize\ttfamily \label{class_glove_model_ab20bf4ce393260da1e59c91ecf8ec11d} 
+void Glove\+Model\+::activate\+On\+Number (\begin{DoxyParamCaption}\item[{int}]{number}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Activates the stimuli on a given number representing a specific actuator pattern. 
+
+The method activates and deactivates actuators based on the given number and the selected encoding scheme (OST or sequential).
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The number representing the actuator pattern to be activated using the specific stimuli. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_glove_model_aff9e79269bfb75e21f6e5f10999059b5}\index{GloveModel@{GloveModel}!executePatternAt@{executePatternAt}}
+\index{executePatternAt@{executePatternAt}!GloveModel@{GloveModel}}
+\doxysubsubsection{\texorpdfstring{executePatternAt()}{executePatternAt()}}
+{\footnotesize\ttfamily \label{class_glove_model_aff9e79269bfb75e21f6e5f10999059b5} 
+void Glove\+Model\+::execute\+Pattern\+At (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Executes a pattern of actuations at the specified index in the pattern. 
+
+Resets all actuators and vibrates based on the pattern at the given index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the pattern to be executed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_glove_model_a219a693928bbb483ab0b860effe042aa}\index{GloveModel@{GloveModel}!getPattern@{getPattern}}
+\index{getPattern@{getPattern}!GloveModel@{GloveModel}}
+\doxysubsubsection{\texorpdfstring{getPattern()}{getPattern()}}
+{\footnotesize\ttfamily \label{class_glove_model_a219a693928bbb483ab0b860effe042aa} 
+std\+::vector$<$ int $>$ Glove\+Model\+::get\+Pattern (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the current pattern of actuations. 
+
+This method returns the current pattern of actuations that is set.
+
+\begin{DoxyReturn}{Returns}
+A vector containing the current pattern of actuations. 
+\end{DoxyReturn}
+\Hypertarget{class_glove_model_ae6a2237c453d9c0afc40ce90dc74d4e7}\index{GloveModel@{GloveModel}!getPatternLength@{getPatternLength}}
+\index{getPatternLength@{getPatternLength}!GloveModel@{GloveModel}}
+\doxysubsubsection{\texorpdfstring{getPatternLength()}{getPatternLength()}}
+{\footnotesize\ttfamily \label{class_glove_model_ae6a2237c453d9c0afc40ce90dc74d4e7} 
+int Glove\+Model\+::get\+Pattern\+Length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the length of the current pattern. 
+
+\begin{DoxyReturn}{Returns}
+The length of the current pattern. 
+\end{DoxyReturn}
+\Hypertarget{class_glove_model_ad3d37890e4554c09985a66f77ad15653}\index{GloveModel@{GloveModel}!pauseBetweenLetters@{pauseBetweenLetters}}
+\index{pauseBetweenLetters@{pauseBetweenLetters}!GloveModel@{GloveModel}}
+\doxysubsubsection{\texorpdfstring{pauseBetweenLetters()}{pauseBetweenLetters()}}
+{\footnotesize\ttfamily \label{class_glove_model_ad3d37890e4554c09985a66f77ad15653} 
+void Glove\+Model\+::pause\+Between\+Letters (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pauses between letters during a sequence of actuations. 
+
+This function applies a custom delay and resets all actuators after the delay. \Hypertarget{class_glove_model_a5c73bff70dc88ee6be9c9da522c5427d}\index{GloveModel@{GloveModel}!resetAllActuators@{resetAllActuators}}
+\index{resetAllActuators@{resetAllActuators}!GloveModel@{GloveModel}}
+\doxysubsubsection{\texorpdfstring{resetAllActuators()}{resetAllActuators()}}
+{\footnotesize\ttfamily \label{class_glove_model_a5c73bff70dc88ee6be9c9da522c5427d} 
+void Glove\+Model\+::reset\+All\+Actuators (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets all actuators to their initial state. 
+
+This method deactivates all actuators, ensuring that they start in the same condition. \Hypertarget{class_glove_model_a12d78b12d28cff117c287d6c21955ec8}\index{GloveModel@{GloveModel}!setChordMode@{setChordMode}}
+\index{setChordMode@{setChordMode}!GloveModel@{GloveModel}}
+\doxysubsubsection{\texorpdfstring{setChordMode()}{setChordMode()}}
+{\footnotesize\ttfamily \label{class_glove_model_a12d78b12d28cff117c287d6c21955ec8} 
+void Glove\+Model\+::set\+Chord\+Mode (\begin{DoxyParamCaption}\item[{Chording\+Scheme}]{chord\+Mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the chording mode for the glove, either sequential or OST encoding. 
+
+This method selects the chording mode (either sequential or OST) for the actuations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em chord\+Mode} & The desired chording scheme (SEQUENTIAL\+\_\+\+ENCODING or OST\+\_\+\+ENCODING). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_glove_model_a099a674368ef9cd54123a11519cbf69d}\index{GloveModel@{GloveModel}!setPattern@{setPattern}}
+\index{setPattern@{setPattern}!GloveModel@{GloveModel}}
+\doxysubsubsection{\texorpdfstring{setPattern()}{setPattern()}}
+{\footnotesize\ttfamily \label{class_glove_model_a099a674368ef9cd54123a11519cbf69d} 
+void Glove\+Model\+::set\+Pattern (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{new\+Values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets a new pattern of actuations to be played. 
+
+This method allows the user to define a new pattern of actuations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Values} & A vector containing the new pattern of actuations. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -108,37 +108,347 @@ $(function(){initNavTree('class_glove_model.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">GloveModel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents the glove model, simulating actuator behavior on a given hand.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_glove_model_8h_source.html">GloveModel.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a848359362d349be0cd1baeba3d93cb95" id="r_a848359362d349be0cd1baeba3d93cb95"><td class="memItemLeft" align="right" valign="top"><a id="a848359362d349be0cd1baeba3d93cb95" name="a848359362d349be0cd1baeba3d93cb95"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GloveModel</b> (Hand hand, <a class="el" href="class_actuator.html">Actuator</a> &amp;actuator1, <a class="el" href="class_actuator.html">Actuator</a> &amp;actuator2, <a class="el" href="class_actuator.html">Actuator</a> &amp;actuator3)</td></tr>
+<tr class="memitem:a848359362d349be0cd1baeba3d93cb95" id="r_a848359362d349be0cd1baeba3d93cb95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a848359362d349be0cd1baeba3d93cb95">GloveModel</a> (Hand hand, <a class="el" href="class_actuator.html">Actuator</a> &amp;actuator1, <a class="el" href="class_actuator.html">Actuator</a> &amp;actuator2, <a class="el" href="class_actuator.html">Actuator</a> &amp;actuator3)</td></tr>
+<tr class="memdesc:a848359362d349be0cd1baeba3d93cb95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_glove_model.html" title="Represents the glove model, simulating actuator behavior on a given hand.">GloveModel</a> object with the given hand and actuators.  <br /></td></tr>
 <tr class="separator:a848359362d349be0cd1baeba3d93cb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c73bff70dc88ee6be9c9da522c5427d" id="r_a5c73bff70dc88ee6be9c9da522c5427d"><td class="memItemLeft" align="right" valign="top"><a id="a5c73bff70dc88ee6be9c9da522c5427d" name="a5c73bff70dc88ee6be9c9da522c5427d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetAllActuators</b> ()</td></tr>
+<tr class="memitem:a5c73bff70dc88ee6be9c9da522c5427d" id="r_a5c73bff70dc88ee6be9c9da522c5427d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c73bff70dc88ee6be9c9da522c5427d">resetAllActuators</a> ()</td></tr>
+<tr class="memdesc:a5c73bff70dc88ee6be9c9da522c5427d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all actuators to their initial state.  <br /></td></tr>
 <tr class="separator:a5c73bff70dc88ee6be9c9da522c5427d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff9e79269bfb75e21f6e5f10999059b5" id="r_aff9e79269bfb75e21f6e5f10999059b5"><td class="memItemLeft" align="right" valign="top"><a id="aff9e79269bfb75e21f6e5f10999059b5" name="aff9e79269bfb75e21f6e5f10999059b5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>executePatternAt</b> (int index)</td></tr>
+<tr class="memitem:aff9e79269bfb75e21f6e5f10999059b5" id="r_aff9e79269bfb75e21f6e5f10999059b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff9e79269bfb75e21f6e5f10999059b5">executePatternAt</a> (int index)</td></tr>
+<tr class="memdesc:aff9e79269bfb75e21f6e5f10999059b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a pattern of actuations at the specified index in the pattern.  <br /></td></tr>
 <tr class="separator:aff9e79269bfb75e21f6e5f10999059b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3d37890e4554c09985a66f77ad15653" id="r_ad3d37890e4554c09985a66f77ad15653"><td class="memItemLeft" align="right" valign="top"><a id="ad3d37890e4554c09985a66f77ad15653" name="ad3d37890e4554c09985a66f77ad15653"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>pauseBetweenLetters</b> ()</td></tr>
+<tr class="memitem:ad3d37890e4554c09985a66f77ad15653" id="r_ad3d37890e4554c09985a66f77ad15653"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3d37890e4554c09985a66f77ad15653">pauseBetweenLetters</a> ()</td></tr>
+<tr class="memdesc:ad3d37890e4554c09985a66f77ad15653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses between letters during a sequence of actuations.  <br /></td></tr>
 <tr class="separator:ad3d37890e4554c09985a66f77ad15653"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7df77a16f25bb3a71654b672dda4a8b7" id="r_a7df77a16f25bb3a71654b672dda4a8b7"><td class="memItemLeft" align="right" valign="top"><a id="a7df77a16f25bb3a71654b672dda4a8b7" name="a7df77a16f25bb3a71654b672dda4a8b7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>vibrateOnNumber</b> (int number)</td></tr>
-<tr class="separator:a7df77a16f25bb3a71654b672dda4a8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a099a674368ef9cd54123a11519cbf69d" id="r_a099a674368ef9cd54123a11519cbf69d"><td class="memItemLeft" align="right" valign="top"><a id="a099a674368ef9cd54123a11519cbf69d" name="a099a674368ef9cd54123a11519cbf69d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPattern</b> (std::vector&lt; int &gt; newValues)</td></tr>
+<tr class="memitem:ab20bf4ce393260da1e59c91ecf8ec11d" id="r_ab20bf4ce393260da1e59c91ecf8ec11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab20bf4ce393260da1e59c91ecf8ec11d">activateOnNumber</a> (int number)</td></tr>
+<tr class="memdesc:ab20bf4ce393260da1e59c91ecf8ec11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the stimuli on a given number representing a specific actuator pattern.  <br /></td></tr>
+<tr class="separator:ab20bf4ce393260da1e59c91ecf8ec11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a099a674368ef9cd54123a11519cbf69d" id="r_a099a674368ef9cd54123a11519cbf69d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a099a674368ef9cd54123a11519cbf69d">setPattern</a> (std::vector&lt; int &gt; newValues)</td></tr>
+<tr class="memdesc:a099a674368ef9cd54123a11519cbf69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new pattern of actuations to be played.  <br /></td></tr>
 <tr class="separator:a099a674368ef9cd54123a11519cbf69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a219a693928bbb483ab0b860effe042aa" id="r_a219a693928bbb483ab0b860effe042aa"><td class="memItemLeft" align="right" valign="top"><a id="a219a693928bbb483ab0b860effe042aa" name="a219a693928bbb483ab0b860effe042aa"></a>
-std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPattern</b> ()</td></tr>
+<tr class="memitem:a219a693928bbb483ab0b860effe042aa" id="r_a219a693928bbb483ab0b860effe042aa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a219a693928bbb483ab0b860effe042aa">getPattern</a> ()</td></tr>
+<tr class="memdesc:a219a693928bbb483ab0b860effe042aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current pattern of actuations.  <br /></td></tr>
 <tr class="separator:a219a693928bbb483ab0b860effe042aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6a2237c453d9c0afc40ce90dc74d4e7" id="r_ae6a2237c453d9c0afc40ce90dc74d4e7"><td class="memItemLeft" align="right" valign="top"><a id="ae6a2237c453d9c0afc40ce90dc74d4e7" name="ae6a2237c453d9c0afc40ce90dc74d4e7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getPatternLength</b> ()</td></tr>
+<tr class="memitem:ae6a2237c453d9c0afc40ce90dc74d4e7" id="r_ae6a2237c453d9c0afc40ce90dc74d4e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6a2237c453d9c0afc40ce90dc74d4e7">getPatternLength</a> ()</td></tr>
+<tr class="memdesc:ae6a2237c453d9c0afc40ce90dc74d4e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the current pattern.  <br /></td></tr>
 <tr class="separator:ae6a2237c453d9c0afc40ce90dc74d4e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12d78b12d28cff117c287d6c21955ec8" id="r_a12d78b12d28cff117c287d6c21955ec8"><td class="memItemLeft" align="right" valign="top"><a id="a12d78b12d28cff117c287d6c21955ec8" name="a12d78b12d28cff117c287d6c21955ec8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setChordMode</b> (ChordingScheme chordMode)</td></tr>
+<tr class="memitem:a12d78b12d28cff117c287d6c21955ec8" id="r_a12d78b12d28cff117c287d6c21955ec8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12d78b12d28cff117c287d6c21955ec8">setChordMode</a> (ChordingScheme chordMode)</td></tr>
+<tr class="memdesc:a12d78b12d28cff117c287d6c21955ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the chording mode for the glove, either sequential or OST encoding.  <br /></td></tr>
 <tr class="separator:a12d78b12d28cff117c287d6c21955ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents the glove model, simulating actuator behavior on a given hand. </p>
+<p>This class is used to simulate the actuations of actuators on a glove. It defines the pattern of actuations and the chording scheme (OST or sequential). The class also provides methods to control and reset actuators and manage the sequence of actuations. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a848359362d349be0cd1baeba3d93cb95" name="a848359362d349be0cd1baeba3d93cb95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a848359362d349be0cd1baeba3d93cb95">&#9670;&#160;</a></span>GloveModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GloveModel::GloveModel </td>
+          <td>(</td>
+          <td class="paramtype">Hand</td>          <td class="paramname"><span class="paramname"><em>hand</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_actuator.html">Actuator</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>actuator1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_actuator.html">Actuator</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>actuator2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_actuator.html">Actuator</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>actuator3</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_glove_model.html" title="Represents the glove model, simulating actuator behavior on a given hand.">GloveModel</a> object with the given hand and actuators. </p>
+<p>Initializes the glove with actuators and assigns the specified hand (left or right).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hand</td><td>The hand (left or right) of the glove. </td></tr>
+    <tr><td class="paramname">actuator1</td><td>First actuator of the glove. </td></tr>
+    <tr><td class="paramname">actuator2</td><td>Second actuator of the glove. </td></tr>
+    <tr><td class="paramname">actuator3</td><td>Third actuator of the glove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab20bf4ce393260da1e59c91ecf8ec11d" name="ab20bf4ce393260da1e59c91ecf8ec11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab20bf4ce393260da1e59c91ecf8ec11d">&#9670;&#160;</a></span>activateOnNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GloveModel::activateOnNumber </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>number</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Activates the stimuli on a given number representing a specific actuator pattern. </p>
+<p>The method activates and deactivates actuators based on the given number and the selected encoding scheme (OST or sequential).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>The number representing the actuator pattern to be activated using the specific stimuli. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aff9e79269bfb75e21f6e5f10999059b5" name="aff9e79269bfb75e21f6e5f10999059b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff9e79269bfb75e21f6e5f10999059b5">&#9670;&#160;</a></span>executePatternAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GloveModel::executePatternAt </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executes a pattern of actuations at the specified index in the pattern. </p>
+<p>Resets all actuators and vibrates based on the pattern at the given index.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the pattern to be executed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a219a693928bbb483ab0b860effe042aa" name="a219a693928bbb483ab0b860effe042aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a219a693928bbb483ab0b860effe042aa">&#9670;&#160;</a></span>getPattern()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; int &gt; GloveModel::getPattern </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the current pattern of actuations. </p>
+<p>This method returns the current pattern of actuations that is set.</p>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing the current pattern of actuations. </dd></dl>
+
+</div>
+</div>
+<a id="ae6a2237c453d9c0afc40ce90dc74d4e7" name="ae6a2237c453d9c0afc40ce90dc74d4e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6a2237c453d9c0afc40ce90dc74d4e7">&#9670;&#160;</a></span>getPatternLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GloveModel::getPatternLength </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the length of the current pattern. </p>
+<dl class="section return"><dt>Returns</dt><dd>The length of the current pattern. </dd></dl>
+
+</div>
+</div>
+<a id="ad3d37890e4554c09985a66f77ad15653" name="ad3d37890e4554c09985a66f77ad15653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d37890e4554c09985a66f77ad15653">&#9670;&#160;</a></span>pauseBetweenLetters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GloveModel::pauseBetweenLetters </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pauses between letters during a sequence of actuations. </p>
+<p>This function applies a custom delay and resets all actuators after the delay. </p>
+
+</div>
+</div>
+<a id="a5c73bff70dc88ee6be9c9da522c5427d" name="a5c73bff70dc88ee6be9c9da522c5427d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c73bff70dc88ee6be9c9da522c5427d">&#9670;&#160;</a></span>resetAllActuators()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GloveModel::resetAllActuators </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets all actuators to their initial state. </p>
+<p>This method deactivates all actuators, ensuring that they start in the same condition. </p>
+
+</div>
+</div>
+<a id="a12d78b12d28cff117c287d6c21955ec8" name="a12d78b12d28cff117c287d6c21955ec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d78b12d28cff117c287d6c21955ec8">&#9670;&#160;</a></span>setChordMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GloveModel::setChordMode </td>
+          <td>(</td>
+          <td class="paramtype">ChordingScheme</td>          <td class="paramname"><span class="paramname"><em>chordMode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the chording mode for the glove, either sequential or OST encoding. </p>
+<p>This method selects the chording mode (either sequential or OST) for the actuations.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chordMode</td><td>The desired chording scheme (SEQUENTIAL_ENCODING or OST_ENCODING). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a099a674368ef9cd54123a11519cbf69d" name="a099a674368ef9cd54123a11519cbf69d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a099a674368ef9cd54123a11519cbf69d">&#9670;&#160;</a></span>setPattern()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GloveModel::setPattern </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt;</td>          <td class="paramname"><span class="paramname"><em>newValues</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a new pattern of actuations to be played. </p>
+<p>This method allows the user to define a new pattern of actuations.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newValues</td><td>A vector containing the new pattern of actuations. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/Models/<a class="el" href="_glove_model_8h_source.html">GloveModel.h</a></li>
 </ul>
