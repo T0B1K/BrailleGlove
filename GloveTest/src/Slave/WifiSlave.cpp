@@ -2,10 +2,10 @@
 #include <Settings/SingeltonWifiSettings.h>
 
 #ifdef UNIT_TEST
-    #include "../test/Mocks/ESP_Mock.h"
-    extern MockESPClass ESP;
-#endif
-#ifdef UNIT_TEST
+    #ifndef ESP
+        #include "../test/Mocks/ESP_Mock.h"
+        extern MockESPClass ESP;
+    #endif
     #ifndef HTTP_GET
         #define HTTP_GET 1
     #endif
@@ -45,7 +45,6 @@ void WifiSlave::receivedPatten(std::vector<int> sensitivityPattern){
 
 
 void WifiSlave::processMessage(const uint8_t* mac, const uint8_t* buf, unsigned int count) {
-
     if (count > 0) {
         uint8_t messageType = buf[0];
         if (messageType == 0) { // 0 indicates a vector
@@ -55,10 +54,8 @@ void WifiSlave::processMessage(const uint8_t* mac, const uint8_t* buf, unsigned 
             } else {
                 gloveModel.setChordMode(SEQUENTIAL_ENCODING);
             }
-
             size_t vectorSize;
             memcpy(&vectorSize, buf + 2, sizeof(size_t));
-
             int repeat = 0;
             int offset = 2 + sizeof(size_t);  // Initial offset after message type, encoding, and vector size
             int firstValue;
@@ -71,7 +68,6 @@ void WifiSlave::processMessage(const uint8_t* mac, const uint8_t* buf, unsigned 
             for (size_t i = 0; i < vectorSize; i++) {
                 int value;
                 memcpy(&value, buf + offset + i * sizeof(int), sizeof(int));
-
                 if (value == -1) {
                     sensitivityPattern[i] = 0;
                 } else {
@@ -84,22 +80,18 @@ void WifiSlave::processMessage(const uint8_t* mac, const uint8_t* buf, unsigned 
                     sensitivityPattern.insert(sensitivityPattern.end(), sensitivityValues.begin(), sensitivityValues.end());
                 }
             }
-
             receivedPatten(sensitivityPattern);
 
         } else if (messageType == 1) { // 1 indicates an integer
             int receivedInteger;
             memcpy(&receivedInteger, buf + 1, sizeof(int));
-
             receivedIndex(receivedInteger);
-
         }
     }
 }
 
 void WifiSlave::runProgram(){
-    //Serial.println("hasPatternFlag: " + String(hasPatternFlag) + " nextCharacterFlag: " + String(nextCharacterFlag));
-    if (hasPatternFlag && nextCharacterFlag){//pol if pattern and index otherwise disregard
+    if (hasPatternFlag && nextCharacterFlag){//poll if there is a pattern and index otherwise disregard
         int oldCharacterIndex = characterIndex;
         gloveModel.executePatternAt(oldCharacterIndex);
 
@@ -113,8 +105,6 @@ WifiSlave::WifiSlave(GloveModel gloveModel)
     : gloveModel(gloveModel) {}
 
 
-
-
 void WifiSlave::setup() {
     WiFi.persistent(false);
     WiFi.mode(WIFI_STA); // Set to Access Point mode
@@ -125,8 +115,6 @@ void WifiSlave::setup() {
     if (!WifiEspNow.begin()) {
         ESP.restart(); // Restart if initialization fails
     }
-
-
     WifiEspNow.onReceive(WifiSlave::onReceiveCallback, this);
 }
 
