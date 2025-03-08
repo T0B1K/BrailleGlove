@@ -13,11 +13,9 @@ void Controller::setup() {
 }
 
 void Controller::initializeMaster() {
-
     VibrationActuator* strokingAct = new VibrationActuator(5);
     VibrationActuator* tabbingAct2 = new VibrationActuator(4);
     VibrationActuator* g1VibAct3 = new VibrationActuator(2);
-
 
     GloveModel rightGloveModel(Right, *g1VibAct3, *tabbingAct2, *strokingAct);
 
@@ -26,7 +24,6 @@ void Controller::initializeMaster() {
 }
 
 void Controller::initializeSlave() {
-
     VibrationActuator* g1VibAct1 = new VibrationActuator(5);
     VibrationActuator* g1VibAct2 = new VibrationActuator(4);
     VibrationActuator* g1VibAct3 = new VibrationActuator(2);
