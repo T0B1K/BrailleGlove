@@ -7,29 +7,29 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Actuator.h"{}}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }VibrationActuator\ :\ \textcolor{keyword}{public}\ Actuator\ \{}
-\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00008\ \ \ \ \ VibrationActuator(\textcolor{keywordtype}{int}\ pin)\ :\ Actuator(pin,\ Vibration)\ \{}
-\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ pinMode(pin,\ OUTPUT);}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ digitalWrite(pin,\ LOW);}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ turnedOn\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00012\ \ \ \ \ \}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ activate()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!turnedOn)\{}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ turnedOn\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ digitalWrite(pin,\ HIGH);\ \textcolor{comment}{//\ Turn\ on\ vibration}}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00019\ \ \ \ \ \}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ deactivate()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(turnedOn)\{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ turnedOn\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ digitalWrite(pin,\ LOW);\ \textcolor{comment}{//\ Turn\ off\ vibration}}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vibration_actuator_a33a4a3cb031beee1697e54d2f8d59fbc}{VibrationActuator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_actuator_adc053742bcd5d2671ee955fda7544539}{Actuator}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_vibration_actuator_a33a4a3cb031beee1697e54d2f8d59fbc}{VibrationActuator}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}})\ :\ \mbox{\hyperlink{class_actuator_adc053742bcd5d2671ee955fda7544539}{Actuator}}(\mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}},\ Vibration)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ pinMode(\mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}},\ OUTPUT);\ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ digitalWrite(\mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}},\ LOW);\ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_actuator_a0799af131c17c48143c785db7c20ba6d}{turnedOn}}\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00026\ \ \ \ \ \}}
-\DoxyCodeLine{00027\ \};}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vibration_actuator_a5b90406e80a621a79e8ca6d967953506}{activate}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_actuator_a0799af131c17c48143c785db7c20ba6d}{turnedOn}})\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_actuator_a0799af131c17c48143c785db7c20ba6d}{turnedOn}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ digitalWrite(\mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}},\ HIGH);\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vibration_actuator_a3588083c945c2a4e07b9cd9ffb93dbdf}{deactivate}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_actuator_a0799af131c17c48143c785db7c20ba6d}{turnedOn}})\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_actuator_a0799af131c17c48143c785db7c20ba6d}{turnedOn}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ digitalWrite(\mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}},\ LOW);\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VIBRATION\_ACTUATOR\_H}}
 
 \end{DoxyCode}

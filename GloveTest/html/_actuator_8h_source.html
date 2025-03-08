@@ -114,34 +114,33 @@ $(function(){initNavTree('_actuator_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">    #include &quot;../test/Mocks/Servo_Mock.h&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">    #include &lt;Servo.h&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifdef UNIT_TEST</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">    #include &lt;Arduino.h&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_actuator.html">   17</a></span><span class="keyword">class </span>Actuator {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> pin;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ActuatorType actuatorType;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">bool</span> turnedOn = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Actuator(<span class="keywordtype">int</span> pin, ActuatorType type) : pin(pin), actuatorType(type) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> activate() = 0;   <span class="comment">// Pure virtual function</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> deactivate() = 0; <span class="comment">// Pure virtual function</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    ActuatorType getType() {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">return</span> actuatorType;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">    #include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_actuator.html">   20</a></span><span class="keyword">class </span><a class="code hl_function" href="class_actuator.html#adc053742bcd5d2671ee955fda7544539">Actuator</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">   22</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_actuator.html#af847a7590d81b1c779ac4ef6726d64fe">   23</a></span>    ActuatorType <a class="code hl_variable" href="class_actuator.html#af847a7590d81b1c779ac4ef6726d64fe">actuatorType</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_actuator.html#a0799af131c17c48143c785db7c20ba6d">   24</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_actuator.html#a0799af131c17c48143c785db7c20ba6d">turnedOn</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_actuator.html#adc053742bcd5d2671ee955fda7544539">   32</a></span>    <a class="code hl_function" href="class_actuator.html#adc053742bcd5d2671ee955fda7544539">Actuator</a>(<span class="keywordtype">int</span> <a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>, ActuatorType type) : <a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>(<a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>), <a class="code hl_variable" href="class_actuator.html#af847a7590d81b1c779ac4ef6726d64fe">actuatorType</a>(type) {}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_actuator.html#ab9af7bdcdfb8c81dcf5aef07b1050901">   40</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_actuator.html#ab9af7bdcdfb8c81dcf5aef07b1050901">activate</a>() = 0;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_actuator.html#ab3e705a76b6b93876ab3ad0739c21f32">   48</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_actuator.html#ab3e705a76b6b93876ab3ad0739c21f32">deactivate</a>() = 0;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
 </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">// ACTUATOR_H</span></div>
+<div class="ttc" id="aclass_actuator_html_a0799af131c17c48143c785db7c20ba6d"><div class="ttname"><a href="class_actuator.html#a0799af131c17c48143c785db7c20ba6d">Actuator::turnedOn</a></div><div class="ttdeci">bool turnedOn</div><div class="ttdoc">Flag to check if the actuator is currently active.</div><div class="ttdef"><b>Definition</b> Actuator.h:24</div></div>
+<div class="ttc" id="aclass_actuator_html_ab3e705a76b6b93876ab3ad0739c21f32"><div class="ttname"><a href="class_actuator.html#ab3e705a76b6b93876ab3ad0739c21f32">Actuator::deactivate</a></div><div class="ttdeci">virtual void deactivate()=0</div><div class="ttdoc">Pure virtual function to deactivate the actuator.</div></div>
+<div class="ttc" id="aclass_actuator_html_ab9af7bdcdfb8c81dcf5aef07b1050901"><div class="ttname"><a href="class_actuator.html#ab9af7bdcdfb8c81dcf5aef07b1050901">Actuator::activate</a></div><div class="ttdeci">virtual void activate()=0</div><div class="ttdoc">Pure virtual function to activate the actuator.</div></div>
+<div class="ttc" id="aclass_actuator_html_adc053742bcd5d2671ee955fda7544539"><div class="ttname"><a href="class_actuator.html#adc053742bcd5d2671ee955fda7544539">Actuator::Actuator</a></div><div class="ttdeci">Actuator(int pin, ActuatorType type)</div><div class="ttdoc">Constructor for the Actuator class.</div><div class="ttdef"><b>Definition</b> Actuator.h:32</div></div>
+<div class="ttc" id="aclass_actuator_html_af6f89373f87d7d63169d7d2f5362dfa4"><div class="ttname"><a href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">Actuator::pin</a></div><div class="ttdeci">int pin</div><div class="ttdoc">GPIO pin number the actuator is connected to.</div><div class="ttdef"><b>Definition</b> Actuator.h:22</div></div>
+<div class="ttc" id="aclass_actuator_html_af847a7590d81b1c779ac4ef6726d64fe"><div class="ttname"><a href="class_actuator.html#af847a7590d81b1c779ac4ef6726d64fe">Actuator::actuatorType</a></div><div class="ttdeci">ActuatorType actuatorType</div><div class="ttdoc">Type of actuator (e.g., vibration, stroking, tabbing).</div><div class="ttdef"><b>Definition</b> Actuator.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

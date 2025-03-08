@@ -119,7 +119,7 @@ $(function(){initNavTree('_o_s_t_encoding_8h_source.html',''); initResizable(tru
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> handle(<span class="keywordtype">int</span> number, <a class="code hl_class" href="class_actuator.html">Actuator</a>** actuators, Hand hand) {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">if</span> (validIndex(number, hand)) {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keywordtype">int</span> actuatorIdx = (number - 1) % SingeltonGloveSettings::getInstance().NUM_ACTUATORS; <span class="comment">// 3 actuators on each hand</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            actuators[actuatorIdx]-&gt;activate();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            actuators[actuatorIdx]-&gt;<a class="code hl_function" href="class_actuator.html#ab9af7bdcdfb8c81dcf5aef07b1050901">activate</a>();</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        }</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        customDelay(SingeltonGloveSettings::getInstance().OST_OFFSET);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
@@ -127,7 +127,8 @@ $(function(){initNavTree('_o_s_t_encoding_8h_source.html',''); initResizable(tru
 </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_actuator_html"><div class="ttname"><a href="class_actuator.html">Actuator</a></div><div class="ttdef"><b>Definition</b> Actuator.h:17</div></div>
+<div class="ttc" id="aclass_actuator_html"><div class="ttname"><a href="class_actuator.html">Actuator</a></div><div class="ttdoc">Abstract class for implementing different types of actuators.</div><div class="ttdef"><b>Definition</b> Actuator.h:20</div></div>
+<div class="ttc" id="aclass_actuator_html_ab9af7bdcdfb8c81dcf5aef07b1050901"><div class="ttname"><a href="class_actuator.html#ab9af7bdcdfb8c81dcf5aef07b1050901">Actuator::activate</a></div><div class="ttdeci">virtual void activate()=0</div><div class="ttdoc">Pure virtual function to activate the actuator.</div></div>
 <div class="ttc" id="aclass_encoding_html"><div class="ttname"><a href="class_encoding.html">Encoding</a></div><div class="ttdef"><b>Definition</b> Encoding.h:14</div></div>
 <div class="ttc" id="aclass_o_s_t_encoding_html"><div class="ttname"><a href="class_o_s_t_encoding.html">OSTEncoding</a></div><div class="ttdef"><b>Definition</b> OSTEncoding.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->

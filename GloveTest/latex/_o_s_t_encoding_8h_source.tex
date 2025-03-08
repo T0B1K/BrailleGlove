@@ -15,7 +15,7 @@
 \DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ handle(\textcolor{keywordtype}{int}\ number,\ \mbox{\hyperlink{class_actuator}{Actuator}}**\ actuators,\ Hand\ hand)\ \{}
 \DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validIndex(number,\ hand))\ \{}
 \DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ actuatorIdx\ =\ (number\ -\/\ 1)\ \%\ SingeltonGloveSettings::getInstance().NUM\_ACTUATORS;\ \textcolor{comment}{//\ 3\ actuators\ on\ each\ hand}}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ actuators[actuatorIdx]-\/>activate();}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ actuators[actuatorIdx]-\/>\mbox{\hyperlink{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901}{activate}}();}
 \DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ customDelay(SingeltonGloveSettings::getInstance().OST\_OFFSET);}
 \DoxyCodeLine{00017\ \ \ \ \ \}}

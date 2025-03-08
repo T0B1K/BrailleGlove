@@ -109,32 +109,44 @@ $(function(){initNavTree('_tabbing_actuator_8h_source.html',''); initResizable(t
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define TABBING_ACTUATOR_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Actuator.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_tabbing_actuator.html">    6</a></span><span class="keyword">class </span>TabbingActuator : <span class="keyword">public</span> Actuator {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    Servo servo;  <span class="comment">// Servo object to control the DS208</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    TabbingActuator(<span class="keywordtype">int</span> pin) : Actuator(pin, Stroking) {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="comment">// Initialize the servo and set to 180 degrees</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        servo.attach(pin);  <span class="comment">// Attach the servo to the specified pin</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        servo.write(180);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        turnedOn = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> activate()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        turnedOn = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        servo.write(90);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> deactivate()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        turnedOn = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        servo.write(180);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_tabbing_actuator.html">   12</a></span><span class="keyword">class </span><a class="code hl_function" href="class_tabbing_actuator.html#a8f288eaa95d764f2a0ed88d0422b085b">TabbingActuator</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_actuator.html#adc053742bcd5d2671ee955fda7544539">Actuator</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    Servo servo;  </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_tabbing_actuator.html#a8f288eaa95d764f2a0ed88d0422b085b">   25</a></span>    <a class="code hl_function" href="class_tabbing_actuator.html#a8f288eaa95d764f2a0ed88d0422b085b">TabbingActuator</a>(<span class="keywordtype">int</span> <a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>) : <a class="code hl_function" href="class_actuator.html#adc053742bcd5d2671ee955fda7544539">Actuator</a>(<a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>, Stroking) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        servo.attach(<a class="code hl_variable" href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>);  </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        servo.write(180);   </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_variable" href="class_actuator.html#a0799af131c17c48143c785db7c20ba6d">turnedOn</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_tabbing_actuator.html#a4bffd00dd034e3bfa073a6d435ddc038">   36</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_tabbing_actuator.html#a4bffd00dd034e3bfa073a6d435ddc038">activate</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_variable" href="class_actuator.html#a0799af131c17c48143c785db7c20ba6d">turnedOn</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        servo.write(90);  </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_tabbing_actuator.html#ad413c01a617efee167597f9a7ab59122">   46</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_tabbing_actuator.html#ad413c01a617efee167597f9a7ab59122">deactivate</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_variable" href="class_actuator.html#a0799af131c17c48143c785db7c20ba6d">turnedOn</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        servo.write(180);  </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">// TABBING_ACTUATOR_H</span></div>
+<div class="ttc" id="aclass_actuator_html_a0799af131c17c48143c785db7c20ba6d"><div class="ttname"><a href="class_actuator.html#a0799af131c17c48143c785db7c20ba6d">Actuator::turnedOn</a></div><div class="ttdeci">bool turnedOn</div><div class="ttdoc">Flag to check if the actuator is currently active.</div><div class="ttdef"><b>Definition</b> Actuator.h:24</div></div>
+<div class="ttc" id="aclass_actuator_html_adc053742bcd5d2671ee955fda7544539"><div class="ttname"><a href="class_actuator.html#adc053742bcd5d2671ee955fda7544539">Actuator::Actuator</a></div><div class="ttdeci">Actuator(int pin, ActuatorType type)</div><div class="ttdoc">Constructor for the Actuator class.</div><div class="ttdef"><b>Definition</b> Actuator.h:32</div></div>
+<div class="ttc" id="aclass_actuator_html_af6f89373f87d7d63169d7d2f5362dfa4"><div class="ttname"><a href="class_actuator.html#af6f89373f87d7d63169d7d2f5362dfa4">Actuator::pin</a></div><div class="ttdeci">int pin</div><div class="ttdoc">GPIO pin number the actuator is connected to.</div><div class="ttdef"><b>Definition</b> Actuator.h:22</div></div>
+<div class="ttc" id="aclass_tabbing_actuator_html_a4bffd00dd034e3bfa073a6d435ddc038"><div class="ttname"><a href="class_tabbing_actuator.html#a4bffd00dd034e3bfa073a6d435ddc038">TabbingActuator::activate</a></div><div class="ttdeci">void activate() override</div><div class="ttdoc">Activates the tabbing actuator.</div><div class="ttdef"><b>Definition</b> TabbingActuator.h:36</div></div>
+<div class="ttc" id="aclass_tabbing_actuator_html_a8f288eaa95d764f2a0ed88d0422b085b"><div class="ttname"><a href="class_tabbing_actuator.html#a8f288eaa95d764f2a0ed88d0422b085b">TabbingActuator::TabbingActuator</a></div><div class="ttdeci">TabbingActuator(int pin)</div><div class="ttdoc">Constructor for TabbingActuator.</div><div class="ttdef"><b>Definition</b> TabbingActuator.h:25</div></div>
+<div class="ttc" id="aclass_tabbing_actuator_html_ad413c01a617efee167597f9a7ab59122"><div class="ttname"><a href="class_tabbing_actuator.html#ad413c01a617efee167597f9a7ab59122">TabbingActuator::deactivate</a></div><div class="ttdeci">void deactivate() override</div><div class="ttdoc">Deactivates the tabbing actuator.</div><div class="ttdef"><b>Definition</b> TabbingActuator.h:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

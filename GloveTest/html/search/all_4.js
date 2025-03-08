@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['glovemodel_0',['GloveModel',['../class_glove_model.html',1,'']]]
+  ['encoding_0',['Encoding',['../class_encoding.html',1,'']]]
 ];

@@ -109,45 +109,153 @@ $(function(){initNavTree('class_actuator.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Actuator Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract class for implementing different types of actuators.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_actuator_8h_source.html">Actuator.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Actuator:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_actuator.png" usemap="#Actuator_map" alt=""/>
   <map id="Actuator_map" name="Actuator_map">
-<area href="class_stroking_actuator.html" alt="StrokingActuator" shape="rect" coords="0,56,111,80"/>
-<area href="class_tabbing_actuator.html" alt="TabbingActuator" shape="rect" coords="121,56,232,80"/>
-<area href="class_vibration_actuator.html" alt="VibrationActuator" shape="rect" coords="242,56,353,80"/>
+<area href="class_stroking_actuator.html" title="A class representing a stroking actuator." alt="StrokingActuator" shape="rect" coords="0,56,111,80"/>
+<area href="class_tabbing_actuator.html" title="A class representing a tabbing actuator." alt="TabbingActuator" shape="rect" coords="121,56,232,80"/>
+<area href="class_vibration_actuator.html" title="A class representing a vibration actuator." alt="VibrationActuator" shape="rect" coords="242,56,353,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adc053742bcd5d2671ee955fda7544539" id="r_adc053742bcd5d2671ee955fda7544539"><td class="memItemLeft" align="right" valign="top"><a id="adc053742bcd5d2671ee955fda7544539" name="adc053742bcd5d2671ee955fda7544539"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Actuator</b> (int pin, ActuatorType type)</td></tr>
+<tr class="memitem:adc053742bcd5d2671ee955fda7544539" id="r_adc053742bcd5d2671ee955fda7544539"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc053742bcd5d2671ee955fda7544539">Actuator</a> (int <a class="el" href="#af6f89373f87d7d63169d7d2f5362dfa4">pin</a>, ActuatorType type)</td></tr>
+<tr class="memdesc:adc053742bcd5d2671ee955fda7544539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="class_actuator.html" title="Abstract class for implementing different types of actuators.">Actuator</a> class.  <br /></td></tr>
 <tr class="separator:adc053742bcd5d2671ee955fda7544539"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9af7bdcdfb8c81dcf5aef07b1050901" id="r_ab9af7bdcdfb8c81dcf5aef07b1050901"><td class="memItemLeft" align="right" valign="top"><a id="ab9af7bdcdfb8c81dcf5aef07b1050901" name="ab9af7bdcdfb8c81dcf5aef07b1050901"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>activate</b> ()=0</td></tr>
+<tr class="memitem:ab9af7bdcdfb8c81dcf5aef07b1050901" id="r_ab9af7bdcdfb8c81dcf5aef07b1050901"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9af7bdcdfb8c81dcf5aef07b1050901">activate</a> ()=0</td></tr>
+<tr class="memdesc:ab9af7bdcdfb8c81dcf5aef07b1050901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to activate the actuator.  <br /></td></tr>
 <tr class="separator:ab9af7bdcdfb8c81dcf5aef07b1050901"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3e705a76b6b93876ab3ad0739c21f32" id="r_ab3e705a76b6b93876ab3ad0739c21f32"><td class="memItemLeft" align="right" valign="top"><a id="ab3e705a76b6b93876ab3ad0739c21f32" name="ab3e705a76b6b93876ab3ad0739c21f32"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deactivate</b> ()=0</td></tr>
+<tr class="memitem:ab3e705a76b6b93876ab3ad0739c21f32" id="r_ab3e705a76b6b93876ab3ad0739c21f32"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3e705a76b6b93876ab3ad0739c21f32">deactivate</a> ()=0</td></tr>
+<tr class="memdesc:ab3e705a76b6b93876ab3ad0739c21f32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to deactivate the actuator.  <br /></td></tr>
 <tr class="separator:ab3e705a76b6b93876ab3ad0739c21f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe3b97dd2a45bfe57472212e880826be" id="r_abe3b97dd2a45bfe57472212e880826be"><td class="memItemLeft" align="right" valign="top"><a id="abe3b97dd2a45bfe57472212e880826be" name="abe3b97dd2a45bfe57472212e880826be"></a>
-ActuatorType&#160;</td><td class="memItemRight" valign="bottom"><b>getType</b> ()</td></tr>
-<tr class="separator:abe3b97dd2a45bfe57472212e880826be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:af6f89373f87d7d63169d7d2f5362dfa4" id="r_af6f89373f87d7d63169d7d2f5362dfa4"><td class="memItemLeft" align="right" valign="top"><a id="af6f89373f87d7d63169d7d2f5362dfa4" name="af6f89373f87d7d63169d7d2f5362dfa4"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>pin</b></td></tr>
+<tr class="memdesc:af6f89373f87d7d63169d7d2f5362dfa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pin number the actuator is connected to. <br /></td></tr>
 <tr class="separator:af6f89373f87d7d63169d7d2f5362dfa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af847a7590d81b1c779ac4ef6726d64fe" id="r_af847a7590d81b1c779ac4ef6726d64fe"><td class="memItemLeft" align="right" valign="top"><a id="af847a7590d81b1c779ac4ef6726d64fe" name="af847a7590d81b1c779ac4ef6726d64fe"></a>
 ActuatorType&#160;</td><td class="memItemRight" valign="bottom"><b>actuatorType</b></td></tr>
+<tr class="memdesc:af847a7590d81b1c779ac4ef6726d64fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of actuator (e.g., vibration, stroking, tabbing). <br /></td></tr>
 <tr class="separator:af847a7590d81b1c779ac4ef6726d64fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0799af131c17c48143c785db7c20ba6d" id="r_a0799af131c17c48143c785db7c20ba6d"><td class="memItemLeft" align="right" valign="top"><a id="a0799af131c17c48143c785db7c20ba6d" name="a0799af131c17c48143c785db7c20ba6d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>turnedOn</b> = false</td></tr>
+<tr class="memdesc:a0799af131c17c48143c785db7c20ba6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to check if the actuator is currently active. <br /></td></tr>
 <tr class="separator:a0799af131c17c48143c785db7c20ba6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract class for implementing different types of actuators. </p>
+<p>This class provides a base for all actuator types, defining common properties and methods. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="adc053742bcd5d2671ee955fda7544539" name="adc053742bcd5d2671ee955fda7544539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc053742bcd5d2671ee955fda7544539">&#9670;&#160;</a></span>Actuator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Actuator::Actuator </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ActuatorType</td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="class_actuator.html" title="Abstract class for implementing different types of actuators.">Actuator</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>The GPIO pin to which the actuator is connected. </td></tr>
+    <tr><td class="paramname">type</td><td>The type of actuator. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab9af7bdcdfb8c81dcf5aef07b1050901" name="ab9af7bdcdfb8c81dcf5aef07b1050901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9af7bdcdfb8c81dcf5aef07b1050901">&#9670;&#160;</a></span>activate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Actuator::activate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual function to activate the actuator. </p>
+<p>This function must be implemented by derived classes to define how the actuator should be activated. </p>
+
+<p>Implemented in <a class="el" href="class_stroking_actuator.html#a3f5e76f0f0a870f5f358b157261ca1fc">StrokingActuator</a>, <a class="el" href="class_tabbing_actuator.html#a4bffd00dd034e3bfa073a6d435ddc038">TabbingActuator</a>, and <a class="el" href="class_vibration_actuator.html#a5b90406e80a621a79e8ca6d967953506">VibrationActuator</a>.</p>
+
+</div>
+</div>
+<a id="ab3e705a76b6b93876ab3ad0739c21f32" name="ab3e705a76b6b93876ab3ad0739c21f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e705a76b6b93876ab3ad0739c21f32">&#9670;&#160;</a></span>deactivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Actuator::deactivate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual function to deactivate the actuator. </p>
+<p>This function must be implemented by derived classes to define how the actuator should be deactivated. </p>
+
+<p>Implemented in <a class="el" href="class_stroking_actuator.html#a52202f803f15497905553046fcb0b1e8">StrokingActuator</a>, <a class="el" href="class_tabbing_actuator.html#ad413c01a617efee167597f9a7ab59122">TabbingActuator</a>, and <a class="el" href="class_vibration_actuator.html#a3588083c945c2a4e07b9cd9ffb93dbdf">VibrationActuator</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/ActuatorTypes/<a class="el" href="_actuator_8h_source.html">Actuator.h</a></li>
 </ul>

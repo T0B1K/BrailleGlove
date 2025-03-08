@@ -7,28 +7,28 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Actuator.h"{}}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }TabbingActuator\ :\ \textcolor{keyword}{public}\ Actuator\ \{}
-\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00008\ \ \ \ \ Servo\ servo;\ \ \textcolor{comment}{//\ Servo\ object\ to\ control\ the\ DS208}}
-\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00010\ \ \ \ \ TabbingActuator(\textcolor{keywordtype}{int}\ pin)\ :\ Actuator(pin,\ Stroking)\ \{}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ servo\ and\ set\ to\ 180\ degrees}}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ servo.attach(pin);\ \ \textcolor{comment}{//\ Attach\ the\ servo\ to\ the\ specified\ pin}}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ servo.write(180);}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ turnedOn\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00015\ \ \ \ \ \}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ activate()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ turnedOn\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ servo.write(90);}
-\DoxyCodeLine{00020\ \ \ \ \ \}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ deactivate()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ turnedOn\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ servo.write(180);}
-\DoxyCodeLine{00025\ \ \ \ \ \}}
-\DoxyCodeLine{00026\ \};}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_tabbing_actuator_a8f288eaa95d764f2a0ed88d0422b085b}{TabbingActuator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_actuator_adc053742bcd5d2671ee955fda7544539}{Actuator}}\ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ Servo\ servo;\ \ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_tabbing_actuator_a8f288eaa95d764f2a0ed88d0422b085b}{TabbingActuator}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}})\ :\ \mbox{\hyperlink{class_actuator_adc053742bcd5d2671ee955fda7544539}{Actuator}}(\mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}},\ Stroking)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ servo.attach(\mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}});\ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ servo.write(180);\ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_actuator_a0799af131c17c48143c785db7c20ba6d}{turnedOn}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tabbing_actuator_a4bffd00dd034e3bfa073a6d435ddc038}{activate}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_actuator_a0799af131c17c48143c785db7c20ba6d}{turnedOn}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ servo.write(90);\ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_tabbing_actuator_ad413c01a617efee167597f9a7ab59122}{deactivate}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_actuator_a0799af131c17c48143c785db7c20ba6d}{turnedOn}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ servo.write(180);\ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TABBING\_ACTUATOR\_H}}
 
 \end{DoxyCode}

@@ -1,5 +1,14 @@
 \doxysection{Tabbing\+Actuator Class Reference}
 \hypertarget{class_tabbing_actuator}{}\label{class_tabbing_actuator}\index{TabbingActuator@{TabbingActuator}}
+
+
+A class representing a tabbing actuator.  
+
+
+
+
+{\ttfamily \#include $<$Tabbing\+Actuator.\+h$>$}
+
 Inheritance diagram for Tabbing\+Actuator\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,31 +18,55 @@ Inheritance diagram for Tabbing\+Actuator\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_tabbing_actuator_a8f288eaa95d764f2a0ed88d0422b085b}\label{class_tabbing_actuator_a8f288eaa95d764f2a0ed88d0422b085b} 
-{\bfseries Tabbing\+Actuator} (int pin)
-\item 
+\mbox{\hyperlink{class_tabbing_actuator_a8f288eaa95d764f2a0ed88d0422b085b}{Tabbing\+Actuator}} (int \mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_tabbing_actuator}{Tabbing\+Actuator}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_tabbing_actuator_a4bffd00dd034e3bfa073a6d435ddc038}{activate}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Activates the tabbing actuator. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_tabbing_actuator_ad413c01a617efee167597f9a7ab59122}{deactivate}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Deactivates the tabbing actuator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_actuator}{Actuator}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Actuator} (int pin, Actuator\+Type type)
-\item 
-Actuator\+Type {\bfseries get\+Type} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_actuator_adc053742bcd5d2671ee955fda7544539}{Actuator}} (int \mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}}, Actuator\+Type type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_actuator}{Actuator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_actuator}{Actuator}}}
 \begin{DoxyCompactItemize}
 \item 
 int {\bfseries pin}
-\item 
+\begin{DoxyCompactList}\small\item\em GPIO pin number the actuator is connected to. \end{DoxyCompactList}\item 
 Actuator\+Type {\bfseries actuator\+Type}
-\item 
+\begin{DoxyCompactList}\small\item\em Type of actuator (e.\+g., vibration, stroking, tabbing). \end{DoxyCompactList}\item 
 bool {\bfseries turned\+On} = false
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Flag to check if the actuator is currently active. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A class representing a tabbing actuator. 
+
+This actuator is designed to create a tapping or tabbing sensation using a servo motor. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_tabbing_actuator_a8f288eaa95d764f2a0ed88d0422b085b}\index{TabbingActuator@{TabbingActuator}!TabbingActuator@{TabbingActuator}}
+\index{TabbingActuator@{TabbingActuator}!TabbingActuator@{TabbingActuator}}
+\doxysubsubsection{\texorpdfstring{TabbingActuator()}{TabbingActuator()}}
+{\footnotesize\ttfamily \label{class_tabbing_actuator_a8f288eaa95d764f2a0ed88d0422b085b} 
+Tabbing\+Actuator\+::\+Tabbing\+Actuator (\begin{DoxyParamCaption}\item[{int}]{pin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{class_tabbing_actuator}{Tabbing\+Actuator}. 
+
+Initializes the tabbing actuator by attaching the servo to the specified pin and setting it to the initial position (180 degrees).
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The GPIO pin to which the actuator is connected. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Attach the servo to the specified pin.
+
+\texorpdfstring{$<$}{<} Set servo to 180 degrees initially.
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_tabbing_actuator_a4bffd00dd034e3bfa073a6d435ddc038}\index{TabbingActuator@{TabbingActuator}!activate@{activate}}
@@ -44,7 +77,11 @@ void Tabbing\+Actuator\+::activate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCa
 
 
 
-Implements \mbox{\hyperlink{class_actuator}{Actuator}}.
+Activates the tabbing actuator. 
+
+Moves the servo to 90 degrees to simulate a tabbing motion. \texorpdfstring{$<$}{<} Move the servo to 90 degrees.
+
+Implements \mbox{\hyperlink{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901}{Actuator}}.
 
 \Hypertarget{class_tabbing_actuator_ad413c01a617efee167597f9a7ab59122}\index{TabbingActuator@{TabbingActuator}!deactivate@{deactivate}}
 \index{deactivate@{deactivate}!TabbingActuator@{TabbingActuator}}
@@ -54,7 +91,11 @@ void Tabbing\+Actuator\+::deactivate (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 
 
-Implements \mbox{\hyperlink{class_actuator}{Actuator}}.
+Deactivates the tabbing actuator. 
+
+Moves the servo back to 180 degrees. \texorpdfstring{$<$}{<} Move the servo back to 180 degrees.
+
+Implements \mbox{\hyperlink{class_actuator_ab3e705a76b6b93876ab3ad0739c21f32}{Actuator}}.
 
 
 

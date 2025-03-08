@@ -11,31 +11,24 @@
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}../test/Mocks/Servo\_Mock.h"{}}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#else}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \#include\ <Servo.h>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#else}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ \#include\ <Arduino.h>}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }Actuator\ \{}
-\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ pin;}
-\DoxyCodeLine{00020\ \ \ \ \ ActuatorType\ actuatorType;}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ turnedOn\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00024\ \ \ \ \ Actuator(\textcolor{keywordtype}{int}\ pin,\ ActuatorType\ type)\ :\ pin(pin),\ actuatorType(type)\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \}}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ activate()\ =\ 0;\ \ \ \textcolor{comment}{//\ Pure\ virtual\ function}}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ deactivate()\ =\ 0;\ \textcolor{comment}{//\ Pure\ virtual\ function}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ ActuatorType\ getType()\ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ actuatorType;}
-\DoxyCodeLine{00032\ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \};}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \ \ \#include\ <Arduino.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_actuator_adc053742bcd5d2671ee955fda7544539}{Actuator}}\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ ActuatorType\ \mbox{\hyperlink{class_actuator_af847a7590d81b1c779ac4ef6726d64fe}{actuatorType}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_actuator_a0799af131c17c48143c785db7c20ba6d}{turnedOn}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_actuator_adc053742bcd5d2671ee955fda7544539}{Actuator}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}},\ ActuatorType\ type)\ :\ \mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}}(\mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}}),\ \mbox{\hyperlink{class_actuator_af847a7590d81b1c779ac4ef6726d64fe}{actuatorType}}(type)\ \{\}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901}{activate}}()\ =\ 0;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actuator_ab3e705a76b6b93876ab3ad0739c21f32}{deactivate}}()\ =\ 0;}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ACTUATOR\_H}}
 
 \end{DoxyCode}

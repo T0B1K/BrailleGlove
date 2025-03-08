@@ -1,5 +1,14 @@
 \doxysection{Vibration\+Actuator Class Reference}
 \hypertarget{class_vibration_actuator}{}\label{class_vibration_actuator}\index{VibrationActuator@{VibrationActuator}}
+
+
+A class representing a vibration actuator.  
+
+
+
+
+{\ttfamily \#include $<$Vibration\+Actuator.\+h$>$}
+
 Inheritance diagram for Vibration\+Actuator\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,31 +18,55 @@ Inheritance diagram for Vibration\+Actuator\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_vibration_actuator_a33a4a3cb031beee1697e54d2f8d59fbc}\label{class_vibration_actuator_a33a4a3cb031beee1697e54d2f8d59fbc} 
-{\bfseries Vibration\+Actuator} (int pin)
-\item 
+\mbox{\hyperlink{class_vibration_actuator_a33a4a3cb031beee1697e54d2f8d59fbc}{Vibration\+Actuator}} (int \mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_vibration_actuator}{Vibration\+Actuator}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_vibration_actuator_a5b90406e80a621a79e8ca6d967953506}{activate}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Activates the vibration actuator. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_vibration_actuator_a3588083c945c2a4e07b9cd9ffb93dbdf}{deactivate}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Deactivates the vibration actuator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_actuator}{Actuator}}}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Actuator} (int pin, Actuator\+Type type)
-\item 
-Actuator\+Type {\bfseries get\+Type} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_actuator_adc053742bcd5d2671ee955fda7544539}{Actuator}} (int \mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}}, Actuator\+Type type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_actuator}{Actuator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_actuator}{Actuator}}}
 \begin{DoxyCompactItemize}
 \item 
 int {\bfseries pin}
-\item 
+\begin{DoxyCompactList}\small\item\em GPIO pin number the actuator is connected to. \end{DoxyCompactList}\item 
 Actuator\+Type {\bfseries actuator\+Type}
-\item 
+\begin{DoxyCompactList}\small\item\em Type of actuator (e.\+g., vibration, stroking, tabbing). \end{DoxyCompactList}\item 
 bool {\bfseries turned\+On} = false
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Flag to check if the actuator is currently active. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A class representing a vibration actuator. 
+
+This actuator uses a digital output pin to control a vibration motor. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_vibration_actuator_a33a4a3cb031beee1697e54d2f8d59fbc}\index{VibrationActuator@{VibrationActuator}!VibrationActuator@{VibrationActuator}}
+\index{VibrationActuator@{VibrationActuator}!VibrationActuator@{VibrationActuator}}
+\doxysubsubsection{\texorpdfstring{VibrationActuator()}{VibrationActuator()}}
+{\footnotesize\ttfamily \label{class_vibration_actuator_a33a4a3cb031beee1697e54d2f8d59fbc} 
+Vibration\+Actuator\+::\+Vibration\+Actuator (\begin{DoxyParamCaption}\item[{int}]{pin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{class_vibration_actuator}{Vibration\+Actuator}. 
+
+Initializes the vibration actuator by setting the specified pin as an output and turning off the vibration motor initially.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The GPIO pin to which the actuator is connected. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Set the pin as an output.
+
+\texorpdfstring{$<$}{<} Ensure the actuator is off initially.
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_vibration_actuator_a5b90406e80a621a79e8ca6d967953506}\index{VibrationActuator@{VibrationActuator}!activate@{activate}}
@@ -44,7 +77,11 @@ void Vibration\+Actuator\+::activate (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 
 
-Implements \mbox{\hyperlink{class_actuator}{Actuator}}.
+Activates the vibration actuator. 
+
+Turns on the vibration motor if it is not already on. \texorpdfstring{$<$}{<} Turn on vibration.
+
+Implements \mbox{\hyperlink{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901}{Actuator}}.
 
 \Hypertarget{class_vibration_actuator_a3588083c945c2a4e07b9cd9ffb93dbdf}\index{VibrationActuator@{VibrationActuator}!deactivate@{deactivate}}
 \index{deactivate@{deactivate}!VibrationActuator@{VibrationActuator}}
@@ -54,7 +91,11 @@ void Vibration\+Actuator\+::deactivate (\begin{DoxyParamCaption}{}{}\end{DoxyPar
 
 
 
-Implements \mbox{\hyperlink{class_actuator}{Actuator}}.
+Deactivates the vibration actuator. 
+
+Turns off the vibration motor if it is currently on. \texorpdfstring{$<$}{<} Turn off vibration.
+
+Implements \mbox{\hyperlink{class_actuator_ab3e705a76b6b93876ab3ad0739c21f32}{Actuator}}.
 
 
 

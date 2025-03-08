@@ -1,5 +1,14 @@
 \doxysection{Actuator Class Reference}
 \hypertarget{class_actuator}{}\label{class_actuator}\index{Actuator@{Actuator}}
+
+
+Abstract class for implementing different types of actuators.  
+
+
+
+
+{\ttfamily \#include $<$Actuator.\+h$>$}
+
 Inheritance diagram for Actuator\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,30 +18,80 @@ Inheritance diagram for Actuator\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_actuator_adc053742bcd5d2671ee955fda7544539}\label{class_actuator_adc053742bcd5d2671ee955fda7544539} 
-{\bfseries Actuator} (int pin, Actuator\+Type type)
-\item 
-\Hypertarget{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901}\label{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901} 
-virtual void {\bfseries activate} ()=0
-\item 
-\Hypertarget{class_actuator_ab3e705a76b6b93876ab3ad0739c21f32}\label{class_actuator_ab3e705a76b6b93876ab3ad0739c21f32} 
-virtual void {\bfseries deactivate} ()=0
-\item 
-\Hypertarget{class_actuator_abe3b97dd2a45bfe57472212e880826be}\label{class_actuator_abe3b97dd2a45bfe57472212e880826be} 
-Actuator\+Type {\bfseries get\+Type} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_actuator_adc053742bcd5d2671ee955fda7544539}{Actuator}} (int \mbox{\hyperlink{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}{pin}}, Actuator\+Type type)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_actuator}{Actuator} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901}{activate}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to activate the actuator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_actuator_ab3e705a76b6b93876ab3ad0739c21f32}{deactivate}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to deactivate the actuator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4}\label{class_actuator_af6f89373f87d7d63169d7d2f5362dfa4} 
 int {\bfseries pin}
-\item 
+\begin{DoxyCompactList}\small\item\em GPIO pin number the actuator is connected to. \end{DoxyCompactList}\item 
 \Hypertarget{class_actuator_af847a7590d81b1c779ac4ef6726d64fe}\label{class_actuator_af847a7590d81b1c779ac4ef6726d64fe} 
 Actuator\+Type {\bfseries actuator\+Type}
-\item 
+\begin{DoxyCompactList}\small\item\em Type of actuator (e.\+g., vibration, stroking, tabbing). \end{DoxyCompactList}\item 
 \Hypertarget{class_actuator_a0799af131c17c48143c785db7c20ba6d}\label{class_actuator_a0799af131c17c48143c785db7c20ba6d} 
 bool {\bfseries turned\+On} = false
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Flag to check if the actuator is currently active. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class for implementing different types of actuators. 
+
+This class provides a base for all actuator types, defining common properties and methods. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_actuator_adc053742bcd5d2671ee955fda7544539}\index{Actuator@{Actuator}!Actuator@{Actuator}}
+\index{Actuator@{Actuator}!Actuator@{Actuator}}
+\doxysubsubsection{\texorpdfstring{Actuator()}{Actuator()}}
+{\footnotesize\ttfamily \label{class_actuator_adc053742bcd5d2671ee955fda7544539} 
+Actuator\+::\+Actuator (\begin{DoxyParamCaption}\item[{int}]{pin}{, }\item[{Actuator\+Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{class_actuator}{Actuator} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The GPIO pin to which the actuator is connected. \\
+\hline
+{\em type} & The type of actuator. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901}\index{Actuator@{Actuator}!activate@{activate}}
+\index{activate@{activate}!Actuator@{Actuator}}
+\doxysubsubsection{\texorpdfstring{activate()}{activate()}}
+{\footnotesize\ttfamily \label{class_actuator_ab9af7bdcdfb8c81dcf5aef07b1050901} 
+virtual void Actuator\+::activate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to activate the actuator. 
+
+This function must be implemented by derived classes to define how the actuator should be activated. 
+
+Implemented in \mbox{\hyperlink{class_stroking_actuator_a3f5e76f0f0a870f5f358b157261ca1fc}{Stroking\+Actuator}}, \mbox{\hyperlink{class_tabbing_actuator_a4bffd00dd034e3bfa073a6d435ddc038}{Tabbing\+Actuator}}, and \mbox{\hyperlink{class_vibration_actuator_a5b90406e80a621a79e8ca6d967953506}{Vibration\+Actuator}}.
+
+\Hypertarget{class_actuator_ab3e705a76b6b93876ab3ad0739c21f32}\index{Actuator@{Actuator}!deactivate@{deactivate}}
+\index{deactivate@{deactivate}!Actuator@{Actuator}}
+\doxysubsubsection{\texorpdfstring{deactivate()}{deactivate()}}
+{\footnotesize\ttfamily \label{class_actuator_ab3e705a76b6b93876ab3ad0739c21f32} 
+virtual void Actuator\+::deactivate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to deactivate the actuator. 
+
+This function must be implemented by derived classes to define how the actuator should be deactivated. 
+
+Implemented in \mbox{\hyperlink{class_stroking_actuator_a52202f803f15497905553046fcb0b1e8}{Stroking\+Actuator}}, \mbox{\hyperlink{class_tabbing_actuator_ad413c01a617efee167597f9a7ab59122}{Tabbing\+Actuator}}, and \mbox{\hyperlink{class_vibration_actuator_a3588083c945c2a4e07b9cd9ffb93dbdf}{Vibration\+Actuator}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
