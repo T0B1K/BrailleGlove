@@ -33,6 +33,16 @@ d1_mini_test   SUCCESS   00:00:00.143
 
 ```
 GloveTest/
+│── html/
+│   ├── [HTML Documentation](GloveTest/html/index.html)
+          # This is the generated HTML for the documentation which is used in the GitHub pages
+│   ├── ...
+│
+│── latex/
+│   ├── [Latex PDF Documentation](GloveTest/latex/refman.pdf)
+          # This is the generated latex PDF for the documentation
+│   ├── ...
+│
 │── data/
 │   ├── switch.html          # This is the mobile website for controlling the microcontrollers
 │   ├── TestingSite.html     # This is the testing site used on the laptop
@@ -71,6 +81,9 @@ GloveTest/
 │   │
 │   │── Slave/
 │   │   ├── WifiSlave.h       # Handles data reception and glove model execution on the slave
+│
+│── test/
+│   ├── ...                   # Tests files as defined below
 │
 │── main.ino                  # Main program file
 │── platform.ini               # PlatformIO configuration file
