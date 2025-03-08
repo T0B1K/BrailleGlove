@@ -7,29 +7,46 @@
     #include "../test/Mocks/Servo_Mock.h"
 #else
     #include <Servo.h>
-#endif
-
-#ifdef UNIT_TEST
-#else
     #include <Arduino.h>
 #endif
 
+
+
+/**
+ * @class Actuator
+ * @brief Abstract class for implementing different types of actuators.
+ * 
+ * This class provides a base for all actuator types, defining common properties and methods.
+ */
 class Actuator {
   protected:
-    int pin;
-    ActuatorType actuatorType;
-    bool turnedOn = false;
+    int pin; ///< GPIO pin number the actuator is connected to.
+    ActuatorType actuatorType; ///< Type of actuator (e.g., vibration, stroking, tabbing).
+    bool turnedOn = false; ///< Flag to check if the actuator is currently active.
 
   public:
-    Actuator(int pin, ActuatorType type) : pin(pin), actuatorType(type) {
-    }
+    /**
+     * @brief Constructor for the Actuator class.
+     * @param pin The GPIO pin to which the actuator is connected.
+     * @param type The type of actuator.
+     */
+    Actuator(int pin, ActuatorType type) : pin(pin), actuatorType(type) {}
 
-    virtual void activate() = 0;   // Pure virtual function
-    virtual void deactivate() = 0; // Pure virtual function
+    /**
+     * @brief Pure virtual function to activate the actuator.
+     * 
+     * This function must be implemented by derived classes to define 
+     * how the actuator should be activated.
+     */
+    virtual void activate() = 0;
 
-    ActuatorType getType() {
-        return actuatorType;
-    }
+    /**
+     * @brief Pure virtual function to deactivate the actuator.
+     * 
+     * This function must be implemented by derived classes to define 
+     * how the actuator should be deactivated.
+     */
+    virtual void deactivate() = 0;
 };
 
-#endif
+#endif // ACTUATOR_H

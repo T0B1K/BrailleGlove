@@ -1,0 +1,39 @@
+\doxysection{Encoding.\+h}
+\hypertarget{_encoding_8h_source}{}\label{_encoding_8h_source}\index{src/Models/EncodingScheme/Encoding.h@{src/Models/EncodingScheme/Encoding.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENCODING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENCODING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ ARDUINO\_MOCK\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#pragma\ once}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ "{}../test/Mocks/new\_Arduino\_Mock.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \#include\ <Arduino.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_encoding}{Encoding}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ customDelay(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ timeInMs)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ startMillis\ =\ millis();\ \ \textcolor{comment}{//\ Get\ the\ current\ time}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (millis()\ -\/\ startMillis\ <\ timeInMs)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ yield();\ \ \textcolor{comment}{//\ the\ program\ doesn't\ stop}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ validIndex(\textcolor{keywordtype}{int}\ number,\ Hand\ hand)\{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((hand\ ==\ Left\ \&\&\ number\ >\ SingeltonGloveSettings::getInstance().NUM\_ACTUATORS)\ ||}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ (hand\ ==\ Right\ \&\&\ number\ <\ SingeltonGloveSettings::getInstance().NUM\_ACTUATORS\ +\ 1))\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

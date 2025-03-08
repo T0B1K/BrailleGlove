@@ -1,0 +1,31 @@
+\doxysection{Sequential\+Encoding.\+h}
+\hypertarget{_sequential_encoding_8h_source}{}\label{_sequential_encoding_8h_source}\index{src/Models/EncodingScheme/SequentialEncoding.h@{src/Models/EncodingScheme/SequentialEncoding.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SEQUENTIAL\_ENCODING\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SEQUENTIAL\_ENCODING\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../../ActuatorTypes/Actuator.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../../Settings/SingeltonGloveSettings.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../../Models/HandEnum.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Encoding.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sequential_encoding}{SequentialEncoding}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_encoding}{Encoding}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ handle(\textcolor{keywordtype}{int}\ number,\ \mbox{\hyperlink{class_actuator}{Actuator}}**\ actuators,\ Hand\ hand)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (validIndex(number,\ hand))\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ actuatorIdx\ =\ (number\ -\/\ 1)\ \%\ SingeltonGloveSettings::getInstance().NUM\_ACTUATORS;\ \textcolor{comment}{//\ 3\ actuators\ on\ each\ hand}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ actuators[actuatorIdx]-\/>activate();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ customDelay(SingeltonGloveSettings::getInstance().DURATION);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ actuators[actuatorIdx]-\/>deactivate();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ customDelay(SingeltonGloveSettings::getInstance().SEQ\_OFFSET);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ customDelay(SingeltonGloveSettings::getInstance().DURATION);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ customDelay(SingeltonGloveSettings::getInstance().SEQ\_OFFSET);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

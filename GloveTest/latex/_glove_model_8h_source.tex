@@ -1,0 +1,97 @@
+\doxysection{Glove\+Model.\+h}
+\hypertarget{_glove_model_8h_source}{}\label{_glove_model_8h_source}\index{src/Models/GloveModel.h@{src/Models/GloveModel.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GLOVE\_MODEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GLOVE\_MODEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\ \ \ \ \#include\ <Arduino.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../ActuatorTypes/Actuator.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../Models/HandEnum.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../Settings/SingeltonGloveSettings.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}./EncodingScheme/ChordingScheme.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}./EncodingScheme/SequentialEncoding.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}./EncodingScheme/OSTEncoding.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }GloveModel\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_actuator}{Actuator}}*\ actuators[3];}
+\DoxyCodeLine{00021\ \ \ \ \ Hand\ hand;}
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<int>\ values;}
+\DoxyCodeLine{00023\ \ \ \ \ ChordingScheme\ playMode;\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ GloveModel(Hand\ hand,\ \mbox{\hyperlink{class_actuator}{Actuator}}\&\ actuator1,\ \mbox{\hyperlink{class_actuator}{Actuator}}\&\ actuator2,\ \mbox{\hyperlink{class_actuator}{Actuator}}\&\ actuator3)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ actuators[0]\ =\ \&actuator1;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ actuators[1]\ =\ \&actuator2;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ actuators[2]\ =\ \&actuator3;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ this-\/>hand\ =\ hand;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ resetAllActuators()\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ SingeltonGloveSettings::getInstance().NUM\_ACTUATORS;\ i++)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (actuators[i]\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actuators[i]-\/>deactivate();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ executePatternAt(\textcolor{keywordtype}{int}\ index)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ resetAllActuators();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ vibrateOnNumber(values[index]);}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ pauseBetweenLetters()\{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().DURATION);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ resetAllActuators();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().PAUSE);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ vibrateOnNumber(\textcolor{keywordtype}{int}\ number)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (number\ <\ 1)\ \{\ \ \ \textcolor{comment}{//\ -\/1\ is\ a\ pause,\ so\ reset\ every\ actuator}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ pauseBetweenLetters();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (number\ >\ 0)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ lastDigit\ =\ number\ \%\ 10;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ number\ =\ (int)number\ /\ 10;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playMode\ ==\ SEQUENTIAL\_ENCODING)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SequentialEncoding::handle(lastDigit,\ actuators,\ hand);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OSTEncoding::handle(lastDigit,\ actuators,\ hand);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(playMode\ ==\ OST\_ENCODING)\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().DURATION);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ resetAllActuators();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ SequentialEncoding::customDelay(SingeltonGloveSettings::getInstance().PAUSE);}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ setPattern(std::vector<int>\ newValues)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ values\ =\ newValues;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ std::vector<int>\ getPattern()\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ values;}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ getPatternLength()\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ values.size();}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ setChordMode(ChordingScheme\ chordMode)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ playMode\ =\ chordMode;}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

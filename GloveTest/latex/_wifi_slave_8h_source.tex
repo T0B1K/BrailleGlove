@@ -1,0 +1,49 @@
+\doxysection{Wifi\+Slave.\+h}
+\hypertarget{_wifi_slave_8h_source}{}\label{_wifi_slave_8h_source}\index{src/Slave/WifiSlave.h@{src/Slave/WifiSlave.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WIFI\_SLAVE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WIFI\_SLAVE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TEST}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}../test/Mocks/ESP8266WiFi\_Mock.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}../test/Mocks/MockWiFiUDP.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}../test/Mocks/ESPNOW\_Mock.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}../test/Mocks/ESP\_Mock.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \#include\ <ESP8266WiFi.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \#include\ <ESP8266WebServer.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ \#include\ <WiFiUdp.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ \#include\ <WiFiServer.h>}\ \ \textcolor{comment}{//\ Include\ for\ TCP\ server}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \#include\ <LittleFS.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \#include\ <WifiEspNow.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}Models/GloveModel.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }WifiSlave\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ WifiSlave(\mbox{\hyperlink{class_glove_model}{GloveModel}}\ gloveModel);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ setup();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ loop();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ onReceiveCallback(\textcolor{keyword}{const}\ uint8\_t*\ mac,\ \textcolor{keyword}{const}\ uint8\_t*\ buf,\ \textcolor{keywordtype}{size\_t}\ count,\ \textcolor{keywordtype}{void}*\ arg);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ processMessage(\textcolor{keyword}{const}\ uint8\_t*\ mac,\ \textcolor{keyword}{const}\ uint8\_t*\ buf,\ \textcolor{keywordtype}{size\_t}\ count);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_glove_model}{GloveModel}}\ gloveModel;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasPatternFlag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ nextCharacterFlag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ characterIndex\ =\ 0;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ runProgram();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ receivedIndex(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ receivedPatten(std::vector<int>\ sensitivityPattern);}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WIFI\_SLAVE\_H}}
+
+\end{DoxyCode}
