@@ -24,5 +24,5 @@ void setup() {
  * Continuously calls the loop function of the controller.
  */
 void loop() {
-    controller.loop(); ///< Calls the loop function of the controller.
+    controller.loop(); ///< Calls the standard loop function of the controller.
 }
