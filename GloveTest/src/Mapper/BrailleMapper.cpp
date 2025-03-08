@@ -7,32 +7,14 @@ BrailleMapper::BrailleMapper() {
 
 // Initializes the brailleMap with predefined letter-to-Braille mappings
 void BrailleMapper::initializeBrailleMap() {
-    brailleMap['a'] = 1;
-    brailleMap['b'] = 12;
-    brailleMap['c'] = 14;
-    brailleMap['d'] = 145;
-    brailleMap['e'] = 15;
-    brailleMap['f'] = 124;
-    brailleMap['g'] = 1245;
-    brailleMap['h'] = 125;
-    brailleMap['i'] = 24;
-    brailleMap['j'] = 245;
-    brailleMap['k'] = 13;
-    brailleMap['l'] = 123;
-    brailleMap['m'] = 134;
-    brailleMap['n'] = 1345;
-    brailleMap['o'] = 135;
-    brailleMap['p'] = 1234;
-    brailleMap['q'] = 12345;
-    brailleMap['r'] = 1235;
-    brailleMap['s'] = 234;
-    brailleMap['t'] = 2345;
-    brailleMap['u'] = 136;
-    brailleMap['v'] = 1236;
-    brailleMap['w'] = 2456;
-    brailleMap['x'] = 1346;
-    brailleMap['y'] = 13456;
-    brailleMap['z'] = 1356;
+    brailleMap = {
+        {'a', 1},   {'b', 12},  {'c', 14},  {'d', 145}, {'e', 15},
+        {'f', 124}, {'g', 1245},{'h', 125}, {'i', 24},  {'j', 245},
+        {'k', 13},  {'l', 123}, {'m', 134}, {'n', 1345},{'o', 135},
+        {'p', 1234},{'q', 12345},{'r', 1235},{'s', 234}, {'t', 2345},
+        {'u', 136}, {'v', 1236},{'w', 2456},{'x', 1346},{'y', 13456},
+        {'z', 1356}
+    };
 }
 
 // Get the Braille hash for a given letter
