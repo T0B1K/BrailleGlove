@@ -1,5 +1,8 @@
 # Project Braille  
 
+[![PlatformIO Build](https://github.com/T0B1K/BrailleGlove/actions/workflows/platformio_build.yml/badge.svg)](https://github.com/T0B1K/BrailleGlove/actions/workflows/platformio_build.yml)
+[![PlatformIO Build](https://github.com/T0B1K/BrailleGlove/actions/workflows/platformio_build.yml/badge.svg)](https://github.com/T0B1K/BrailleGlove/actions/workflows/platformio_build.yml)
+
 **Project Braille** focuses on developing a **Braille glove** for **passive haptic learning** of Braille. The project is divided into three repositories:  
 
 ## Repositories  
