@@ -25,7 +25,7 @@
  */
 class GloveModel {
 private:
-    Actuator* actuators[SingeltonGloveSettings::getInstance().NUM_ACTUATORS]; ///< Array of actuators for a single hand
+    Actuator* actuators[3]; ///< Array of actuators for a single hand
     Hand hand; ///< Represents whether the glove is for the left or right hand
     std::vector<int> values; ///< The pattern of actuations to be played
     ChordingScheme playMode; ///< Defines the chording scheme (OST or sequential)
