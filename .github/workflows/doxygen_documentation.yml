@@ -24,7 +24,9 @@ jobs:
 
       # Step 3: Generate Doxygen documentation
       - name: Run Doxygen
-        run: doxygen Doxyfile
+        run: |
+          cd GloveTest
+          doxygen Doxyfile
 
       # Step 4: Upload documentation to GitHub Pages
       - name: Deploy Doxygen Documentation to GitHub Pages
