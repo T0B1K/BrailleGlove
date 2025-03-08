@@ -25,7 +25,7 @@
  */
 class GloveModel {
 private:
-    Actuator* actuators[3]; ///< Array of actuators for a single hand
+    Actuator* actuators[SingeltonGloveSettings::getInstance().NUM_ACTUATORS]; ///< Array of actuators for a single hand
     Hand hand; ///< Represents whether the glove is for the left or right hand
     std::vector<int> values; ///< The pattern of actuations to be played
     ChordingScheme playMode; ///< Defines the chording scheme (OST or sequential)
@@ -70,7 +70,7 @@ public:
      */
     void executePatternAt(int index) {
         resetAllActuators();
-        vibrateOnNumber(values[index]);
+        activateOnNumber(values[index]);
     }
 
     /**
@@ -85,14 +85,14 @@ public:
     }
 
     /**
-     * @brief Vibrates on a given number representing a specific actuator pattern.
+     * @brief Activates the stimuli on a given number representing a specific actuator pattern.
      * 
      * The method activates and deactivates actuators based on the given number and the selected encoding scheme 
      * (OST or sequential).
      * 
-     * @param number The number representing the actuator pattern to be vibrated.
+     * @param number The number representing the actuator pattern to be activated using the specific stimuli.
      */
-    void vibrateOnNumber(int number) {
+    void activateOnNumber(int number) {
         if (number < 1) {   // -1 is a pause, so reset every actuator
             pauseBetweenLetters();
             return;

@@ -39,22 +39,22 @@ TEST_F(GloveModelTest, ExecutePatternAtTest) {
     std::vector<int> pattern = {1, 2, 3};
     gloveModel.setPattern(pattern);
 
-    // Mock the resetAllActuators and vibrateOnNumber methods to track calls
+    // Mock the resetAllActuators and activateOnNumber methods to track calls
     EXPECT_CALL(actuator1, deactivate()).Times(3);  // Expect 3 deactivations for actuators
     EXPECT_CALL(actuator2, deactivate()).Times(3);
     EXPECT_CALL(actuator3, deactivate()).Times(3);
 
-    // Mock the vibrateOnNumber method call
-    EXPECT_CALL(gloveModel, vibrateOnNumber(1)).Times(1);
-    EXPECT_CALL(gloveModel, vibrateOnNumber(2)).Times(1);
-    EXPECT_CALL(gloveModel, vibrateOnNumber(3)).Times(1);
+    // Mock the activateOnNumber method call
+    EXPECT_CALL(gloveModel, activateOnNumber(1)).Times(1);
+    EXPECT_CALL(gloveModel, activateOnNumber(2)).Times(1);
+    EXPECT_CALL(gloveModel, activateOnNumber(3)).Times(1);
 
-    gloveModel.executePatternAt(0);  // Should call vibrateOnNumber(1)
-    gloveModel.executePatternAt(1);  // Should call vibrateOnNumber(2)
-    gloveModel.executePatternAt(2);  // Should call vibrateOnNumber(3)
+    gloveModel.executePatternAt(0);  // Should call activateOnNumber(1)
+    gloveModel.executePatternAt(1);  // Should call activateOnNumber(2)
+    gloveModel.executePatternAt(2);  // Should call activateOnNumber(3)
 }
 
-// Test for vibrateOnNumber
+// Test for activateOnNumber
 TEST_F(GloveModelTest, VibrateOnNumberTest) {
     gloveModel.setPattern({1, 2});
 
@@ -67,8 +67,8 @@ TEST_F(GloveModelTest, VibrateOnNumberTest) {
 
     // Test when playMode is SEQUENTIAL_ENCODING
     gloveModel.setChordMode(SEQUENTIAL_ENCODING);
-    gloveModel.vibrateOnNumber(1);  // Activate actuator1
-    gloveModel.vibrateOnNumber(2);  // Activate actuator2
+    gloveModel.activateOnNumber(1);  // Activate actuator1
+    gloveModel.activateOnNumber(2);  // Activate actuator2
 }
 
 // Test for setPattern and getPattern
